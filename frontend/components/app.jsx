@@ -17,11 +17,6 @@ import { AuthRoute } from '../util/route_util';
 const App = () => (
   <div>
     <Modal />
-    {/* <div>
-      <Link to="/" className="header-link">
-        <h1>Pick-A-Table</h1>
-      </Link>
-    </div> */}
       <SplashContainer />
   </div>
 );

@@ -4,8 +4,9 @@ import SessionForm from './session_form';
 import { closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = ({ errors, session }) => {
+
   return {
-    errors: errors.session,
+    errors: errors.errors,
     currentUserId: session.currentUserId
   };
 };
