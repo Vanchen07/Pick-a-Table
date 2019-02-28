@@ -4,7 +4,7 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      email: '',
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,7 +19,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.loginForm(user);
   }
 
   renderErrors() {
@@ -35,29 +35,34 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    if(this.props.currentUserId){
+      return null
+    }
+
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <br/>
-          <div className="login-form">
-            <br/>
-            <label>Username:
+      <div className="form-container">
+        <form onSubmit={this.handleSubmit}>
+          <div className="signup-form">
+            <div className="form-cta">Please Sign in</div>
+      
               <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
+                value={this.state.email}
+                onChange={this.update('email')}
                 className="login-input"
+                placeholder="Email"
+                className="signup-input"
               />
-            </label>
-            <br/>
-            <label>Password:
+
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
+                placeholder="Password"
+                className="signup-input"
               />
-            </label>
-            <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
+  
+            
+            <input className="session-submit" type="submit" value="Sign In" />
           </div>
         </form>
       </div>

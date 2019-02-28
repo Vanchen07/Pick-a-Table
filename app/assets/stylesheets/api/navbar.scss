@@ -1,0 +1,39 @@
+.nav-bar {
+    display: flex;
+    padding: 16px;
+    justify-content: space-between;
+}
+
+.nav-bar-heading {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.user-bar-container {
+    display: flex;
+}
+
+.user-bar-button {
+    padding: 8px;
+    border-radius: 3px;
+    margin-left: 8px;
+
+    a {
+        color: black;
+    }
+}
+
+.secondary {
+    background-color: #237b98;
+    a {
+        color: #fff;
+    }
+}
+
+.user-bar-name {
+
+}
+
+a:link {
+    text-decoration: none
+}
