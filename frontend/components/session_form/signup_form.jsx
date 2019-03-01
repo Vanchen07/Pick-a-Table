@@ -26,15 +26,23 @@ class SignupForm extends React.Component {
   }
   
   renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    if (this.props.errors) {
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error} 
+            </li>
+          ))}
+        </ul>
+      );
+    } else {
+      return null
+    }
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors()
   }
   
   render() {
@@ -46,7 +54,7 @@ class SignupForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div className="signup-form">
             <div className="form-cta">Welcome to Pick-A-Table!</div>
-
+            {this.renderErrors()}
             <input type="text"
               value={this.state.first_name}
               onChange={this.update('first_name')}

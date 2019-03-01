@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :reservations
     resources :reviews
     resources :time_slots, only: [:index, :show]
+    resources :images, only: [:index]
     
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy]

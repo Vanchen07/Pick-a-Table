@@ -2,13 +2,33 @@
     display: flex;
     padding: 16px;
     justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+    border-top: 28px solid #f7f7f7;
+
+    .icon {
+        margin-right: 12px;
+        margin-left: 18px;
+        color: #da3743;
+    }
+
+
+    a:visited {
+        color: black;
+    }
 }
 
 .nav-bar-heading {
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size: 100%;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 900;
     font-style: normal;
+    font: #333333;
+}
+
+.nav-bar-heading-text {
+    opacity: 0.7;
 }
 
 .user-bar-container {
@@ -19,6 +39,13 @@
     padding: 8px;
     border-radius: 3px;
     margin-left: 8px;
+    border-color: white;
+    font-size: 14px;
+    font-weight: 600px;
+
+    a:visited {
+        color: black;
+    }
 
     a {
         color: black;
@@ -28,6 +55,9 @@
 .secondary {
     background-color: #237b98;
     a {
+        color: #fff;
+    }
+    a:visited {
         color: #fff;
     }
 }

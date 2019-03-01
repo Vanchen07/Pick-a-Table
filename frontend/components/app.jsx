@@ -16,7 +16,7 @@ import { AuthRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <Modal />
+      <Modal/>
       <SplashContainer />
   </div>
 );
