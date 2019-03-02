@@ -101,40 +101,48 @@ class SessionForm extends React.Component {
 
     return (
       <div className="form-container">
-         
-        <form onSubmit={this.handleSubmit}>
-          <div className="signup-form">
-            <div className="form-cta">Please Sign in</div>
+        <div className="form-cta">
+          <h3 className="cta-welcome">Please Sign in</h3>
+        </div>
+        <form className="signup-form" onSubmit={this.handleSubmit}>
             {this.renderErrors()}
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                className="login-input"
-                placeholder="Email"
-                className="signup-input"
-              />
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-                placeholder="Password"
-                className="signup-input"
-              />
+            <input type="text"
+              value={this.state.email}
+              onChange={this.update('email')}
+              className="signup-input"
+              placeholder="Email"
+            />
+            <input type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              className="signup-input"
+              placeholder="Password"
+            />
   
             <input 
-              className="session-submit" 
+              className="signup-input" 
               type="submit" 
               value="Sign In" />
-          </div>
         </form>
-        <button
-              className="session-submit" 
-              onClick={this.handleDemoSubmit} 
-              value="Demo Sign In">Demo Sign In
-        </button>
-         <div >
-           New to Pick-A-Table? <a href="#" onClick={this.props.openSignupModal}>Create an account</a>
-         </div>
+
+        <div className="cta-demo-header">
+          <h3>Don't want to complete the form?</h3>
+        </div>
+        <div className="cta-demo">
+          <button className="demo-button"
+                onClick={this.handleDemoSubmit} 
+                value="Demo Sign In">
+              <span>Continue with Demo</span>
+          </button>
+        </div>
+        <div >
+          <span className="cta-legal"> New to Pick-A-Table?
+          <a href="#" onClick={this.props.openSignupModal}> Create an account</a>
+          </span>
+        </div>
+        <div className="cta-end">
+          <span></span>
+        </div>
       </div>
     );
   }

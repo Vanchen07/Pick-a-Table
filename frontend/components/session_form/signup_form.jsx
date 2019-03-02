@@ -51,9 +51,10 @@ class SignupForm extends React.Component {
     }
     return (
       <div className="form-container">
-        <form onSubmit={this.handleSubmit}>
-          <div className="signup-form">
-            <div className="form-cta">Welcome to Pick-A-Table!</div>
+        <div className="form-cta">
+          <h3 className="cta-welcome">Welcome to Pick-A-Table!</h3>
+        </div>
+        <form className="signup-form" onSubmit={this.handleSubmit}>
             {this.renderErrors()}
             <input type="text"
               value={this.state.first_name}
@@ -79,9 +80,26 @@ class SignupForm extends React.Component {
               className="signup-input"
               placeholder="Password"
             />
-            <input className="signup-input" type="submit" value="Create Account" />
-          </div>
+            <input 
+              className="signup-input" 
+              type="submit" 
+              value="Create Account" />
         </form>
+
+        <div className="cta-demo-header">
+          <h3>Don't want to complete the form?</h3>
+        </div>
+        <div className="cta-demo">
+          <button className="demo-button">
+            <span>Continue with Demo</span>
+          </button>
+        </div>
+        {/* <div >
+          <span className="cta-legal">This is clone for learning purposes</span>
+        </div> */}
+        <div className="cta-end">
+          <span></span>
+        </div>
       </div>
     );
   }

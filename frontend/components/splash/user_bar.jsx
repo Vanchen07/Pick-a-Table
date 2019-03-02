@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import {logout} from '../../actions/session_actions';
 
 
+
 const UserBar = ({ currentUser, logout, openSignup, openSignin}) => {
   const sessionLinks = () => (
     <nav className="user-bar-container">
@@ -19,8 +20,28 @@ const UserBar = ({ currentUser, logout, openSignup, openSignin}) => {
   );
   const personalGreeting = () => (
     <nav className="user-bar-container">
-      <h2 className="user-bar-name">Hi, {`${currentUser.first_name}`}</h2>
-      <button className="user-bar-button" onClick={logout}>Sign Out</button>
+      <div className="dropdown">
+        <button className="dropbtn">
+          <i class="far fa-calendar-alt fa-2x"></i>
+          <div className="dropdown-content">
+            <a href="#" >My Upcoming Reservations</a>
+          </div>
+        </button>
+      </div>
+      <div className="user-bar-name">
+        Hi, {`${currentUser.first_name}`}
+      </div>
+      <div className="dropdown">
+       <button className="dropbtn">
+         <i class="fas fa-angle-down fa-2x"></i>
+         <div className="dropdown-content">
+           <a href="#" >My Profile</a>
+           <a href="#" >My Dining History</a>
+           <a href="#" >My Saved Restaurants</a>
+           <a href="#" onClick={logout}>Sign Out</a>
+          </div>
+        </button>
+      </div>
     </nav>
   );
 
