@@ -16,6 +16,7 @@ const mapStateToProps = ({ errors, session }) => {
 const mapDispatchToProps = dispatch => {
   return {
     signupForm: (user) => dispatch(signup(user)),
+    loginForm: (user) => dispatch(login(user)),
     closeModal: () => dispatch(closeModal()),
     clearErrors: () => dispatch(clearErrors())
   };

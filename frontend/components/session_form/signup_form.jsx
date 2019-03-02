@@ -22,8 +22,9 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.signupForm(user);
+    this.props.signupForm(user).then(this.props.closeModal);
   }
+
   
   renderErrors() {
     if (this.props.errors) {
@@ -90,7 +91,9 @@ class SignupForm extends React.Component {
           <h3>Don't want to complete the form?</h3>
         </div>
         <div className="cta-demo">
-          <button className="demo-button">
+          <button className="demo-button"
+                onClick={this.handleDemoSubmit}
+                value="Demo Sign In">
             <span>Continue with Demo</span>
           </button>
         </div>

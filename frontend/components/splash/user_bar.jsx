@@ -6,47 +6,90 @@ import {logout} from '../../actions/session_actions';
 
 
 
-const UserBar = ({ currentUser, logout, openSignup, openSignin}) => {
-  const sessionLinks = () => (
-    <nav className="user-bar-container">
-      <button className='user-bar-button secondary'  onClick={openSignup}>
-      <Link to="/signup">Sign up</Link>
-      </button>
-      <button className="user-bar-button"  onClick={openSignin}>
-      <Link to="/login">Sign in</Link>
-      </button>
+class UserBar extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      activeDropdown: null
+    }
+    this.toggleDropdown = this.toggleDropdown.bind(this)
 
-    </nav>
-  );
-  const personalGreeting = () => (
+  }
+
+  sessionLinks() {
+    return(
+      <nav className="user-bar-container">
+        <button className='user-bar-button secondary'  onClick={this.props.openSignup}>
+        <Link to="/signup">Sign up</Link>
+        </button>
+        <button className="user-bar-button"  onClick={this.props.openSignin}>
+        <Link to="/login">Sign in</Link>
+        </button>
+
+      </nav>
+    )
+  }
+
+  personalGreeting() {
+    return(
     <nav className="user-bar-container">
       <div className="dropdown">
-        <button className="dropbtn">
+        <button className="dropbtn" onClick={()=>{this.toggleDropdown('calendar')}}>
           <i class="far fa-calendar-alt fa-2x"></i>
-          <div className="dropdown-content">
-            <a href="#" >My Upcoming Reservations</a>
-          </div>
+          {this.renderCalendarDropdown()}
         </button>
-      </div>
-      <div className="user-bar-name">
-        Hi, {`${currentUser.first_name}`}
       </div>
       <div className="dropdown">
-       <button className="dropbtn">
-         <i class="fas fa-angle-down fa-2x"></i>
-         <div className="dropdown-content">
-           <a href="#" >My Profile</a>
-           <a href="#" >My Dining History</a>
-           <a href="#" >My Saved Restaurants</a>
-           <a href="#" onClick={logout}>Sign Out</a>
-          </div>
-        </button>
+          <button className="dropbtn-dashboard" onClick={()=>{this.toggleDropdown('user')}}>
+            <span className="user-bar-name-span">Hi, {`${this.props.currentUser.first_name}`}</span>
+            <i class="fas fa-angle-down fa-lg"></i>
+            {this.renderUserDropdown()}
+          </button>
       </div>
     </nav>
-  );
+    )
+  }
 
-  return currentUser ? personalGreeting() : sessionLinks();
-};
+  renderCalendarDropdown() {
+      if(this.state.activeDropdown === 'calendar'){
+        return(
+          <div className="dropdown-content calendar">
+              <a href="#" >My Upcoming Reservations</a>
+            </div>
+        )
+      }
+  }
+
+  renderUserDropdown() {
+    if(this.state.activeDropdown === 'user') {
+      return(
+          <div className="dropdown-content">
+             <a href="#" >My Profile</a>
+             <a href="#" >My Dining History</a>
+             <a href="#" >My Saved Restaurants</a>
+             <a href="#" onClick={this.props.logout}>Sign Out</a>
+            </div>
+      )
+    }
+  }
+  
+  toggleDropdown(activeDropdown) {
+    if(this.state.activeDropdown === activeDropdown){
+      this.setState({ activeDropdown: null})
+    } else {
+      this.setState({ activeDropdown: activeDropdown})
+    }
+  }
+
+  render() {
+    if(this.props.currentUser){
+      return this.personalGreeting()     
+    } else {
+      return this.sessionLinks()
+    }
+  }
+
+}
 
 const mapStateToProps = state => ({
   currentUser: state.entities.users[state.session.currentUserId]

@@ -33,7 +33,9 @@
 
 .user-bar-container {
     display: flex;
-    
+    align-content: center;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .user-bar-button {
@@ -76,6 +78,19 @@
     opacity: 0.7;
 }
 
+.user-bar-name-span {
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 600px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 16px;
+    padding-left: 0px;
+    border-radius: 3px;
+    margin-left: 8px;
+    border-color: white;
+}
+
 a:link {
     text-decoration: none
 }
@@ -83,20 +98,31 @@ a:link {
 
 .dropdown {
     display: flex;
-    float: right;
+    float: left;
     overflow: hidden;
     padding: 0;
     border: none;
     background-color: none;
   }
 
+
+
 .dropdown-content {
-    display: none;
+    display: block;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    max-width: 100px;
+    right: 0;
+    top: 85px;
+    border-radius: 3px;
+  }
+
+  .calendar {
+      right: 100px;
+      
   }
   
 
@@ -111,17 +137,23 @@ a:link {
 
 .dropdown-content a:hover {
     background-color: #ddd;
-
-  }
-  
-.dropdown:hover .dropdown-content {
-    display: block;
   }
 
-.dropbtn {
+.dropdown:hover {
+    cursor: pointer;
+}
+.dropbtn, .dropbtn-dashboard {
     align-content: center;
-    padding: 0px;
-    border: none;
+    padding-right: 16px;
+    border-bottom: none;
+    border-left: none;
+    border-top: none;
+    border-right: 1px solid lightgray;
     background-color: white;
-    opacity: 0.7;
+    // opacity: 0.9;
+}
+
+.dropbtn-dashboard {
+    border-right: none;
+    opacity: 0.7px;
 }
