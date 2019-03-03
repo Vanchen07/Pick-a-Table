@@ -8,5 +8,38 @@
 
 require 'csv'
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'Pick-A-Table_Seed_Data_Restaurants.csv'))
-puts csv_text
+#create neighborhoods
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'neigborhoods.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+    Neighborhood.create!(name: row[0])
+    puts "created #{row[0]}"
+end
+
+#create cuisine
+# csv_text = File.read(Rails.root.join('lib', 'seeds', 'cuisines.csv'))
+# csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+# csv.each do |row|
+#    Cuisine.create!(name: row[0])
+# end
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'restaurant_seed.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+    Restaurant.create!(
+        name: row[0],
+        price_range: row[1],
+        description: row[2],
+        address: row[3],
+        website: row[4],
+        phone_number: row[5],
+        dining_style: row[6],
+        dress_code: row[7],
+        neighborhood_id: Neighborhood.find_by(name: row[8]).id,
+        cuisine_id: Cuisine.find_by(name: row[9]).id,
+        opening_hour: Time.parse(row[10]),
+        closing_hour: Time.parse(row[11]),
+    )
+    puts "created #{row[0]}"
+end
