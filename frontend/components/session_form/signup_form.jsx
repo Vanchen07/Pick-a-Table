@@ -26,6 +26,7 @@ class SignupForm extends React.Component {
   }
 
   
+  
   renderErrors() {
     if (this.props.errors) {
       return(
@@ -92,7 +93,7 @@ class SignupForm extends React.Component {
         </div>
         <div className="cta-demo">
           <button className="demo-button"
-                onClick={this.handleDemoSubmit}
+                onClick={() => this.props.loginForm({email: "Demo_User@demo.com", password: "password" }).then(this.props.closeModal)}
                 value="Demo Sign In">
             <span>Continue with Demo</span>
           </button>
