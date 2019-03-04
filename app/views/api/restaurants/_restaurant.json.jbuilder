@@ -1,0 +1,1 @@
+json.extract! restaurant, :id, :name, :price_range, :description, :address, :website, :phone_number, :dining_style, :dress_code, :neighborhood_name, :cuisine_type, :image_url

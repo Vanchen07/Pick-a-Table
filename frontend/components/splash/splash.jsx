@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from './nav_bar';
 import Hero from './hero';
+import RestaurantContainer from '../restaurants/restaurants_container';
 
 class Splash extends React.Component {
     render () {
@@ -8,6 +9,7 @@ class Splash extends React.Component {
         <div>
         <NavBar/>
         <Hero/>
+        <RestaurantContainer/>
         </div>
         );
     }
