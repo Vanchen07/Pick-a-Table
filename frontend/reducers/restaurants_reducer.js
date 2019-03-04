@@ -6,17 +6,14 @@ const restaurantsReducer = (state = {}, action) => {
 
     switch(action.type) {
         case RECEIVE_RESTAURANTS:
-            nextState.byName = {}
             action.restaurants.forEach(restaurant => {
                 nextState[restaurant.id] = restaurant
-                nextState.byName[restaurant.name] = restaurant.id
             })
-
             return nextState;
         case RECEIVE_RESTAURANT:
             // const newRestaurant = {[action.restaurant.id]: action.restaurant}
             nextState[action.restaurant.id] = action.restaurant
-            return {...state, nextState}
+            return Object.assign({}, state, nextState)
         default:
             return state;
     }

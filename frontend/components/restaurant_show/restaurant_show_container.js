@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import RestaurantShow from './restaurant_show';
-import {fetchRestaurant} from '../../actions/restaurant_actions'
+import {fetchRestaurant} from '../../actions/restaurant_actions';
+import {findRestaurantByName} from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-    let restaurantId = state.entities.restaurants.byName[ownProps.match.params.restaurantName]
+    // let restaurantId = state.entities.restaurants.byName[ownProps.match.params.restaurantName]
     return ({
-        restaurant: state.entities.restaurants[restaurantId]
+        restaurant: findRestaurantByName(state, ownProps.match.params.restaurantName)
     })
 }
     

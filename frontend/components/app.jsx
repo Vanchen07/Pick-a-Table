@@ -22,7 +22,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={SplashContainer} />
         <Route path="/search" component={SearchContainer} />
-        <Route path="/:restaurantName" component={RestaurantsIndexContainer} />
+        <Route path="/:restaurantName" component={RestaurantShowContainer} />
     </Switch>
   </div>
 );
