@@ -10,14 +10,17 @@ import {
 import Modal from './modal/modal'
 
 import SplashContainer from './splash/splash_container';
-import SignUpFormContainer from './session_form/signup_form_container';
-import LogInFormContainer from './session_form/login_form_container';
+import RestaurantContainer from './restaurant/restaurant_container';
 import { AuthRoute } from '../util/route_util';
 
 const App = () => (
   <div>
       <Modal/>
       <SplashContainer />
+      <Switch>
+        <Route path="/:restaurantName" component={RestaurantContainer} />
+        {/* <Route exact path="/" component={SearchContainer} /> */}
+    </Switch>
   </div>
 );
 

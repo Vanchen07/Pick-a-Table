@@ -1,7 +1,8 @@
 import React from 'react';
 import NavBar from './nav_bar';
 import Hero from './hero';
-import RestaurantContainer from '../restaurants/restaurants_container';
+import RestaurantsContainer from '../restaurants/restaurants_container';
+import RestaurantContainer from '../restaurant/restaurant_container';
 
 class Splash extends React.Component {
     render () {
