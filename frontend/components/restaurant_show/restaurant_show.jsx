@@ -1,7 +1,8 @@
 import React from 'react';
 
-class Restaurant extends React.Component {
+class RestaurantShow extends React.Component {
     componentDidMount() {
+        
         this.props.fetchRestaurant(this.props.match.params.id)
     }
 
@@ -15,4 +16,4 @@ class Restaurant extends React.Component {
     }
 }
 
-export default Restaurant;
+export default RestaurantShow;

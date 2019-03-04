@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Restaurants from './restaurants';
+import Search from './search';
 import {fetchRestaurants} from '../../actions/restaurant_actions'
 
 const mapStateToProps = (state) => ({
@@ -12,4 +12,4 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Restaurants);
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

@@ -6,8 +6,10 @@ const restaurantsReducer = (state = {}, action) => {
 
     switch(action.type) {
         case RECEIVE_RESTAURANTS:
+            nextState.byName = {}
             action.restaurants.forEach(restaurant => {
                 nextState[restaurant.id] = restaurant
+                nextState.byName[restaurant.name] = restaurant.id
             })
 
             return nextState;

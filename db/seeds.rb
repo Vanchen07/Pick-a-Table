@@ -6,9 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#create users
+User.destroy_all 
+
+user1 = User.create({first_name: "guest", last_name: "user", email: "Demo_User@demo.com", password: "password"})
+
+
 require 'csv'
 
 #create neighborhoods
+Neighborhood.destroy_all
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'neigborhoods.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
@@ -17,12 +24,17 @@ csv.each do |row|
     puts "created #{row[0]}"
 end
 
-#create cuisine
-# csv_text = File.read(Rails.root.join('lib', 'seeds', 'cuisines.csv'))
-# csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
-# csv.each do |row|
-#    Cuisine.create!(name: row[0])
-# end
+#create cuisines
+Cuisine.destroy_all
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'cuisines.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+   Cuisine.create!(name: row[0])
+end
+
+#create restaurants
+Restaurant.destroy_all
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'restaurant_seed.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
