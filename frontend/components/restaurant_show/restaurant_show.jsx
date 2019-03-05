@@ -1,4 +1,8 @@
 import React from 'react';
+import NavBar from '../splash/nav_bar';
+import LocationLinkBar from '../restaurant_show/location_link_bar';
+import RestaurantSplash from '../restaurant_show/restaurant_splash';
+import RestaurantMain from '../restaurant_show/restaurant_main';
 
 class RestaurantShow extends React.Component {
     componentDidMount() {
@@ -16,8 +20,12 @@ class RestaurantShow extends React.Component {
 
         return (
         <div>
-            {this.props.restaurant.name}
-            <img src={this.props.restaurant.image_url}/>  
+            {/* {this.props.restaurant.name}
+            <img src={this.props.restaurant.image_url}/>   */}
+            <NavBar/>
+            <LocationLinkBar />
+            <RestaurantSplash {...this.props}/>
+            <RestaurantMain {...this.props}/>
         </div>
         );
     }
