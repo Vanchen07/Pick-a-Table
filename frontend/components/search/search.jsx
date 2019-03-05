@@ -1,13 +1,18 @@
 import React from 'react';
-import RestaurantsIndexContainer from '../restaurants_index/restaurants_index_container'
-
+import NavBar from '../splash/nav_bar';
+import LocationLinkBar from '../restaurant_show/location_link_bar';
+import SearchSplash from './search_splash';
+import ResultsMain from './results_main';
 
 class Search extends React.Component {
     render () {
         return (
-        <div>
-        <RestaurantsIndexContainer/>
-        </div>
+            <div>
+                <NavBar/>
+                <LocationLinkBar/>
+                <SearchSplash/>
+                <ResultsMain {...this.props}/>
+            </div>
         );
     }
 }
