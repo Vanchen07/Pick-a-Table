@@ -10,15 +10,22 @@ class Splash extends React.Component {
             <NavBar/>
             <Hero/>
             <div className="splash-main">
-                <div className="splash-block">Popular Restaurants in San Francisco
-                    
-                </div>
-                <div className="splash-block">Top Cuisines Near You
+                <section className="splash-block">Popular Restaurants in San Francisco
+                    <div>
+                        <h2></h2>
+                    </div>
+                </section>
+                <section className="splash-block">
+                    <div>
+                        <h2>Top Cuisines Near You</h2>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </section>
+                <section className="splash-block">Featured Neighborhoods
 
-                </div>
-                <div className="splash-block">Featured Neighborhoods
-
-                </div>
+                </section>
             </div>
         </div>
         );

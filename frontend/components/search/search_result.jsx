@@ -7,7 +7,7 @@ class SearchResult extends React.Component {
 
     passespriceFilter(restaurant) {
         if (this.props.filters.price.length > 0) {
-            return this.props.filters.price.includes(restaurant.price)
+            return this.props.filters.price.includes(restaurant.price_range)
         } else {
             return true 
         }
@@ -64,10 +64,7 @@ class SearchResult extends React.Component {
 
         return (    
             <div>
-                <li>
-            
                     {filtered.length > 0 ? filtered : EmptySearchResult}
-                </li>
             </div>
         );
     }

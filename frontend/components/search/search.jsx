@@ -14,7 +14,7 @@ class Search extends React.Component {
             <div>
                 <NavBar/>
                 <LocationLinkBar/>
-                <SearchSplash/>
+                <SearchSplash {...this.props}/>
                 <ResultsMain {...this.props}/>
             </div>
         );

@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchFieldContainer from '../search/search_field_container';
 
 class Hero extends React.Component {
     constructor(props) {
@@ -40,7 +41,9 @@ class Hero extends React.Component {
     }
     
     render () {
-        return(<div className="hero-container">
+        return(
+        <div className="hero-container">
+            <SearchFieldContainer/>
             {this.renderBackgroundImage()}
         </div>)
     }
