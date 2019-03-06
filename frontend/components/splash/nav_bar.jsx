@@ -9,7 +9,7 @@ class NavBar extends React.Component {
             <div className='nav-bar'>
                 <div className='nav-bar-heading'>
                 <Link to='/'>
-                <i className="fas fa-glass-cheers icon"></i>
+                <i className="fas fa-glass-cheers icon fa-lg"></i>
                 </Link>
                 <Link to='/'>
                 <span className="nav-bar-heading-text">Pick-A-Table</span>

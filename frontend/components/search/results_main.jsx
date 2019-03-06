@@ -5,7 +5,7 @@ import MainBody from './main_body';
 class ResultsMain extends React.Component {
     render () {
         return (
-            <div>
+            <div className="results-main-container">
                 <MainSideBar {...this.props}/>
                 <MainBody {...this.props}/>
             </div>

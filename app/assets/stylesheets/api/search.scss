@@ -1,0 +1,11 @@
+.results-main-container {
+    display: flex;
+
+    .filters-container {
+        flex: 20%;
+    }
+
+    .search-results-container {
+        flex: 80%;
+    }
+}

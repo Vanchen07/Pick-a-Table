@@ -5,8 +5,7 @@ class SearchSplash extends React.Component {
     render () {
         return (
             <div>
-                <img src={}/>
-                <SearchBar/>
+                {/* <SearchBar/> */}
             </div>
         );
     }

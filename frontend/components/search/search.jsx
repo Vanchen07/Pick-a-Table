@@ -5,6 +5,10 @@ import SearchSplash from './search_splash';
 import ResultsMain from './results_main';
 
 class Search extends React.Component {
+    componentDidMount() {
+        this.props.fetchRestaurants()
+    }
+
     render () {
         return (
             <div>

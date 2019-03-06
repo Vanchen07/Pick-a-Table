@@ -8,3 +8,21 @@
     opacity: 0.8;
     transition: ease-in-out;
 }
+
+.splash-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 155px;
+    padding-right: 155px;
+    border: 1px solid lightgray;
+}
+
+.splash-block {
+    height: 284px;
+    font-family: BrandonText,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    font-weight: 700px;
+    color: #2d333f;
+    line-height: 32px;
+}

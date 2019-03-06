@@ -1,10 +1,12 @@
 import React from 'react';
+import SearchResultContainer from './search_result_container';
 
 class MainBody extends React.Component {
-    render () {
+    
+    render () { 
         return (
-            <div>
-
+            <div className="search-results-container">
+                <SearchResultContainer {...this.props}/>
             </div>
         );
     }
