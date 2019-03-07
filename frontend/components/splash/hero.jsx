@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchFieldContainer from '../search/search_field_container';
+import SearchBar from '../search/search_bar';
 
 class Hero extends React.Component {
     constructor(props) {
@@ -43,7 +43,7 @@ class Hero extends React.Component {
     render () {
         return(
         <div className="hero-container">
-            <SearchFieldContainer/>
+            <SearchBar {...this.props}/>
             {this.renderBackgroundImage()}
         </div>)
     }

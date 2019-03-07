@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_03_081924) do
+ActiveRecord::Schema.define(version: 2019_03_06_212542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,19 @@ ActiveRecord::Schema.define(version: 2019_03_03_081924) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "party_size"
+    t.date "date"
+    t.integer "restaurant_id"
+    t.integer "user_id"
+    t.integer "time_slot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_reservations_on_restaurant_id"
+    t.index ["time_slot_id"], name: "index_reservations_on_time_slot_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -44,6 +57,12 @@ ActiveRecord::Schema.define(version: 2019_03_03_081924) do
     t.time "closing_hour"
     t.index ["cuisine_id"], name: "index_restaurants_on_cuisine_id"
     t.index ["neighborhood_id"], name: "index_restaurants_on_neighborhood_id"
+  end
+
+  create_table "time_slots", force: :cascade do |t|
+    t.time "start_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

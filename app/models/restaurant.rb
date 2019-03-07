@@ -5,6 +5,8 @@ class Restaurant < ApplicationRecord
 
     belongs_to :cuisine
 
+    has_many :reservations
+
     def neighborhood_name
         neighborhood.name
     end

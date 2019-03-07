@@ -18,4 +18,4 @@ const restaurantsReducer = (state = {}, action) => {
     }
 }
 
-export default restaurantsReducer
+export default restaurantsReducer;

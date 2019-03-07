@@ -8,7 +8,7 @@ class Splash extends React.Component {
         return (
         <div>
             <NavBar/>
-            <Hero/>
+            <Hero {...this.props}/>
             <div className="splash-main">
                 <section className="splash-block">Popular Restaurants in San Francisco
                     <div>
