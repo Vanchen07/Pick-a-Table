@@ -5,7 +5,6 @@ import { closeModal, openModal } from '../../actions/modal_actions';
 import { clearErrors } from '../../actions/session_actions';
 
 const mapStateToProps = ({ errors, session }) => {
-
   return {
     errors: errors.errors,
     currentUserId: session.currentUserId

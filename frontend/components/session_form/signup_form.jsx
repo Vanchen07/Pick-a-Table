@@ -14,6 +14,7 @@ class SignupForm extends React.Component {
   }
   
   update(field) {
+    debugger
     return e => this.setState({
       [field]: e.currentTarget.value
     });
@@ -48,6 +49,7 @@ class SignupForm extends React.Component {
   }
   
   render() {
+    debugger
     if(this.props.currentUserId){
       return null
     }

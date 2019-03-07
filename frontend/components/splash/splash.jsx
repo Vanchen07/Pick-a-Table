@@ -3,6 +3,9 @@ import NavBar from './nav_bar';
 import Hero from './hero';
 
 class Splash extends React.Component {
+    componentDidMount() {
+        this.props.fetchRestaurants()
+    }
 
     render () {
         return (

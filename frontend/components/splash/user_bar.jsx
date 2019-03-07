@@ -20,10 +20,10 @@ class UserBar extends React.Component {
     return(
       <nav className="user-bar-container">
         <button className='user-bar-button secondary'  onClick={this.props.openSignup}>
-        <Link to="/signup">Sign up</Link>
+          <a href="#">Sign up</a> 
         </button>
         <button className="user-bar-button"  onClick={this.props.openSignin}>
-        <Link to="/login">Sign in</Link>
+          <a href="#">Sign in</a> 
         </button>
 
       </nav>
