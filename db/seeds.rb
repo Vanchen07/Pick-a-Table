@@ -57,4 +57,4 @@ csv.each do |row|
 end
 
 #generate default capacity
-#Restaurant.update_all(capacity: 50)
+Restaurant.update_all(capacity: 50)
