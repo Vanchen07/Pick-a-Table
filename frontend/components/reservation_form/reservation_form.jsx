@@ -44,42 +44,55 @@ class ReservationForm extends React.Component {
   componentWillUnmount() {
     this.props.clearErrors()
   }
-  
+
+ 
   render() {
     // if(this.props.currentUserId){
     //   return null
     // }
     return (
-      <div className="form-container">
-        <form className="signup-form" onSubmit={this.handleSubmit}>
+      <div className="reservation-form-container">
+        <div className="reservation-form-header">
+          Make a reservation
+        </div>
+        <form className="reservation-form-body" onSubmit={this.handleSubmit}>
             {this.renderErrors()}
-            <label>
-                <select value={this.state.party_size} onChange={this.update('party_size')} >
-                    <option value="1">For 1</option>
-                    <option value="2">For 2</option>
-                    <option value="3">For 3</option>
-                    <option value="4">For 4</option>
-                    <option value="5">For 5</option>
-                    <option value="6">For 6</option>
-                    <option value="7">For 7</option>
-                    <option value="8">For 8</option>
-                    <option value="9">For 9</option>
-                    <option value="10">For 10</option>
-                </select>
-            </label>
+            <div className="party-size">
+                <label>Party Size
+                    <select value={this.state.party_size} onChange={this.update('party_size')} >
+                        <option value="1">For 1</option>
+                        <option value="2">For 2</option>
+                        <option value="3">For 3</option>
+                        <option value="4">For 4</option>
+                        <option value="5">For 5</option>
+                        <option value="6">For 6</option>
+                        <option value="7">For 7</option>
+                        <option value="8">For 8</option>
+                        <option value="9">For 9</option>
+                        <option value="10">For 10</option>
+                    </select>
+                </label>
+            </div>
 
-           {this.props.restaurant.remaining_time_slots.map(timeSlot => {
-             return (
-                <div onClick={()=> {this.setState({time_slot_id: timeSlot.id})}}>
-                  {timeSlot.formatted_start_time}
-                </div>
-             )
-           })}
-            
-            <input 
-              className="signup-input" 
-              type="submit" 
-              value="Find a Table" />
+            <div className="select-a-time">Select a time:
+            </div>
+
+            <div className="time-slot-parent">
+              {this.props.restaurant.remaining_time_slots.map(timeSlot => {
+                return (
+                    <div className="time-slots" onClick={()=> {this.setState({time_slot_id: timeSlot.id})}} >
+                        <button className="time-slots-button">
+                          {timeSlot.formatted_start_time}
+                        </button>
+                    </div>
+                )
+              })}
+            </div>
+
+            <div className='submit-button'>
+                <input className='submit-button-input' type="submit" value="Find a Table"/>
+            </div>
+
         </form>
       </div>
     );

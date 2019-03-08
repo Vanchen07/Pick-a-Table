@@ -3,6 +3,7 @@
     width: 100%;
     display: flex;
     z-index: 1;
+    position: relative;
 
     .search-bar {
         z-index: 2;
@@ -13,6 +14,9 @@
     width: 100%;
     opacity: 0.8;
     transition: ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 
@@ -129,4 +133,8 @@
     height: 100%;  
     border: 1px solid #d8d9db;
     border-radius: 4px;
+}
+
+.window-image {
+    object-fit: cover;
 }

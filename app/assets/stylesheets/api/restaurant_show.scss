@@ -18,10 +18,128 @@
 }
 
 .restaurant-show-container {
-    
+    display: flex;
+    flex-direction: column;
+    color: #2d333f;
+    font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
 }
 
 .splash-photo {
     height: 230px;
     width: 100%;
+    object-fit: cover;
 }
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin-left: 175px;
+    margin-right: 175px;
+}
+
+.main-header {
+    display: flex;
+    justify-content: left;
+    color: #2d333f;
+    border-bottom: 1px solid lightgray;
+    height: 48px;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.main-body {
+    display: flex;
+    flex-direction: column;
+    padding-top: 32px;
+    padding-bottom: 64px;
+    padding-left: 16px;
+    padding-right: 16px; 
+}
+
+.body-description {
+    color: #2d333f;
+    line-height: 24px;
+    font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.name-heading {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 56px;
+    color: #2d333f;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    padding-bottom: 32px;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 16px;
+}
+
+.name-heading-lower {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #2d333f;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    padding-bottom: 32px;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 16px;
+}
+
+
+.main-header-list {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    cursor: pointer;
+    color: #2d333f;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.restaurant-attributes {
+    display: flex;
+}
+
+.restaurant-attributes-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.restaurant-attributes-items {
+    display: flex;
+}
+
+.restaurant-attributes-items-pad {
+    padding-left: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+}
+
+.restaurant-attributes-items-pad2 {
+    padding-left: 21px;
+    font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+

@@ -19,11 +19,21 @@ class RestaurantShow extends React.Component {
         if (!this.props.restaurant) return null
 
         return (
-        <div className="restaurant-show-container">
+        <div >
+            <div>
             <NavBar/>
+            </div>
+            <div>
             <LocationLinkBar />
-            <RestaurantSplash {...this.props}/>
-            <RestaurantMain {...this.props}/>
+            </div>
+            <div className="restaurant-show-container">
+                <div>
+                    <RestaurantSplash {...this.props}/>
+                </div>
+                <div>
+                    <RestaurantMain {...this.props}/>
+                </div>
+            </div>
         </div>
         );
     }

@@ -21,7 +21,7 @@ class Splash extends React.Component {
                         <div className="splash-block-body">
                             <div className="splash-block-body-item">
                                 <div>
-                                    <img src={window.imagesURL.picture1}/>
+                                    <img src={window.imagesURL.picture1} className="window-image"/>
                                 </div>
                                 <div className="splash-block-body-item-content">
 

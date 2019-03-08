@@ -45,10 +45,11 @@ class Hero extends React.Component {
         <div>
             <div className="hero-container" >
                 {this.renderBackgroundImage()}
+                <div className="hero-container search-bar">
+                <SearchBar {...this.props} />
+                </div>
             </div>
-            <div className="hero-container search-bar">
-            <SearchBar {...this.props} />
-            </div>
+            
         </div>
         )
     }

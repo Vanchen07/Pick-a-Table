@@ -7,7 +7,7 @@ class MainBody extends React.Component {
     
     render() {
         return (
-            <div>
+            <div className="main-body">
                <BodyNameHeading {...this.props}/>
                <BodyRestaurantDescription {...this.props}/>
                <BodyRestaurantAttributes {...this.props}/>

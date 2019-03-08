@@ -4,7 +4,7 @@ class BodyRestaurantDescription extends React.Component {
     
     render() {
         return (
-            <div>
+            <div className="body-description">
                 {this.props.restaurant.description}
             </div>
         )

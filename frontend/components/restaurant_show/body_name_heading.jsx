@@ -5,14 +5,12 @@ class BodyNameHeading extends React.Component {
     render() {
         return (
             <div>
-                <div>
+                <div className="name-heading">
                     <h1>{this.props.restaurant.name}</h1>
                 </div>
-                <div>
-                    {/* <div>{this.props.restaurant.rating}</div> */}
-                    {/* <div>{this.props.restaurant.reviews.count}</div> */}
-                    <div>{this.props.restaurant.price_range}</div>
-                    <div>{this.props.restaurant.cuisine_type}</div>
+                <div className="name-heading-lower">
+                    <div className="name-heading-lower-item">{this.props.restaurant.price_range}</div>
+                    <div className="name-heading-lower-item">{this.props.restaurant.cuisine_type}</div>
                 </div>
             </div>
         )
