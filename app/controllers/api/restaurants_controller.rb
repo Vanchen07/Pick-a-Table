@@ -8,7 +8,6 @@ class Api::RestaurantsController < ApplicationController
 
     def show
         @restaurant = Restaurant.find_by(name: params[:id])
-        debugger
         render :show
     end 
 
