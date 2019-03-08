@@ -8,7 +8,13 @@ Rails.application.routes.draw do
     resources :reservations
     resources :reviews
     resources :time_slots, only: [:index, :show]
-    resources :images, only: [:index]
+    resources :images, only: [:index] do
+      collection do
+        get :cuisines
+        get :neighborhoods
+        get :restaurants
+      end
+    end
     
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy]

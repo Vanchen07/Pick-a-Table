@@ -5,10 +5,10 @@ class LocationLinkBar extends React.Component {
         return (
             <div >
                 <ul className="location-link-bar">
-                    <li>Home</li>
-                    <li>United States</li>
-                    <li>San Francisco Bay Area</li>
-                    <li>San Francisco</li>
+                    <li className="location-item">Home</li>
+                    <li className="location-item">United States</li>
+                    <li className="location-item">San Francisco Bay Area</li>
+                    <li className="location-item">San Francisco</li>
                 </ul>
             </div>
         );

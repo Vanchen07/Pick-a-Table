@@ -24,21 +24,25 @@ class NeighborhoodFilter extends React.Component {
         const neighborhoods = this.props.allNeighborhoods.map(neighborhood => {
 
             return (
-                <div>
-                    <label>{neighborhood}</label>
+                <div className='filter-component'>
+                    
                     <input type="checkbox"
                         neighborhood={neighborhood} 
                         activedining={this.props.activeFilters.includes(neighborhood).toString()}
                         onClick={this.handleClick(neighborhood)}
                     />
+                    <label className='filter-label'>{neighborhood}</label>
                 </div>
             );
         });
 
         return (
-            <div>
+            <div className="filter-container">
                 <ul>
-                    <h2>Neighborhood</h2>
+                    <h2 className='filter-title'>
+                        <i class="far fa-map filter-icon"></i>
+                        <span>Neighborhood</span>
+                    </h2>
                     <li>
                     {neighborhoods}
                     </li>

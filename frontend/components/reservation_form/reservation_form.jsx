@@ -81,7 +81,7 @@ class ReservationForm extends React.Component {
               {this.props.restaurant.remaining_time_slots.map(timeSlot => {
                 return (
                     <div className="time-slots" onClick={()=> {this.setState({time_slot_id: timeSlot.id})}} >
-                        <button className="time-slots-button">
+                        <button className={`time-slot-button ${this.state.time_slot_id === timeSlot.id ? 'time-slot-button-selected' : ''}`}>
                           {timeSlot.formatted_start_time}
                         </button>
                     </div>

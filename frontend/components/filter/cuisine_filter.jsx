@@ -24,21 +24,23 @@ class CuisineFilter extends React.Component {
         const cuisines = this.props.allCuisines.map(cuisine => {
 
             return (
-                <div>
-                    <label>{cuisine}</label>
+                <div className='filter-component'>
                     <input type="checkbox"
                         cuisine={cuisine} 
                         activedining={this.props.activeFilters.includes(cuisine).toString()}
                         onClick={this.handleClick(cuisine)}
                     />
+                    <label className='filter-label'>{cuisine}</label>
                 </div>
             );
         });
 
         return (
-            <div>
+            <div className='filter-container'>
                 <ul>
-                    <h2>Cuisine</h2>
+                    <h2 className='filter-title'>
+                    <i class="fas fa-utensils filter-icon"></i> 
+                    <span>Cuisine</span></h2>
                     <li>
                     {cuisines}
                     </li>

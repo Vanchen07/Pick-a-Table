@@ -9,7 +9,7 @@ class Filters extends React.Component {
     render () {
         const { activeFilters } = this.props;
         return (
-            <div>
+            <div className="filters-inner-container">
                 <PriceFilter
                     activeFilters={activeFilters.price}
                     allPrices={this.props.allPrices}

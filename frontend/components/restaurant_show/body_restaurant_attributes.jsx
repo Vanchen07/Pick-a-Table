@@ -25,7 +25,7 @@ class BodyRestaurantAttributes extends React.Component {
                             <i class="far fa-clock"></i>
                             <div className="restaurant-attributes-items-pad">Hours of operation</div>
                         </div>
-                        <div className="restaurant-attributes-items-pad2">{`{this.props.restaurant.opening_hour} - {this.props.restaurant.closing_hour}`}</div>
+                        <div className="restaurant-attributes-items-pad2">{`${this.props.restaurant.formatted_opening_hour} - ${this.props.restaurant.formatted_closing_hour}`}</div>
                     </div>
                     <div>
                         <div className="restaurant-attributes-items">

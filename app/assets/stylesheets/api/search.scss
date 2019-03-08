@@ -9,3 +9,48 @@
         flex: 80%;
     }
 }
+
+.filters-inner-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-container {
+    font-weight: 500;
+    padding: 8px;
+}
+
+.search-results-inner-container {
+    padding: 12px;
+}
+
+.filter-title {
+    font-weight: 800;
+    font-size: 18px;
+    padding-bottom: 8px;
+    padding-left: 4px;
+    color: #da3743;
+}
+
+.filter-icon {
+    margin-right: 4px;
+}
+
+.filter-label {
+    margin-left: 4px;
+}
+
+.filter-component {
+    margin-bottom: 4px;
+}
+
+.filtered-result-container {
+    margin-bottom: 16px;
+}
+
+.filtered-result-head {
+    font-size: 18px;
+    color: #da3743;
+    font-weight: 800;
+    margin-bottom: 12px;
+}

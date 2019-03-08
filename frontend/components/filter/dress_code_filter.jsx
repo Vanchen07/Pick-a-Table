@@ -24,21 +24,24 @@ class DressCodeFilter extends React.Component {
         const dressCodes = this.props.allDressCodes.map(dress_code => {
 
             return (
-                <div>
-                    <label>{dress_code}</label>
+                <div className='filter-component'>
+                    
                     <input type="checkbox"
                         dress_code={dress_code} 
                         activedining={this.props.activeFilters.includes(dress_code).toString()}
                         onClick={this.handleClick(dress_code)}
                     />
+                    <label className='filter-label'>{dress_code}</label>
                 </div>
             );
         });
 
         return (
-            <div>
+            <div className='filter-container'>
                 <ul>
-                    <h2>Dress Code</h2>
+                    <h2 className='filter-title'>
+                    <i class="fas fa-tshirt filter-icon"></i> 
+                    <span>Dress Code</span></h2>
                     <li>
                     {dressCodes}
                     </li>

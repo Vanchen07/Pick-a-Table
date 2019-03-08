@@ -25,11 +25,13 @@
 }
 
 .party-size {
-    padding-top: 8px;
+    padding-top: 16px 8px;
+    margin: 12px 0;
     font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-    font-size: .875rem;
-    font-weight: 500;
     padding-bottom: .25rem;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
 }
 
 
@@ -37,11 +39,31 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    padding: 18px;
 }
 
+.time-slot-button {
+    padding: 4px 6px;
+    border-radius: 3px;
+    background-color: #D73946;
+    color: white;
+    font-weight: 500;
+    margin: 12px;
+    font-size: 14px;
+}
+
+.time-slot-button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.time-slot-button-selected {
+    opacity: 0.7
+}
 .reservation-form-body {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .select-a-time {
@@ -57,8 +79,8 @@
     border: 0;
     border-radius: 2px;
     background: none;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding: 4px 46px !important;
+    height: 100% !important;
     background-color: #da3743;
     color: #fff;
     font-size: 12px;

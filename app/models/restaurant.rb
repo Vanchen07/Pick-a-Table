@@ -33,4 +33,12 @@ class Restaurant < ApplicationRecord
         time_slots.where("start_time BETWEEN ? AND ?", DateTime.now, DateTime.now.end_of_day).first(6)
     end
 
+    def formatted_opening_hour
+        opening_hour.strftime('%l:%M %p')
+    end
+
+    def formatted_closing_hour
+        closing_hour.strftime('%l:%M %p')
+    end
+
 end

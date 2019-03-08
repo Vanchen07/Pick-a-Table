@@ -6,7 +6,8 @@ export default class SearchField extends React.Component {
     super(props);
    
     this.state = {
-      inputVal: ''
+      inputVal: '',
+      matches: []
     };
 
     this.selectName = this.selectName.bind(this);
@@ -15,34 +16,32 @@ export default class SearchField extends React.Component {
   }
 
   handleInput(event) {
-    this.setState({inputVal: event.currentTarget.value});
-  }
+    const value = event.currentTarget.value
+    this.setState({inputVal: value});
 
-  matches() {
-    const {allNeighborhoods} = this.props;
- 
-    const matches = [];
-    if (this.state.inputVal.length === 0) {
-      return allNeighborhoods;
-    }
+    if(value.length === 0 ) {
+      this.setState({matches: []})
+    } else {
+      const {allNeighborhoods} = this.props;
+      let matches = []
 
-    allNeighborhoods.forEach(name => {
-      const sub = name.slice(0, this.state.inputVal.length);
-      if (sub.toLowerCase() === this.state.inputVal.toLowerCase()) {
-        matches.push(name);
+      allNeighborhoods.forEach(name => {
+        const sub = name.slice(0, value.length);
+        if (sub.toLowerCase() === value.toLowerCase()) {
+          matches.push(name);
+      } 
+      });
+      if (matches.length === 0) {
+        matches.push('No matches');
       }
-    });
-
-    if (matches.length === 0) {
-      matches.push('No matches');
+      this.setState({matches: matches})
     }
-
-    return matches;
   }
 
   selectName(event) {
     const name = event.currentTarget.innerText;
     this.setState({inputVal: name});
+    this.setState({matches: []})
   }
 
   handleSubmit(e) {
@@ -52,23 +51,28 @@ export default class SearchField extends React.Component {
 
 
   render() {
-    const results = this.matches().map((result, i) => {
+    const results = this.state.matches.map((result, i) => {
       return (
-        <li key={i} onClick={this.selectName}>{result}</li>
+        <li className="search-result-match" key={i} onClick={this.selectName}>{result}</li>
       );
     });
     return(
-      <div>
-        <div className='auto'>
+      <div className='search-container'>
+        <div className='search-field-container'>
           <input
+            className='search-field'
             onChange={this.handleInput}
             value={this.state.inputVal}
-            placeholder='Search...'/>
-          <ul>
+            placeholder='Where shall we go...'/>
+          
+          <div className='search-matches-container'>
+            <ul className='search-matches'>
               {results}
-          </ul>
+            </ul>
+          </div>
+
         </div>
-        <button
+        <button className='search-button'
                 onClick={this.handleSubmit} 
                 value={this.state.inputVal}>
               <span>Let's go</span>

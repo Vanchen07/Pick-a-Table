@@ -17,6 +17,10 @@
     color: #3A9DC3;
 }
 
+.location-item {
+    padding: 8px;
+}
+
 .restaurant-show-container {
     display: flex;
     flex-direction: column;
@@ -97,6 +101,7 @@
     padding-bottom: 32px;
     border-bottom: 1px solid lightgray;
     margin-bottom: 16px;
+    align-items: center;
 }
 
 
