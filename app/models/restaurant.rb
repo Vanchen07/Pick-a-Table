@@ -17,7 +17,7 @@ class Restaurant < ApplicationRecord
         cuisine.name 
     end
 
-    def image_url
+    def image_path
         ActionController::Base.helpers.asset_path("restaurant_heads/#{name}")
     end
 
