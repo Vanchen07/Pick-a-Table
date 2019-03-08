@@ -65,7 +65,7 @@ class SearchResult extends React.Component {
 
         return (    
             <div className='filters-inner-container search-results-inner-container'>
-                <div>Showing {total} Restaurants</div>
+                {/* <div>Showing {total} Restaurants</div> */}
                     {filtered.length > 0 ? filtered : EmptySearchResult}
             </div>
         );
