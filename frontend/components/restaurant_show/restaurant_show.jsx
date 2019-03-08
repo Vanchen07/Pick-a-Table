@@ -6,6 +6,7 @@ import RestaurantMain from '../restaurant_show/restaurant_main';
 
 class RestaurantShow extends React.Component {
     componentDidMount() {
+        debugger
         this.props.fetchRestaurant(this.props.match.params.restaurantName)
     }
 
