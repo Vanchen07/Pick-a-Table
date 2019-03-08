@@ -1,7 +1,6 @@
 class Api::TimeSlotsController < ApplicationController
 
     def index
-        @time_slots = TimeSlot.all
         render :index
     end 
 

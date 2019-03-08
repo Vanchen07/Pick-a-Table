@@ -6,8 +6,7 @@ class ReservationForm extends React.Component {
     super(props);
     this.state = {
       party_size: '',
-      date: '',
-      time: ''
+      time_slot_id: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -20,8 +19,8 @@ class ReservationForm extends React.Component {
   
   handleSubmit(e) {
     e.preventDefault();
-    const reservation = Object.assign({}, this.state);
-    this.props.createReservation(reservation);
+    const reservationParams = Object.assign({ user_id: this.props.currentUserId, restaurant_id: this.props.restaurant.id }, this.state);
+    this.props.createReservation(reservationParams);
   }
 
   
@@ -69,9 +68,13 @@ class ReservationForm extends React.Component {
                 </select>
             </label>
 
-            <input type="date" value={this.state.date} onChange={this.update('date')}/>
-
-            <input type="time" value={this.state.time} onChange={this.update('time')}/>
+           {this.props.restaurant.remaining_time_slots.map(timeSlot => {
+             return (
+                <div onClick={()=> {this.setState({time_slot_id: timeSlot.id})}}>
+                  {timeSlot.formatted_start_time}
+                </div>
+             )
+           })}
             
             <input 
               className="signup-input" 

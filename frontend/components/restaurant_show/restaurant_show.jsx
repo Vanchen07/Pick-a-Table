@@ -19,9 +19,7 @@ class RestaurantShow extends React.Component {
         if (!this.props.restaurant) return null
 
         return (
-        <div>
-            {/* {this.props.restaurant.name}
-            <img src={this.props.restaurant.image_url}/>   */}
+        <div className="restaurant-show-container">
             <NavBar/>
             <LocationLinkBar />
             <RestaurantSplash {...this.props}/>

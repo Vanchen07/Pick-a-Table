@@ -4,12 +4,14 @@ import ReservationForm from './reservation_form';
 import { closeModal, openModal } from '../../actions/modal_actions';
 import { clearErrors } from '../../actions/session_actions';
 import { createReservation } from '../../actions/reservation_actions';
+import {findRestaurantByName} from '../../reducers/selectors';
 
-const mapStateToProps = ({ errors, session, entities: {reservations} }) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    reservations,
-    errors: errors.errors,
-    currentUserId: session.currentUserId
+    reservations: state.entities.reservations,
+    errors: state.errors.errors,
+    currentUserId: state.session.currentUserId,
+    restaurant: findRestaurantByName(state, ownProps.match.params.restaurantName)
   };
 };
 

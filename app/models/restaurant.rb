@@ -7,6 +7,8 @@ class Restaurant < ApplicationRecord
 
     has_many :reservations
 
+    has_many :time_slots
+
     def neighborhood_name
         neighborhood.name
     end
@@ -17,6 +19,18 @@ class Restaurant < ApplicationRecord
 
     def image_url
         ActionController::Base.helpers.asset_path("restaurant_heads/#{name}")
+    end
+
+    def remaining_capacity_for_time_slot(time_slot)
+        capacity - reservations.where(time_slot_id: time_slot.id).sum(&:party_size)
+    end
+
+    def fully_booked_for_time_slot?(time_slot)
+        remaining_capacity_for_time_slot(time_slot) <= 0
+    end
+
+    def remaining_time_slots_for_today(limit: 6)
+        time_slots.where("start_time BETWEEN ? AND ?", DateTime.now, DateTime.now.end_of_day).first(6)
     end
 
 end

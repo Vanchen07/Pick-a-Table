@@ -10,7 +10,6 @@ class FilteredResult extends React.Component {
         return (
             <div>
                 <div>{result.name}</div>
-                <div>{result.neighborhood_name}</div>
             </div>
         )
     }

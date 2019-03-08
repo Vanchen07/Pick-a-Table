@@ -31,7 +31,7 @@ csv_text = File.read(Rails.root.join('lib', 'seeds', 'cuisines.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
    Cuisine.create!(name: row[0])
-end
+end 
 
 #create restaurants
 Restaurant.destroy_all
@@ -55,3 +55,6 @@ csv.each do |row|
     )
     puts "created #{row[0]}"
 end
+
+#generate default capacity
+#Restaurant.update_all(capacity: 50)

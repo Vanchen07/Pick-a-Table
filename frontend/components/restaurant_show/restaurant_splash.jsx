@@ -3,7 +3,7 @@ import React from 'react';
 class RestaurantSplash extends React.Component {
     render () {
         return (
-            <div>
+            <div className="splash-photo">
                 <img src={this.props.restaurant.image_url} alt={this.props.restaurant.name}/>
             </div>
         );

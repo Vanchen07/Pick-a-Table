@@ -27,8 +27,8 @@ export const fetchReservation = (id) => dispatch => (
     ReservationAPIUtil.fetchReservation(id).then(reservation => dispatch(receiveReservation(reservation)))
 )
 
-export const createReservation = reservation => dispatch => (
-    ReservationAPIUtil.createReservation(reservation).then(reservation => dispatch(receiveReservation(reservation)))
+export const createReservation = (reservationParams) => dispatch => (
+    ReservationAPIUtil.createReservation(reservationParams).then(reservation => dispatch(receiveReservation(reservation)))
 )
 
 export const updateReservation = reservation => dispatch => (

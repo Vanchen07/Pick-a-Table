@@ -18,7 +18,7 @@ import { AuthRoute } from '../util/route_util';
 const App = () => (
   <div>
       <Modal/>
-      {/* <SplashContainer /> */}
+      {/* <SplashContainer/> */}
       <Switch>
         <Route exact path="/" component={SplashContainer} />
         <Route path="/search" component={SearchContainer} />

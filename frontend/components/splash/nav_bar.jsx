@@ -7,15 +7,21 @@ class NavBar extends React.Component {
     render() {
         return(
             <div className='nav-bar'>
-                <div className='nav-bar-heading'>
-                <Link to='/'>
-                <i className="fas fa-glass-cheers icon fa-lg"></i>
-                </Link>
-                <Link to='/'>
-                <span className="nav-bar-heading-text">Pick-A-Table</span>
-                </Link>
+                <div className='top-bar'>
                 </div>
-                <UserBar/>
+                <div className='bar-heading'>
+                    <div className="bar-heading-left">
+                        <div>
+                            <Link to='/' className="cheers-logo icon"><i class="fas fa-cookie fa-2x"></i></Link>
+                        </div>
+                        <div>
+                            <Link to='/' className="secondary">Pick-A-Table</Link>
+                        </div>
+                    </div>
+                    <div className="bar-heading-left">
+                        <UserBar/>
+                    </div>
+                </div>
             </div>
         )
     }

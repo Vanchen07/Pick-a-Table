@@ -18,21 +18,21 @@ class UserBar extends React.Component {
 
   sessionLinks() {
     return(
-      <nav className="user-bar-container">
-        <button className='user-bar-button secondary'  onClick={this.props.openSignup}>
+      <div>
+        <button onClick={this.props.openSignup} className="signup-button">
           <a href="#">Sign up</a> 
         </button>
-        <button className="user-bar-button"  onClick={this.props.openSignin}>
+        <button onClick={this.props.openSignin} className="signin-button">
           <a href="#">Sign in</a> 
         </button>
 
-      </nav>
+      </div>
     )
   }
 
   personalGreeting() {
     return(
-    <nav className="user-bar-container">
+    <div>
       <div className="dropdown">
         <button className="dropbtn" onClick={()=>{this.toggleDropdown('calendar')}}>
           <i class="far fa-calendar-alt fa-2x"></i>
@@ -46,7 +46,7 @@ class UserBar extends React.Component {
             {this.renderUserDropdown()}
           </button>
       </div>
-    </nav>
+    </div>
     )
   }
 
@@ -68,7 +68,7 @@ class UserBar extends React.Component {
              <a href="#" >My Dining History</a>
              <a href="#" >My Saved Restaurants</a>
              <a href="#" onClick={this.props.logout}>Sign Out</a>
-            </div>
+          </div>
       )
     }
   }

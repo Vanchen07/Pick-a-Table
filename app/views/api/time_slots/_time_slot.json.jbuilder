@@ -1,0 +1,1 @@
+json.extract! time_slot, :id, :formatted_start_time

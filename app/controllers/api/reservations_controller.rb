@@ -2,7 +2,12 @@ class Api::ReservationsController < ApplicationController
 
     def create
         @reservation = Reservation.new(reservation_params)
-        render :show
+        
+        if @reservation.save
+            render :show
+        else 
+            render  json: @reservation.errors.full_messages
+        end 
     end 
 
     def index
@@ -16,7 +21,7 @@ class Api::ReservationsController < ApplicationController
 
     private
     def reservation_params
-        params.require(:id).permit(:date, :party_size)
+        params.require(:reservation).permit(:time_slot_id, :party_size, :restaurant_id, :user_id)
     end 
 
 end

@@ -47,7 +47,7 @@ export default class SearchField extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.addFilter("neighborhood", this.state.inputVal)
+    this.props.addFilter("neighborhood", this.state.inputVal).then(this.props.history.push('/search'))
   }
 
 
