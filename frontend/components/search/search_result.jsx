@@ -55,7 +55,7 @@ class SearchResult extends React.Component {
             && this.passespriceFilter(restaurant)
         })
 
-        let total = filteredSearchResults.length
+        // let total = filteredSearchResults.length
         let filtered = filteredSearchResults.map((result, idx) => {
             return (
                 <FilteredResult key={idx} result={result}/>
