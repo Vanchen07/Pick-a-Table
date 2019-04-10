@@ -12,7 +12,7 @@ const filtersReducer = function(state = initialState, action) {
     let newState = Object.assign({}, state);
     switch (action.type) {
       case ADD_FILTER:
-        newState[action.data.filterName].push(action.data.filterValue)
+        newState[action.data.filterName].push(action.data.filterValue);
         return newState;
       case REMOVE_FILTER:
         newState[action.data.filterName].splice(newState[action.data.filterName].indexOf(newState[action.data.filterValue]),1);
@@ -22,6 +22,6 @@ const filtersReducer = function(state = initialState, action) {
       default:
         return state;
     }
-  }
+};
 
 export default filtersReducer;

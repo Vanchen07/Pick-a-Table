@@ -46,7 +46,7 @@ class Hero extends React.Component {
             <div className="hero-container" >
                 {this.renderBackgroundImage()}
                 <div className="search-bar">
-                    <div className='hero-title'> Pick Your Table!</div>
+                    <div className='hero-title'> Find your table for any occasion</div>
                     <SearchBar {...this.props} />
                 </div>
             </div>

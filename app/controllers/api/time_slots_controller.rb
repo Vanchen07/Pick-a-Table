@@ -1,5 +1,4 @@
 class Api::TimeSlotsController < ApplicationController
-
     def index
         render :index
     end 

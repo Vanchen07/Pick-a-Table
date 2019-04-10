@@ -15,7 +15,7 @@ class NavBar extends React.Component {
                             <Link to='/' className="cheers-logo icon"><i class="fas fa-cookie fa-2x"></i></Link>
                         </div>
                         <div>
-                            <Link to='/' className="secondary">Pick-A-Table</Link>
+                            <Link to='/' className="secondary">OpenTable</Link>
                         </div>
                     </div>
                     <div className="bar-heading-left">

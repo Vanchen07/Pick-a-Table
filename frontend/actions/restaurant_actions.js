@@ -19,4 +19,4 @@ export const fetchRestaurants = () => dispatch => (
 
 export const fetchRestaurant = (id) => dispatch => (
     RestaurantAPIUtil.fetchRestaurant(id).then(restaurant => dispatch(receiveRestaurant(restaurant)))
-)
+);

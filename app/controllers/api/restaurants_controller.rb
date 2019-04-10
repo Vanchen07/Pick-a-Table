@@ -1,5 +1,4 @@
 class Api::RestaurantsController < ApplicationController
-
     def index
         @restaurants = Restaurant.includes(:time_slots).all
 
