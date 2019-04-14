@@ -59,6 +59,7 @@ export default class SearchField extends React.Component {
     return(
       <div className='search-container'>
         <div className='search-field-container'>
+          <i className="search-icon" class="fas fa-search fa-lg"></i>
           <input
             className='search-field'
             onChange={this.handleInput}

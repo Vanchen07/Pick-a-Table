@@ -17,6 +17,7 @@ class NavBar extends React.Component {
                         <div>
                             <Link to='/' className="secondary">OpenTable</Link>
                         </div>
+
                     </div>
                     <div className="bar-heading-left">
                         <UserBar/>

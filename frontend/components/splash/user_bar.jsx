@@ -55,7 +55,7 @@ class UserBar extends React.Component {
         return(
           <div className="dropdown-content calendar">
               <a href="#" >My Upcoming Reservations</a>
-            </div>
+          </div>
         )
       }
   }

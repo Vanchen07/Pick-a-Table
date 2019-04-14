@@ -16,8 +16,6 @@
 .bar-heading {
     display: flex;
     justify-content: space-between;
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-style: normal;
     height: 54px;
     padding-left: 28px;
     padding-right: 28px;
@@ -31,20 +29,19 @@
 
 .cheers-logo {
     align-content: center;
-
 }
 
 .icon {
     color: #D83947;
+    padding: 2px;
 }
 
 .secondary {
     font-family: BrandonText,Helvetica Neue,Helvetica,Arial,sans-serif;
-    // font-size: 100%;
-    font-size: 16px;
+    font-size: 19px;
     font-style: normal;
-    font-weight: 500;
-    line-height: 16px;
+    font-weight: 700;
+    line-height: 18px;
     padding-left: 8px;
     color: #333333;
 }
@@ -74,12 +71,26 @@ a:active {
 
 .signup-button {
     background-color: #237b98;
-    padding: 8px;
+    border-color: rgb(28, 98, 122);
     border-radius: 3px;
     margin-left: 8px;
     border-color: white;
+    color: rgb(255, 255, 255);
+    font-family: BrandonText,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size: 14px;
     font-weight: 600px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    // margin-top: 11px;
+    text-align: center;
+    text-decoration-color: rgb(255, 255, 255);
+    transition-delay: 0s;
+    transition-duration: 0.3s;
+    transition-property: background-color;
+    transition-timing-function: ease-out;
+    cursor: pointer;
 
     a:visited {
         color: #fff;
@@ -95,13 +106,21 @@ a:active {
     border-radius: 3px;
     margin-left: 8px;
     border-color: white;
-    font-size: 14px;
-    font-weight: 600px;
+    font-size: 15px;
+    font-weight: 700px;
+    color: rgb(51, 51, 51);
+    cursor: pointer;
+    font-family: BrandonText,Helvetica Neue,Helvetica,Arial,sans-serif;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-align: left;
+    text-decoration-color: rgb(51, 51, 51);
+
     a {
-        color:#0F0F0F;
+        color:rgb(51, 51, 51);
     }
     a:visited {
-        color:#0F0F0F;
+        color:rgb(51, 51, 51);
     }
 }
 

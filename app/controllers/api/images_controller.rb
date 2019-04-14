@@ -12,7 +12,7 @@ class Api::ImagesController < ApplicationController
     end
 
     def neighborhoods
-        images = get_images(['neighborhoods/neighborhood_1.jpg', 'neighborhoods/neighborhood_2.jpg', 'neighborhoods/neighborhood_3.jpg'])
+        images = get_images(['neighborhoods/neighborhood_1.jpg', 'neighborhoods/neighborhood_2.jpg', 'neighborhoods/neighborhood_3.jpg', 'neighborhoods/neighborhood_1.jpg', 'neighborhoods/neighborhood_2.jpg', 'neighborhoods/neighborhood_3.jpg'])
 
         render json: {images: images}
     end
