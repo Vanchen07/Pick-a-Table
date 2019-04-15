@@ -68,7 +68,7 @@ class SplashBody extends React.Component {
                                         <section>
                                             <div className="popular-restaurant-bar">
                                                 <div className="popular-restaurant-bar-title">
-                                                    <h2 className="popular-restaurant-heading">Popular restaurants in San Francisco</h2>
+                                                    <h2 className="popular-restaurant-heading">Popular Restaurants in San Francisco</h2>
                                                 </div>
                                                 <span className="view-all-bar">
                                                     <a className="view-all" target="_blank" href="/search">
@@ -182,17 +182,78 @@ class SplashBody extends React.Component {
                                             </div>
                                         </section>
                                         <section>
-                                            
+                                            <div className="popular-restaurant-bar">
+                                                <div className="popular-restaurant-bar-title">
+                                                    <h2 className="popular-restaurant-heading">Top Cuisines in San Francisco</h2>
+                                                </div>
+                                                <span className="view-all-bar">
+                                                    <a className="view-all" target="_blank" href="/search">
+                                                        <span>View all</span>
+                                                    </a>
+                                                </span>
+                                            </div>  
+                                            <div className="top-cuisines-body">
+                                                <div className="top-cuisines-body-container">
+                                                    <div className="top-cuisines-body-row">
+                                                        <div className="top-cuisines-body-display">
+                                                            <div className="top-cuisines-body-display-first">
+                                                                <a href="#">
+                                                                    <div className="top-cuisines-body-display-img-american">
+                                                                        <h5 className="top-cuisines-body-display-heading">
+                                                                            <span className="top-cuisines-body-display-heading-span">
+                                                                                Best American Restaurants Around You
+                                                                            </span>
+                                                                        </h5>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <div className="top-cuisines-body-display-middle">
+                                                                <a href="#">
+                                                                    <div className="top-cuisines-body-display-img-italian">
+                                                                        <h5 className="top-cuisines-body-display-heading">
+                                                                            <span className="top-cuisines-body-display-heading-span">
+                                                                                Best Italian Restaurants Around You
+                                                                            </span>
+                                                                        </h5>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <div className="top-cuisines-body-display-middle">
+                                                                <a href="#">
+                                                                    <div className="top-cuisines-body-display-img-seafood">
+                                                                        <h5 className="top-cuisines-body-display-heading">
+                                                                            <span className="top-cuisines-body-display-heading-span">
+                                                                                Best Seafood Restaurants Around You
+                                                                            </span>
+                                                                        </h5>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <div className="top-cuisines-body-display-middle">
+                                                                <a href="#">
+                                                                    <div className="top-cuisines-body-display-img-french">
+                                                                        <h5 className="top-cuisines-body-display-heading">
+                                                                            <span className="top-cuisines-body-display-heading-span">
+                                                                                Best French Restaurants Around You
+                                                                            </span>
+                                                                        </h5>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            {/* <div className="top-cuisines-body-display-last"></div> */}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </section>
-                                        <section>
-                                            
-                                        </section>
+                                        {/* <section></section> */}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                {/* <div className="splash-footer"></div> */}
             </div>
         )
     }
