@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchBar from '../search/search_bar';
+import SearchBar from '../../search/search_bar';
 
 class Hero extends React.Component {
     constructor(props) {
