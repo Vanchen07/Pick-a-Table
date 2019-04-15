@@ -175,7 +175,10 @@
     font-weight: 500;
     line-height: 19.2px;
     margin: 0px;
-    padding: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 10%;
+    padding-right: 10%;
     position: relative;
     align-content: center;
 }
@@ -315,6 +318,7 @@
 
     background-image: url(https://components.otstatic.com/components/dtp/1.8.4/img/party-size-picker.svg);
     background-repeat: no-repeat;
+    background-position-y: center;
     // background-size: contain;
 }
 
@@ -352,9 +356,9 @@
     height: 45px;
     line-height: 19.2px;
     padding-bottom: 13px;
-    padding-left: 8px;
+    padding-left: 28px;
     padding-right: 32px;
-    padding-top: 13px;
+    padding-top: 36px;
     position: relative;
 
     text-align: left;
@@ -367,6 +371,7 @@
     cursor: pointer;
     display: block;
     position: relative;
+   
 }
 
 .angle-icon {
@@ -482,6 +487,7 @@
 
     background-image: url(https://components.otstatic.com/components/dtp/1.8.4/img/date-picker.svg);
     background-repeat: no-repeat;
+    background-position-y: center;
 }
 
 .dtp-time-picker {
@@ -550,6 +556,7 @@
 
     background-image: url(https://components.otstatic.com/components/dtp/1.8.4/img/time-picker.svg);
     background-repeat: no-repeat;
+    background-position-y: center;
 }
 
 
@@ -616,6 +623,7 @@
 
     background-image: url(https://components.otstatic.com/components/dtp/1.8.4/img/dtp-picker-search-icon.svg);
     background-repeat: no-repeat;
+    background-position-y: center;
 }
 
 .dtp-picker-button {
