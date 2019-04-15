@@ -214,3 +214,37 @@ a:active {
     border-right: none;
     opacity: 0.7px;
 }
+
+.location-picker {
+    box-sizing: border-box;
+    float: left;
+    font-family: BrandonText,Helvetica Neue,Helvetica,Arial,san sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    height: 16px;
+    line-height: 16px;
+    margin-left: 16px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 16px;
+    padding-top: 0px;
+    position: relative;
+    right: 0px;
+    top: 0px;
+
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+.location-picker-border {
+    border-color: red;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+.location-icon {
+
+}

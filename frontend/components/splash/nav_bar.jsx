@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
 
-    render() {
+    render() {  
         return(
             <div className='nav-bar'>
                 <div className='top-bar'>
@@ -16,6 +16,14 @@ class NavBar extends React.Component {
                         </div>
                         <div>
                             <Link to='/' className="secondary">OpenTable</Link>
+                        </div>
+                        <div className="location-picker">
+                            <div className="location-picker-border">
+                                <a className="select-label-party"> 
+                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-angle-down angle-icon location-icon"></i>
+                                </a>
+                            </div>
                         </div>
 
                     </div>
