@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchResultContainer from './search_result_container';
+import SearchResultContainer from '../search_result_container';
 
 class MainBody extends React.Component {
     

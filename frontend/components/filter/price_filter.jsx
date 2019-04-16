@@ -37,13 +37,16 @@ class PriceFilter extends React.Component {
         });
 
         return (
-            <div className="filter-container">
-                <ul>
-                    <h2 className='filter-title'>
-                    <i class="fas fa-dollar-sign filter-icon"></i> 
-                    <span>Price</span></h2>
-                    <li>
-                    {prices}
+            <div className="search_filters">
+                <ul className="filters-list">
+                    <li className="filter-option-prices">
+                        <span className="price-band-filter">
+                            <span className="price-icon"><i class="fas fa-dollar-sign"></i></span>
+                            <span className="price-text">Price</span>
+                        </span>
+                        <div className="price-band-menu">
+                            {prices}
+                        </div>
                     </li>
                 </ul>
             </div>

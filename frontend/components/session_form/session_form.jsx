@@ -120,7 +120,8 @@ class SessionForm extends React.Component {
             />
   
             <input 
-              className="signup-input" 
+              className="signup-input"
+              id="signup-button" 
               type="submit" 
               value="Sign In" />
         </form>

@@ -83,7 +83,7 @@ class SignupForm extends React.Component {
               placeholder="Password"
             />
             <input 
-              className="signup-input" 
+              className="signup-input" id="signup-button" 
               type="submit" 
               value="Create Account" />
         </form>

@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchFieldContainer from './search_field_container';
+import SearchFieldContainer from '../search_field/search_field_container';
 
 class SearchBar extends React.Component {
     render () {

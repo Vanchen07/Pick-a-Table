@@ -8,7 +8,7 @@ const restaurantsReducer = (state = {}, action) => {
         case RECEIVE_RESTAURANTS:
             action.restaurants.forEach(restaurant => {
                 nextState[restaurant.id] = restaurant
-            })
+            });
             return nextState;
         case RECEIVE_RESTAURANT:
             nextState[action.restaurant.id] = action.restaurant
@@ -16,6 +16,6 @@ const restaurantsReducer = (state = {}, action) => {
         default:
             return state;
     }
-}
+};
 
 export default restaurantsReducer;

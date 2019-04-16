@@ -1,53 +1,154 @@
+.search-control {
+    background-image: url(//media.otstatic.com/search-result-node/images/patterns/woodgrain-dark.7b6a1e98.png);
+    background-color: #f1f2f4;
+    position: relative;
+    color: #666;
+    line-height: 1.2rem;
+}
+
+.search-wrapper {
+    height: 80px;
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.page-header-content {
+    padding: 1rem 0;
+    padding-bottom: 16px!important;
+    margin: 0 auto;
+    max-width: 61rem;
+}
+
 .results-main-container {
     display: flex;
+    flex-shrink: 1;
+    justify-content: center;
     padding-left: 130px;
     padding-right: 130px;
+    max-width: 100rem;
 
-    .filters-container {
-        flex: 25%;
-    }
+    // .filters-container {
+    //     flex: 25%;
+    // }
 
-    .search-results-container {
-        flex: 80%;
-    }
+    // .search-results-container {
+    //     flex: 80%;
+    // }
 }
 
-.filters-inner-container {
+.filters-bar {
     display: flex;
     flex-direction: column;
+    border: none;
+    position: relative;
+    z-index: 15;
+    max-width: 100rem;
+    width: 14rem;
 }
 
-.filter-container {
-    font-weight: 400;
-    padding: 8px;
-    color: #333;
-    // font-family: BrandonText,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+.filters-wrapper {
+    height: 1281px;
+    max-width: 100%;
+    transform: translate3d(0,0,0);
+    will-change: position,transform;
+    position: relative;
 }
+
+.row {
+    max-width: 80rem;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.column {
+    padding-left: 16px;
+    padding-right: 1rem;
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+// .search-filters {
+
+// }
+
+.filters-list {
+    float: none;
+    list-style: none;
+}
+
+.filter-option-prices {
+    border-top: none;
+    width: 100%;
+    padding-top: 0!important;
+    position: relative;
+    list-style: none;
+}
+
+.price-band-filter {
+    padding: 8px 0!important;
+    pointer-events: none;
+    position: relative;
+    color: #666;
+    display: block;
+}
+
+.price-icon {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    pointer-events: none;
+    // color: #666;
+}
+
+.price-text {
+    margin-top: .8rem;
+    font-size: 16px;
+    color: #2d333f!important;
+    font-weight: 700!important;
+    text-transform: capitalize!important;
+    padding-left: 4px;
+}
+
+.price-band-menu {
+    padding: 0;
+    margin-top: 5px;
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    top: 90%;
+    left: 0;
+    color: #333;
+    font-family: BrandonText,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    line-height: 1;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.filter-option-neighborhood {
+    border-top: 1px solid rgba(0,0,0,.08);
+    display: block;
+    padding-top: 0!important;
+}
+
+
+// .filter-container {
+//     font-weight: 400;
+//     padding: 8px;
+//     color: #333;
+//     // font-family: BrandonText,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+// }
+
+
 
 .search-results-inner-container {
     padding: 12px;
 }
 
-.filter-title {
-    font-weight: 800;
-    font-size: 18px;
-    padding-bottom: 8px;
-    padding-left: 4px;
-    color: #da3743;
-    
-}
-
-.filter-icon {
-    margin-right: 4px;
-}
-
-.filter-label {
-    margin-left: 4px;
-}
-
-.filter-component {
-    margin-bottom: 4px;
-}
 
 .filtered-result-container {
     margin-bottom: 16px;

@@ -23,7 +23,4 @@ const mapDispatchToProps = dispatch => ({
   fetchRestaurants: () => dispatch(fetchRestaurants())
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Splash);
+export default connect(mapStateToProps, mapDispatchToProps)(Splash);

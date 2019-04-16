@@ -9,11 +9,11 @@ class FilteredResult extends React.Component {
     }
 
     render() {
-        const { result } = this.props
+        const { result } = this.props;
         return (
             <div className='filtered-result-container'>
                 <div className='filtered-result-head'><Link to={`/${result.name}`}>{result.name}</Link></div>
-                <BodyRestaurantDescription restaurant={result}/>
+                {/* <BodyRestaurantDescription restaurant={result}/> */}
                 <BodyRestaurantAttributes restaurant={result}/>
             </div>
         )

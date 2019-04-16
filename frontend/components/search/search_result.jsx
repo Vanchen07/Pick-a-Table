@@ -9,7 +9,7 @@ class SearchResult extends React.Component {
         if (this.props.filters.price.length > 0) {
             return this.props.filters.price.includes(restaurant.price_range)
         } else {
-            return true 
+            return true;
         }
     }
    
@@ -17,7 +17,7 @@ class SearchResult extends React.Component {
         if(this.props.filters.neighborhood.length > 0) {
             return this.props.filters.neighborhood.includes(restaurant.neighborhood_name)
         } else {
-            return true
+            return true;
         }
     }
 
@@ -25,7 +25,7 @@ class SearchResult extends React.Component {
         if(this.props.filters.cuisine.length > 0) {
             return this.props.filters.cuisine.includes(restaurant.cuisine_type)
         } else {
-            return true
+            return true;
         }
     }
 
@@ -33,7 +33,7 @@ class SearchResult extends React.Component {
         if (this.props.filters.dress_code.length > 0) {
             return this.props.filters.dress_code.includes(restaurant.dress_code)
         } else {
-            return true
+            return true;
         }
     }
 
@@ -41,7 +41,7 @@ class SearchResult extends React.Component {
         if(this.props.filters.dining_style.length > 0) {
             return this.props.filters.dining_style.includes(restaurant.dining_style)
         } else {
-            return true
+            return true;
         }
     }
 
@@ -49,18 +49,18 @@ class SearchResult extends React.Component {
         
         let filteredSearchResults = Object.values(this.props.restaurants).filter((restaurant) => {
             return this.passesNeighborhoodFilter(restaurant) 
-            && this.passesCuisineFilter(restaurant)
-            && this.passesDiningStyleFilter(restaurant)
-            && this.passesDressCodeFilter(restaurant)
-            && this.passespriceFilter(restaurant)
-        })
+                && this.passesCuisineFilter(restaurant)
+                && this.passesDiningStyleFilter(restaurant)
+                && this.passesDressCodeFilter(restaurant)
+                && this.passespriceFilter(restaurant)
+        });
 
         // let total = filteredSearchResults.length
         let filtered = filteredSearchResults.map((result, idx) => {
             return (
                 <FilteredResult key={idx} result={result}/>
             )
-        })
+        });
 
 
         return (    

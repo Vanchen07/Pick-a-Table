@@ -36,13 +36,16 @@ class CuisineFilter extends React.Component {
         });
 
         return (
-            <div className='filter-container'>
-                <ul>
-                    <h2 className='filter-title'>
-                    <i class="fas fa-utensils filter-icon"></i> 
-                    <span>Cuisine</span></h2>
-                    <li>
-                    {cuisines}
+            <div className="search_filters">
+                <ul className="filters-list">
+                    <li className="filter-option-neighborhood">
+                        <span className="price-band-filter">
+                            <span className="price-icon"><i class="fas fa-utensils"></i></span>
+                            <span className="price-text">Cuisine</span>
+                        </span>
+                        <div className="price-band-menu">
+                            {cuisines}
+                        </div>
                     </li>
                 </ul>
             </div>

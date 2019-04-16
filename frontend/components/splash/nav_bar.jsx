@@ -1,5 +1,5 @@
-import React from 'react'
-import UserBar from './user_bar'
+import React from 'react';
+import UserBar from './user_bar';
 import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {

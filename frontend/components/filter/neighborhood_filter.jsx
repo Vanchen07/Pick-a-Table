@@ -37,14 +37,16 @@ class NeighborhoodFilter extends React.Component {
         });
 
         return (
-            <div className="filter-container">
-                <ul>
-                    <h2 className='filter-title'>
-                        <i class="far fa-map filter-icon"></i>
-                        <span>Neighborhood</span>
-                    </h2>
-                    <li>
-                    {neighborhoods}
+            <div className="search_filters">
+                <ul className="filters-list">
+                    <li className="filter-option-neighborhood">
+                        <span className="price-band-filter">
+                            <span className="price-icon"><i class="far fa-building"></i></span>
+                            <span className="price-text">Neighborhood</span>
+                        </span>
+                        <div className="price-band-menu">
+                            {neighborhoods}
+                        </div>
                     </li>
                 </ul>
             </div>

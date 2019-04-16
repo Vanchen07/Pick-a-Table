@@ -37,13 +37,16 @@ class DiningStyleFilter extends React.Component {
         });
 
         return (
-            <div className='filter-container'>
-                <ul>
-                    <h2 className='filter-title'>
-                    <i class="fas fa-concierge-bell filter-icon"></i>
-                    <span>Dining Style</span></h2>
-                    <li>
-                    {diningStyles}
+            <div className="search_filters">
+                <ul className="filters-list">
+                    <li className="filter-option-neighborhood">
+                        <span className="price-band-filter">
+                            <span className="price-icon"><i class="fas fa-concierge-bell"></i></span>
+                            <span className="price-text">Dining Style</span>
+                        </span>
+                        <div className="price-band-menu">
+                            {diningStyles}
+                        </div>
                     </li>
                 </ul>
             </div>

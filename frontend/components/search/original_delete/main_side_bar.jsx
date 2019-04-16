@@ -1,5 +1,5 @@
 import React from 'react';
-import FiltersContainer from '../filter/filters_container';
+import FiltersContainer from '../../filter/filters_container';
 
 class MainSideBar extends React.Component {
     render () {

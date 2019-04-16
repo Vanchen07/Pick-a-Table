@@ -16,14 +16,14 @@ export default class SearchField extends React.Component {
   }
 
   handleInput(event) {
-    const value = event.currentTarget.value
+    const value = event.currentTarget.value;
     this.setState({inputVal: value});
 
     if(value.length === 0 ) {
-      this.setState({matches: []})
+      this.setState({matches: []});
     } else {
       const {allNeighborhoods} = this.props;
-      let matches = []
+      let matches = [];
 
       allNeighborhoods.forEach(name => {
         const sub = name.slice(0, value.length);
@@ -34,14 +34,14 @@ export default class SearchField extends React.Component {
       if (matches.length === 0) {
         matches.push('No matches');
       }
-      this.setState({matches: matches})
+      this.setState({matches: matches});
     }
   }
 
   selectName(event) {
     const name = event.currentTarget.innerText;
     this.setState({inputVal: name});
-    this.setState({matches: []})
+    this.setState({matches: []});
   }
 
   handleSubmit(e) {

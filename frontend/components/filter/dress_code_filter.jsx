@@ -37,13 +37,16 @@ class DressCodeFilter extends React.Component {
         });
 
         return (
-            <div className='filter-container'>
-                <ul>
-                    <h2 className='filter-title'>
-                    <i class="fas fa-tshirt filter-icon"></i> 
-                    <span>Dress Code</span></h2>
-                    <li>
-                    {dressCodes}
+            <div className="search_filters">
+                <ul className="filters-list">
+                    <li className="filter-option-neighborhood">
+                        <span className="price-band-filter">
+                            <span className="price-icon"><i class="fas fa-tshirt"></i></span>
+                            <span className="price-text">Dress Code</span>
+                        </span>
+                        <div className="price-band-menu">
+                            {dressCodes}
+                        </div>
                     </li>
                 </ul>
             </div>

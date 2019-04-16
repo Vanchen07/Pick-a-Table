@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import {logout} from '../../actions/session_actions';
 
 
-
 class UserBar extends React.Component {
   constructor(props) {
     super(props)
