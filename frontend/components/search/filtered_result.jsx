@@ -10,12 +10,18 @@ class FilteredResult extends React.Component {
 
     render() {
         const { result } = this.props;
-        return (
-            <div className='filtered-result-container'>
-                <div className='filtered-result-head'><Link to={`/${result.name}`}>{result.name}</Link></div>
-                {/* <BodyRestaurantDescription restaurant={result}/> */}
-                <BodyRestaurantAttributes restaurant={result}/>
+        return (   
+            <div className="rest-row">
+                <div className="rest-row-img">
+                    <img src="//resizer.otstatic.com/v2/profiles/legacy/51673.jpg" alt=""/>
+                </div>
+                <div className="rest-row-info">
+                        <Link className="rest-name" to={`/${result.name}`}>{result.name}</Link>
+                        <BodyRestaurantDescription restaurant={result}/>
+                        <BodyRestaurantAttributes restaurant={result}/>
+                </div>
             </div>
+       
         )
     }
 }

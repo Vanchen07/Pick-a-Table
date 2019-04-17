@@ -7,15 +7,16 @@ class RestaurantMain extends React.Component {
     
     render() {
         return (
-            <div className="main">
-                <div>
-                <MainHeader/>
+            <div className="rest-main">
+                <div className="rest-main-header-container">
+                    <div className="style"></div>
+                    <MainHeader/>
                 </div>
-                <div >
-                <MainBody {...this.props}/>
+                <div className="overview-section">
+                    <MainBody {...this.props}/>
                 </div>
                 <div>
-                <ReservationFormContainer {...this.props}/>
+                    <ReservationFormContainer {...this.props}/>
                 </div>
             </div>
         )

@@ -64,9 +64,36 @@ class SearchResult extends React.Component {
 
 
         return (    
-            <div className='filters-inner-container search-results-inner-container'>
-                {/* <div>Showing {total} Restaurants</div> */}
-                    {filtered.length > 0 ? filtered : EmptySearchResult}
+            <div className='search-result-container'>
+                <div className="search-result-wrapper">
+                    <div className="search-row">
+                        <div className="search-column"></div>
+                    </div>
+                </div>
+
+                <div className='filtered-result-container'>
+                <div>
+                    <div className='filtered-result-header'>
+                        <div className="filtered-result-header-bar">
+                            <h3 className="filtered-result-header-title">106 tables available</h3>
+                            <div className="sort-view-filter">
+                                <div className="sort-filters">
+                                    <div className="sort-dropdown">Featured</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="content-section-header">
+                            <div className="content-section-bar"></div>
+                        </div>
+                        <div className="content-section">  
+                            <div className="content-section-list">
+                                {filtered.length > 0 ? filtered : EmptySearchResult}
+                            </div>
+                        </div>
+                    </div>
+                    {/* <Link to={`/${result.name}`}>{result.name}</Link> */}
+                </div>
+            </div>
             </div>
         );
     }

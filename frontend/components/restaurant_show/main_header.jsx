@@ -4,12 +4,29 @@ class MainHeader extends React.Component {
     
     render() {
         return (
-            <div >
+            <div className="style2" >
                <ul className="main-header">
-                   <li className="main-header-list">Overview</li>
-                   <li className="main-header-list">Description</li>
-                   <li className="main-header-list">Details</li>
-                   <li className="main-header-list">Reviews</li>
+                   <li className="main-header-list-overview">
+                        <a className="overview-link" href="#">
+                            <span>Overview</span>
+                        </a>
+                   </li>
+                   <li className="main-header-list-description">
+                        <a className="overview-link-description" href="#">
+                            <span>Description</span>
+                        </a>
+                   </li>
+                   <li className="main-header-list-description">
+                        <a className="overview-link-description" href="#">
+                            <span>Details</span>
+                        </a>
+                   </li>
+                   <li className="main-header-list-reservations">
+                        <a className="overview-link-description" href="#">
+                            <span>Reservations</span>
+                        </a>
+                   </li>
+
                </ul>
             </div>
         )

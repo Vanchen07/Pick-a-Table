@@ -27,13 +27,13 @@ class BodyRestaurantAttributes extends React.Component {
                         </div>
                         <div className="restaurant-attributes-items-pad2">{`${this.props.restaurant.formatted_opening_hour} - ${this.props.restaurant.formatted_closing_hour}`}</div>
                     </div>
-                    <div>
+                    {/* <div>
                         <div className="restaurant-attributes-items">
                             <i class="fas fa-phone"></i>
                             <div className="restaurant-attributes-items-pad">Phone number</div>
                         </div>
                         <div className="restaurant-attributes-items-pad2">{this.props.restaurant.phone_number}</div>
-                    </div>
+                    </div> */}
                </div>
                <div className="restaurant-attributes-side">
                     <div>
@@ -57,13 +57,13 @@ class BodyRestaurantAttributes extends React.Component {
                         </div>
                         <div className="restaurant-attributes-items-pad2">{this.props.restaurant.dress_code}</div>
                     </div>
-                    <div>
+                    {/* <div>
                         <div className="restaurant-attributes-items">
                             <i class="fas fa-external-link-alt"></i>
                             <div className="restaurant-attributes-items-pad">Website</div>
                         </div>
                         <div className="restaurant-attributes-items-pad2"><a href={this.props.restaurant.website}></a></div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         )
