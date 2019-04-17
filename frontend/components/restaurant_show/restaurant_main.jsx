@@ -15,9 +15,6 @@ class RestaurantMain extends React.Component {
                 <div className="overview-section">
                     <MainBody {...this.props}/>
                 </div>
-                <div>
-                    <ReservationFormContainer {...this.props}/>
-                </div>
             </div>
         )
     }

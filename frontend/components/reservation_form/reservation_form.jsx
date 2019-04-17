@@ -139,8 +139,125 @@ class ReservationForm extends React.Component {
     //   return null
     // }
     return (
-      <div className="reservation-form-container">
-        <div className="reservation-form-header">
+      <div className="reservation-form-wrapper">
+          <div className="reservation-form-header">
+            <h3 className="form-header-title">
+              <span className="title-span">Make a reservation</span>
+            </h3>
+          </div>
+          <div className="reservation-form-body">
+            <div className="form-input-fields">
+              <div className="input-wrapper">
+                <div className="input-box">
+                  <div className="input-party-wrapper">
+                    <div className="input-party-size">Party Size</div>
+                    <div className="input-party-size-selection">
+                      <div className="empty-selection"></div>
+                      <i class="fas fa-angle-down caret"></i>
+                      <select className="res-party-selection-dropdown" name="" id="">
+                        <option value="2">2 people</option>
+                        <option value="3">3 people</option>
+                        <option value="4">4 people</option>
+                        <option value="5">5 people</option>
+                        <option value="6">6 people</option>
+                        <option value="7">7 people</option>
+                        <option value="8">8 people</option>
+                        <option value="9">9 people</option>
+                        <option value="10">10 people</option>
+                        <option value="11">Larger Party</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="input-date-time-wrapper">
+                    <div className="input-date">
+                      <div className="date-label">Date</div>
+                      <div className="date-dropdown">
+                        <div className="date-placeholder">Thu, 5/2</div>
+                        <i class="fas fa-angle-down caret"></i>
+                      </div>
+                    </div>
+                    <div className="input-time">
+                      <div className="date-label">Time</div>
+                      <div className="date-dropdown">
+                        <div className="date-placeholder">7:00 PM</div>
+                        <i class="fas fa-angle-down caret"></i>
+                        <select className="res-party-selection-dropdown" value={this.state.time} onChange={this.handleTimeChange}>
+                            <option value="5:00">5:00 PM</option>
+                            <option value="5:30">5:30 PM</option>
+                            <option value="6:00">6:00 PM</option>
+                            <option value="6:30">6:30 PM</option>
+                            <option value="7:00">7:00 PM</option>
+                            <option value="7:30">7:30 PM</option>
+                            <option value="8:00">8:00 PM</option>
+                            <option value="8:30">8:30 PM</option>
+                            <option value="9:00">9:00 PM</option>
+                            <option value="9:30">9:30 PM</option>
+                            <option value="10:00">10:00 PM</option>
+                            <option value="10:30">10:30 PM</option>
+                            <option value="11:00">11:00 PM</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span className="time-input-buttons-wrapper">
+              <span className="time-input-buttons-span">
+                <div className="time-input-buttons-header">
+                  <span>Select a time</span>
+                </div>
+                <div className="time-input-buttons-body">
+                  <div>
+                    <div className="time-input-button-1">
+                      <div>
+                        <div className="timeslot">
+                          <span>6:30 PM</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="time-input-button-1">
+                      <div>
+                        <div className="timeslot">
+                          <span>7:00 PM</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="time-input-button-1">
+                      <div>
+                        <div className="timeslot">
+                          <span>7:30 PM</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="time-input-button-1">
+                      <div>
+                        <div className="timeslot">
+                          <span>8:00 PM</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </span>
+            <div className="res-button-wrapper">
+              <button className="res-button">
+                <span>Find a Table</span>
+              </button>
+            </div>
+            <div className="form-footer">
+              <div className="form-footer-booked">
+                <div className="form-footer-icon"><i class="fas fa-chart-line"></i></div>
+                <div className="form-footer-text">
+                  <div className="form-footer-text-span">
+                    <span>Booked 38 times today</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {/* <div className="reservation-form-header">
           Make a reservation
         </div>
         <form className="reservation-form-body" onSubmit={this.handleSubmit}>
@@ -192,7 +309,7 @@ class ReservationForm extends React.Component {
                 <input className='submit-button-input' type="submit" value="Find a Table"/>
             </div>
 
-        </form>
+        </form> */}
       </div>
     );
   }

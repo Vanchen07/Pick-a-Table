@@ -265,6 +265,63 @@
     background-color: transparent;
 }
 
+.reservation-container {
+    margin: 2rem calc(-1*1rem);
+}
+
+.reservation-form-wrapper {
+    box-shadow: 0 2px 8px rgba(153,153,153,.4);
+}
+
+.reservation-form-header {
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    text-align: center;
+    padding: 0 1rem;
+    position: relative;
+    justify-content: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-box-pack: end
+}
+
+.form-header-title {
+    font-size: 21px;
+    height: 100%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    border-bottom: 1px solid #d8d9db;
+    margin: 0;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 0;
+    text-align: center;
+}
+
+.title-span {
+    font-size: 21px;
+    -webkit-box-direction: normal;
+    font-weight: 700;
+    line-height: 24px;
+    font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+}
+
+.reservation-form-body {
+    padding: .5rem 1rem 1rem;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-color: #fff;
+    margin-bottom: 1rem;
+}
+
 .body-description {
     color: #2d333f;
     line-height: 24px;
@@ -274,15 +331,275 @@
     margin-bottom: 16px;
 }
 
+.form-input-fields {
+    font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    width: 100%;
+}
 
+.input-wrapper {
+    max-height: 150px;
+    transition: max-height .2s ease 0s;
+    overflow: hidden;
 
+}
 
+.input-box {
+    display: flex;
+    // -webkit-box-orient: horizontal;
+    // -webkit-box-direction: normal;
+    flex-direction: row;
+    padding-top: .5rem;
+    clear: both;
+}
+
+.input-party-wrapper {
+    margin-left: 0;
+    -webkit-box-flex: 1;
+    flex: 1 50%;
+}
+
+.input-party-size {
+    font-size: .875rem;
+    font-weight: 500;
+    padding-bottom: .25rem;
+    font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+}
+
+.input-party-size-selection {
+    cursor: pointer;
+    border-right: none;
+    position: relative;
+    height: 35px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #d8d9db;
+    outline: none;
+}
+
+.empty-selection {
+    pointer-events: none;
+    position: absolute;
+    background-color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: calc(100% - 2px);
+    padding-top: 2px;
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: .875rem;
+    outline: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+.caret {
+    position: absolute;
+    top: 0;
+    right: 9px;
+    height: 100%;
+    width: .5rem;
+    fill: #6f737b;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+.res-party-selection-dropdown {
+    cursor: pointer;
+    font-family: inherit;
+    background-color: #fff;
+    font-size: .875rem;
+    display: block;
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 35px;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border-bottom: 1px solid #d8d9db;
+    text-transform: none;
+    color: rgb(0, 0, 0);
+    font: inherit;
+    margin: 0;
+}
+
+.input-date-time-wrapper {
+    margin-top: 0;
+    margin-left: .5rem;
+    display: flex;
+    -webkit-box-flex: 1;
+    flex: 1 100%;
+}
+
+.input-date {
+    margin-left: 0;
+    -webkit-box-flex: 1;
+    flex: 1 50%;
+}
+
+.date-label {
+    font-size: .875rem;
+    font-weight: 500;
+    padding-bottom: .25rem; 
+}
+
+.date-dropdown {
+    cursor: pointer;
+    border-right: none;
+    position: relative;
+    height: 35px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #d8d9db;
+    outline: none;
+}
+
+.date-placeholder {
+    position: absolute;
+    background-color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: calc(100% - 2px);
+    padding-top: 2px;
+    border: 0;
+    cursor: pointer;
+    font-size: .875rem;
+    outline: none;
+    width: 100%;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.input-time {
+    -webkit-box-flex: 1;
+    flex: 1 50%;
+    margin-left: .5rem;
+}
+
+.time-input-buttons-wrapper {
+    justify-content: center;
+    -webkit-box-pack: center;
+    display: flex;
+    margin: 1rem auto 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.time-input-buttons-span {
+    font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+}
+
+.time-input-buttons-header {
+    margin: 0 0 .5rem;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.time-input-buttons-body {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-bottom: calc(-1*.5rem);
+}
+
+.time-input-button-1 {
+    font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    margin-right: .5rem;
+    margin-bottom: .5rem;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+}
+
+.timeslot {
+    min-width: 72px;
+    height: 32px;
+    font-size: .875rem;
+    background-color: #da3743;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0 .25rem;
+}
+
+.form-footer {
+    text-align: center;
+    margin: 1rem 0 0;
+}
+
+.form-footer-booked {
+    -webkit-box-pack: center;
+    justify-content: center;
+    display: flex;
+    text-overflow: ellipsis;
+    text-decoration-color: rgb(0, 0, 0);
+    text-decoration-line: none;
+    text-decoration-style: solid; 
+}
+
+.form-footer-icon {
+    box-sizing: border-box;
+}
+
+.form-footer-text {
+    align-self: center;
+    margin: 0 0 0 .25rem;
+}
+
+.form-footer-text-span {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.res-button-wrapper {
+    justify-content: center;
+    -webkit-box-pack: center;
+    display: flex;
+    margin: 1rem auto 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.res-button {
+    padding: .75rem 1rem;
+    text-decoration: none;
+    background-color: #da3743;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    line-height: 1.5;
+    width: 18rem;
+    font-weight: 500;
+    border-radius: 2px;
+    display: inline-block;
+    box-sizing: border-box;
+    -webkit-appearance: button;
+    cursor: pointer;
+    text-transform: none;
+    overflow: visible;
+    margin: 0;
+}
 
 
 
 
 .restaurant-attributes {
     display: flex;
+    justify-content: space-between;
+    padding-top: 16px;
 }
 
 .restaurant-attributes-side {

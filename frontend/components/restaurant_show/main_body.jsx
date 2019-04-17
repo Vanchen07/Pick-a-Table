@@ -2,6 +2,8 @@ import React from 'react';
 import BodyNameHeading from './body_name_heading';
 import BodyRestaurantDescription from './body_restaurant_description';
 import BodyRestaurantAttributes from './body_restaurant_attributes';
+import ReservationFormContainer from '../reservation_form/reservation_form_container';
+
 
 class MainBody extends React.Component {
     
@@ -34,6 +36,9 @@ class MainBody extends React.Component {
                             </li>
                         </ul>
                     </div>
+                </div>
+                <div className="reservation-container">
+                    <ReservationFormContainer {...this.props}/>
                 </div>
                <BodyRestaurantDescription {...this.props}/>
                <BodyRestaurantAttributes {...this.props}/>
