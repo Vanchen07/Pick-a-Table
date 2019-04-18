@@ -3,82 +3,9 @@ import 'react-dates/initialize';
 import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import { ANCHOR_LEFT, HORIZONTAL_ORIENTATION, OPEN_UP } from 'react-dates/lib/constants';
+import swal from 'sweetalert';
+
 var moment = require('moment');
-
-const isBeforeDay = (a, b) => {
-  if (!moment.isMoment(a) || !moment.isMoment(b)) return false;
-
-  const aYear = a.year();
-  const aMonth = a.month();
-
-  const bYear = b.year();
-  const bMonth = b.month();
-
-  const isSameYear = aYear === bYear;
-  const isSameMonth = aMonth === bMonth;
-
-  if (isSameYear && isSameMonth) return a.date() < b.date();
-  if (isSameYear) return aMonth < bMonth;
-  return aYear < bYear;
-};
-
-const isInclusivelyAfterDay = (a, b) => {
-  if (!moment.isMoment(a) || !moment.isMoment(b)) return false;
-  return !isBeforeDay(a, b);
-};
-
-const defaultProps = {
-  // example props for the demo
-  // autoFocus: false,
-  // initialDate: null,
-
-  // input related props
-  id: 'date',
-  placeholder: 'Date',
-  disabled: false,
-  required: false,
-  screenReaderInputMessage: '',
-  showClearDate: false,
-  showDefaultInputIcon: false,
-  customInputIcon: null,
-  block: false,
-  small: false,
-  regular: false,
-  verticalSpacing: undefined,
-  keepFocusOnInput: false,
-
-  // calendar presentation and interaction related props
-  renderMonthText: null,
-  orientation: HORIZONTAL_ORIENTATION,
-  anchorDirection: ANCHOR_LEFT,
-  horizontalMargin: 0,
-  withPortal: false,
-  withFullScreenPortal: false,
-  initialVisibleMonth: null,
-  numberOfMonths: 2,
-  keepOpenOnDateSelect: false,
-  reopenPickerOnClearDate: false,
-  isRTL: false,
-
-  // navigation related props
-  navPrev: null,
-  navNext: null,
-  onPrevMonthClick() {},
-  onNextMonthClick() {},
-  onClose() {},
-
-  // day presentation and interaction related props
-  renderCalendarDay: undefined,
-  renderDayContents: null,
-  enableOutsideDays: false,
-  isDayBlocked: () => false,
-  isOutsideRange: day => !isInclusivelyAfterDay(day, moment()),
-  isDayHighlighted: () => {},
-
-  // internationalization props
-  displayFormat: () => moment.localeData().longDateFormat('L'),
-  monthFormat: 'MMMM YYYY'
-};
 
 
 class ReservationForm extends React.Component {
@@ -86,7 +13,7 @@ class ReservationForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      party_size: '',
+      party_size: '2',
       date: moment(),
       time_slot_id: '',
     };
@@ -109,9 +36,15 @@ class ReservationForm extends React.Component {
       date: this.state.date.format()
     });
     this.props.createReservation(reservationParams);
+
+      if(this.props.currentUserId){
+        return swal("Thank You!", "Your reservation is confirmed!", "success");
+      } else {
+        return swal("Sorry!", "Please log in to continue", "error");
+      }
+      
   }
 
-  
   
   renderErrors() {
     if (this.props.errors) {
@@ -140,31 +73,33 @@ class ReservationForm extends React.Component {
     // }
     return (
       <div className="reservation-form-wrapper">
+          <a name="reservations"></a>
           <div className="reservation-form-header">
             <h3 className="form-header-title">
               <span className="title-span">Make a reservation</span>
             </h3>
           </div>
-          <div className="reservation-form-body">
+          <form className="reservation-form-body" onSubmit={this.handleSubmit}>
+            {this.renderErrors()}
             <div className="form-input-fields">
               <div className="input-wrapper">
                 <div className="input-box">
                   <div className="input-party-wrapper">
                     <div className="input-party-size">Party Size</div>
                     <div className="input-party-size-selection">
-                      <div className="empty-selection"></div>
+                      {/* <div className="empty-selection"></div> */}
                       <i class="fas fa-angle-down caret"></i>
-                      <select className="res-party-selection-dropdown" name="" id="">
-                        <option value="2">2 people</option>
-                        <option value="3">3 people</option>
-                        <option value="4">4 people</option>
-                        <option value="5">5 people</option>
-                        <option value="6">6 people</option>
-                        <option value="7">7 people</option>
-                        <option value="8">8 people</option>
-                        <option value="9">9 people</option>
-                        <option value="10">10 people</option>
-                        <option value="11">Larger Party</option>
+                      <select className="res-party-selection-dropdown" value={this.state.party_size} onChange={this.update('party_size')}>
+                        <option value="2">For 2</option>
+                        <option value="3">For 3</option>
+                        <option value="4">For 4</option>
+                        <option value="5">For 5</option>
+                        <option value="6">For 6</option>
+                        <option value="7">For 7</option>
+                        <option value="8">For 8</option>
+                        <option value="9">For 9</option>
+                        <option value="10">For 10</option>
+                        <option value="11">For Larger Party</option>
                       </select>
                     </div>
                   </div>
@@ -172,16 +107,17 @@ class ReservationForm extends React.Component {
                     <div className="input-date">
                       <div className="date-label">Date</div>
                       <div className="date-dropdown">
-                        <div className="date-placeholder">Thu, 5/2</div>
+                        {/* <div className="date-placeholder">Thu, 5/2</div> */}
                         <i class="fas fa-angle-down caret"></i>
+                        <input className="date-dropdown" type="date" />
                       </div>
                     </div>
-                    <div className="input-time">
+                    {/* <div className="input-time">
                       <div className="date-label">Time</div>
-                      <div className="date-dropdown">
-                        <div className="date-placeholder">7:00 PM</div>
-                        <i class="fas fa-angle-down caret"></i>
-                        <select className="res-party-selection-dropdown" value={this.state.time} onChange={this.handleTimeChange}>
+                      <div className="date-dropdown"> */}
+                        {/* <div className="date-placeholder"></div> */}
+                        {/* <i class="fas fa-angle-down caret"></i>
+                        <select className="res-party-selection-dropdown" value={this.state.time_slot_id} onChange={this.update('time_slot_id')}>
                             <option value="5:00">5:00 PM</option>
                             <option value="5:30">5:30 PM</option>
                             <option value="6:00">6:00 PM</option>
@@ -195,9 +131,9 @@ class ReservationForm extends React.Component {
                             <option value="10:00">10:00 PM</option>
                             <option value="10:30">10:30 PM</option>
                             <option value="11:00">11:00 PM</option>
-                        </select>
-                      </div>
-                    </div>
+                        </select> */}
+                      {/* </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -209,7 +145,16 @@ class ReservationForm extends React.Component {
                 </div>
                 <div className="time-input-buttons-body">
                   <div>
-                    <div className="time-input-button-1">
+                  {this.props.restaurant.remaining_time_slots.map(timeSlot => {
+                return (
+                    <div className="time-input-button-1" onClick={()=> {this.setState({time_slot_id: timeSlot.id})}} >
+                        <div className={`timeslot ${this.state.time_slot_id === timeSlot.id ? 'time-slot-button-selected' : ''}`}>
+                          {timeSlot.formatted_start_time}
+                        </div>
+                    </div>
+                )
+              })}
+                    {/* <div className="time-input-button-1">
                       <div>
                         <div className="timeslot">
                           <span>6:30 PM</span>
@@ -236,7 +181,7 @@ class ReservationForm extends React.Component {
                           <span>8:00 PM</span>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </span>
@@ -251,12 +196,12 @@ class ReservationForm extends React.Component {
                 <div className="form-footer-icon"><i class="fas fa-chart-line"></i></div>
                 <div className="form-footer-text">
                   <div className="form-footer-text-span">
-                    <span>Booked 38 times today</span>
+                    <span>Booked {Object.keys(this.props.reservations).length} times today</span>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         {/* <div className="reservation-form-header">
           Make a reservation
         </div>

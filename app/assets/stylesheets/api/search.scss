@@ -125,7 +125,7 @@
     left: 0;
     color: #333;
     font-family: BrandonText,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1;
     font-style: normal;
     font-weight: 400;
@@ -316,6 +316,8 @@
 }
 
 .rest-row-img {
+    // background-image: url(//resizer.otstatic.com/v2/profiles/legacy/51673.jpg);
+    
     width: 37%;
     max-width: 13rem;
     max-height: 100%;
@@ -352,3 +354,42 @@
     font-family: BrandonText,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     
 }
+
+
+.date-dropdown-search {
+    cursor: pointer;
+    border: none;
+    // border-right: none;
+    position: relative;
+    height: 90%;
+    width: 100%;
+    box-sizing: border-box;
+    // border-bottom: 1px solid #d8d9db;
+    outline: none;
+    // border-top: none;
+    // border-left: none;
+    background-image: url(https://components.otstatic.com/components/dtp/1.8.4/img/date-picker.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+
+    color: rgb(51, 51, 51);
+
+    font-family: BrandonText,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+   
+    line-height: 19.2px;
+    // padding-bottom: 13px;
+    padding-left: 28px;
+    // padding-right: 32px;
+    // padding-top: 36px;
+    // position: relative;
+
+    text-align: left;
+    text-decoration-color: rgb(51, 51, 51);
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    white-space: nowrap;
+    z-index: 1;
+} 

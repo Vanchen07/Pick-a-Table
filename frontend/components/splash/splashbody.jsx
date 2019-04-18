@@ -1,7 +1,13 @@
 import React from 'react';
 import SearchField from '../search_field/search_field';
+import { Link} from 'react-router-dom';
 
 class SplashBody extends React.Component {
+
+    componentDidMount() {
+        this.props.fetchRestaurants()
+    }
+
     render() {
         return(
             <div className='splash-body-container'>
@@ -10,10 +16,10 @@ class SplashBody extends React.Component {
                         <div className="content-block">
                             <div className="dtp-title">
                                 <div className="content-block-header">
-                                    <div className="page-header-title">Find your table for any occasion</div>
+                                    <div className="page-header-title">Pick a table for any occasion</div>
                                 </div>
                                 <div className="content-block-body">
-                                    <SearchField/>
+                                    <SearchField {...this.props}/>
                                 </div>
                             </div>
                         </div>
@@ -35,9 +41,9 @@ class SplashBody extends React.Component {
                                                     <h2 className="popular-restaurant-heading">Popular Restaurants in San Francisco</h2>
                                                 </div>
                                                 <span className="view-all-bar">
-                                                    <a className="view-all" target="_blank" href="/search">
+                                                    <Link className="view-all" target="_blank" to="/search">
                                                         <span>View all</span>
-                                                    </a>
+                                                    </Link>
                                                 </span>
                                             </div>
                                             <div className="popular-restaurant-body">
@@ -45,7 +51,7 @@ class SplashBody extends React.Component {
                                                     <div className="popular-restaurant-main">
                                                         <div className="popular-restaurant-list">
                                                             <div className="popular-restaurant-list-item-first">
-                                                                <a target="_blank" href="#">
+                                                                <Link target="_blank" to="/Absinthe%20Brasserie%20and%20Bar">
                                                                     <div className="popular-restaurant-list-item-content">
                                                                         <div className="absinthe-head">
                                                                         </div>
@@ -66,21 +72,21 @@ class SplashBody extends React.Component {
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </a>
+                                                                </Link>
                                                             </div>
                                                             <div className="popular-restaurant-list-item">
-                                                                <a target="_blank" href="#">
+                                                                <Link target="_blank" to="/Marlowe">
                                                                     <div className="popular-restaurant-list-item-content">
                                                                         <div className="flour-head">
                                                                         </div>
                                                                         <div className="absinthe-body">
-                                                                            <h3 className="absinthe-body-name">Flour + Water</h3>
+                                                                            <h3 className="absinthe-body-name">Marlowe</h3>
                                                                             <div className="absinthe-body-attributes">
-                                                                                <span className="absinthe-body-attributes-cuisine">Italian</span>
+                                                                                <span className="absinthe-body-attributes-cuisine">American</span>
                                                                                 <span className="absinthe-body-attributes-dollars">
                                                                                     <span className="absinthe-body-attributes-dollars-signs">$$</span>
                                                                                 </span>
-                                                                                <span className="absinthe-body-attributes-neighborhood">Mission</span>
+                                                                                <span className="absinthe-body-attributes-neighborhood">SOMA</span>
                                                                             </div>
                                                                             <div className="absinthe-body-booked">
                                                                                 <div className="absinthe-body-booked-body">
@@ -90,10 +96,10 @@ class SplashBody extends React.Component {
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </a>
+                                                                </Link>
                                                             </div>
                                                             <div className="popular-restaurant-list-item">
-                                                                <a target="_blank" href="#">
+                                                                <Link target="_blank" to="/Cala">
                                                                     <div className="popular-restaurant-list-item-content">
                                                                         <div className="cala-head">
                                                                         </div>
@@ -114,21 +120,21 @@ class SplashBody extends React.Component {
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </a>
+                                                                </Link>
                                                             </div>
                                                             <div className="popular-restaurant-list-item-last">
-                                                                <a target="_blank" href="#">
+                                                                <Link target="_blank" to="/Venticello">
                                                                     <div className="popular-restaurant-list-item-content">
                                                                         <div className="le-head">
                                                                         </div>
                                                                         <div className="absinthe-body">
-                                                                            <h3 className="absinthe-body-name">Le P'tit Laurent</h3>
+                                                                            <h3 className="absinthe-body-name">Venticello</h3>
                                                                             <div className="absinthe-body-attributes">
-                                                                                <span className="absinthe-body-attributes-cuisine">French</span>
+                                                                                <span className="absinthe-body-attributes-cuisine">Italian</span>
                                                                                 <span className="absinthe-body-attributes-dollars">
-                                                                                    <span className="absinthe-body-attributes-dollars-signs">$$</span>
+                                                                                    <span className="absinthe-body-attributes-dollars-signs">$$$</span>
                                                                                 </span>
-                                                                                <span className="absinthe-body-attributes-neighborhood">Glen Park</span>
+                                                                                <span className="absinthe-body-attributes-neighborhood">Nob Hill</span>
                                                                             </div>
                                                                             <div className="absinthe-body-booked">
                                                                                 <div className="absinthe-body-booked-body">
@@ -138,7 +144,7 @@ class SplashBody extends React.Component {
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </a>
+                                                                </Link>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -151,9 +157,9 @@ class SplashBody extends React.Component {
                                                     <h2 className="popular-restaurant-heading">Top Cuisines in San Francisco</h2>
                                                 </div>
                                                 <span className="view-all-bar">
-                                                    <a className="view-all" target="_blank" href="/search">
+                                                    <Link className="view-all" target="_blank" to="/search">
                                                         <span>View all</span>
-                                                    </a>
+                                                    </Link>
                                                 </span>
                                             </div>  
                                             <div className="top-cuisines-body">

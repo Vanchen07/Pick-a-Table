@@ -18,7 +18,14 @@ const filtersReducer = function(state = initialState, action) {
         newState[action.data.filterName].splice(newState[action.data.filterName].indexOf(newState[action.data.filterValue]),1);
         return newState;
       case CLEAR_ALL_FILTERS:
-        return initialState;
+        let clearState = {
+          price: [],
+          neighborhood: [],
+          cuisine: [],
+          dress_code: [],
+          dining_style: []
+        };
+        return clearState;
       default:
         return state;
     }

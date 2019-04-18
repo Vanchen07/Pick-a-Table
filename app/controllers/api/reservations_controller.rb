@@ -1,6 +1,5 @@
 class Api::ReservationsController < ApplicationController
     def create
-        binding.pry
         @reservation = Reservation.new(reservation_params)
         
         if @reservation.save
@@ -17,6 +16,7 @@ class Api::ReservationsController < ApplicationController
 
     def show
         @reservation = Reservation.find_by(params[:id])
+        render :show
     end 
 
     def destroy

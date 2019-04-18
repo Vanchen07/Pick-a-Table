@@ -1,4 +1,10 @@
 import React from 'react';
+import 'react-dates/initialize';
+import { SingleDatePicker } from 'react-dates';
+import '../../../app/assets/stylesheets/api/react_dates_overrides.css';
+import 'react-dates/lib/css/_datepicker.css';
+import { ANCHOR_LEFT, HORIZONTAL_ORIENTATION, OPEN_UP } from 'react-dates/lib/constants';
+var moment = require('moment');
 
 class SearchField extends React.Component {
   constructor(props) {
@@ -9,6 +15,7 @@ class SearchField extends React.Component {
       matches: [],
       party: '',
       time: '',
+      date: moment()
     };
 
     this.selectName = this.selectName.bind(this);
@@ -28,14 +35,13 @@ class SearchField extends React.Component {
       const {allNeighborhoods} = this.props;
       let matches = [];
 
-      console.log(allNeighborhoods);
-
       allNeighborhoods.forEach(name => {
         const sub = name.slice(0, value.length);
         if (sub.toLowerCase() === value.toLowerCase()) {
           matches.push(name);
       } 
       });
+      
       if (matches.length === 0) {
         matches.push('No matches');
       }
@@ -59,6 +65,7 @@ class SearchField extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    
     this.props.addFilter("neighborhood", this.state.inputVal).then(this.props.history.push('/search'));
   }
 
@@ -66,12 +73,14 @@ class SearchField extends React.Component {
   render() {
     const results = this.state.matches.map((result, i) => {
       return (
-        <li className="search-result-match" key={i} onClick={this.selectName}>{result}</li>
+        <li className="search-result-match" key={i} onClick={this.selectName}>
+        {result}
+        </li>
         );
       });
     return(
       <div className="dtp-picker">  
-        <form className="dtp-picker-form" action="">
+        <form className="dtp-picker-form" onSubmit={this.handleSubmit}>
           <div className="dtp-picker-selectors-container">
             <div className="dtp-party-size">
               <label className="select-label-party" >{this.state.party === '' ? '2 People' : `${this.state.party} people`}<i class="fas fa-angle-down angle-icon"></i>
@@ -90,8 +99,8 @@ class SearchField extends React.Component {
               </label>
             </div>
             <div className="dtp-date-picker">
-              <a className="select-label-party">Date <i class="fas fa-angle-down angle-icon"></i></a>
-              
+              {/* <a className="select-label-party"> <i class="fas fa-angle-down angle-icon"></i></a> */}
+              <input className="date-dropdown-search" type="date" />
             </div>
             <div className="dtp-time-picker">
                 <label className="select-label-party" >{this.state.time === '' ? '7:00 PM' : `${this.state.time} PM`}<i class="fas fa-angle-down angle-icon"></i>
@@ -119,12 +128,17 @@ class SearchField extends React.Component {
                 value={this.state.inputVal}
                 placeholder='Neighborhood'/>
                 
-              <div className='search-matches-container'>
-                <ul className='search-matches'>
+              {/* <div className='search-matches-container'> */}
+                <ul className='search-matches-container search-matches'>
                   {results}
                 </ul>
-              </div>
+              {/* </div> */}
             </div>
+            {/* <button className="dtp-picker-button"
+                  onClick={this.handleSubmit} 
+                  value={this.state.inputVal}>
+                <span>Let's go</span>
+            </button> */}
             <input className="dtp-picker-button" type="submit" value="Let's go"/>
           </div>
         </form>

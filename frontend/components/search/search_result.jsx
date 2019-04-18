@@ -4,10 +4,9 @@ import EmptySearchResult from './empty_search_result';
 
 class SearchResult extends React.Component {
 
-
     passespriceFilter(restaurant) {
         if (this.props.filters.price.length > 0) {
-            return this.props.filters.price.includes(restaurant.price_range)
+            return this.props.filters.price.includes(restaurant.price_range);
         } else {
             return true;
         }
@@ -15,7 +14,7 @@ class SearchResult extends React.Component {
    
     passesNeighborhoodFilter(restaurant) {
         if(this.props.filters.neighborhood.length > 0) {
-            return this.props.filters.neighborhood.includes(restaurant.neighborhood_name)
+            return this.props.filters.neighborhood.includes(restaurant.neighborhood_name);
         } else {
             return true;
         }
@@ -23,7 +22,7 @@ class SearchResult extends React.Component {
 
     passesCuisineFilter(restaurant) {
         if(this.props.filters.cuisine.length > 0) {
-            return this.props.filters.cuisine.includes(restaurant.cuisine_type)
+            return this.props.filters.cuisine.includes(restaurant.cuisine_type);
         } else {
             return true;
         }
@@ -31,7 +30,7 @@ class SearchResult extends React.Component {
 
     passesDressCodeFilter(restaurant) {
         if (this.props.filters.dress_code.length > 0) {
-            return this.props.filters.dress_code.includes(restaurant.dress_code)
+            return this.props.filters.dress_code.includes(restaurant.dress_code);
         } else {
             return true;
         }
@@ -39,7 +38,7 @@ class SearchResult extends React.Component {
 
     passesDiningStyleFilter(restaurant) {
         if(this.props.filters.dining_style.length > 0) {
-            return this.props.filters.dining_style.includes(restaurant.dining_style)
+            return this.props.filters.dining_style.includes(restaurant.dining_style);
         } else {
             return true;
         }
@@ -78,7 +77,13 @@ class SearchResult extends React.Component {
                             <h3 className="filtered-result-header-title">106 tables available</h3>
                             <div className="sort-view-filter">
                                 <div className="sort-filters">
-                                    <div className="sort-dropdown">Featured</div>
+                                    <div className="sort-dropdown">
+                                        <button
+                                            onClick={this.props.clearAllFilters.bind(this)} 
+                                            value="">
+                                            <span>Clear All Filters</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

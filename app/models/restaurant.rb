@@ -30,7 +30,18 @@ class Restaurant < ApplicationRecord
     end
 
     def remaining_time_slots_for_today(limit: 6)
-        time_slots.where("start_time BETWEEN ? AND ?", DateTime.now, DateTime.now.end_of_day).first(6)
+        start_time = opening_hour.hour
+        end_time = closing_hour.hour
+        # total = start_time - end_time
+
+        time_slots = []
+        (start_time..end_time).step(1).to_a.each do |hour|
+           t = TimeSlot.where(restaurant_id: id, start_time: DateTime.now.change({hour: hour})).first_or_initialize
+           t.save!
+           time_slots << t
+        end
+        time_slots
+        # time_slots.where("start_time BETWEEN ? AND ?", DateTime.now, DateTime.now.end_of_day).first(6)
     end
 
     def formatted_opening_hour

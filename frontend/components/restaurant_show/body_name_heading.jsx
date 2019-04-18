@@ -11,4 +11,4 @@ class BodyNameHeading extends React.Component {
     }
 }
 
-export default BodyNameHeading;1
+export default BodyNameHeading;

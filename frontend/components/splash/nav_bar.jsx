@@ -42,7 +42,7 @@ class NavBar extends React.Component {
                             <Link to='/' className="cheers-logo icon"><i class="fas fa-cookie fa-2x"></i></Link>
                         </div>
                         <div className="logo-padding">
-                            <Link to='/' className="secondary">OpenTable</Link>
+                            <Link to='/' className="secondary">Pick-A-Table</Link>
                         </div>
                      
                         <div className="location-picker-dropdown">
@@ -62,7 +62,7 @@ class NavBar extends React.Component {
                                         <a href="#" >Civic Center</a>
                                         <a href="#" >Downtown</a>
                                         <a href="#" >Financial District</a>
-                                        <a href="#" >All neighborhoods</a>
+                                        <Link to="/search">All neighborhoods</Link>
                                     </div>
                                 ) : (
                                     null

@@ -9,7 +9,7 @@ class Splash extends React.Component {
         return (
         <div className="splash-display">
             <NavBar/>
-            <Splashbody/>
+            <Splashbody {...this.props}/>
             <Footer/>
         </div>
         );
