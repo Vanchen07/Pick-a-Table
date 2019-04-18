@@ -4,9 +4,25 @@ import { Link} from 'react-router-dom';
 
 class SplashBody extends React.Component {
 
+    // constructor(props) {
+    //     super(props);
+       
+    //     this.state = {
+    //       inputVal: '',
+    //     };
+    
+    //     this.handleSubmit = this.handleSubmit.bind(this);
+    //   }
+
     componentDidMount() {
-        this.props.fetchRestaurants()
+        this.props.fetchRestaurants();
     }
+
+    // handleSubmit(e) {
+    //     e.preventDefault();
+        
+    //     this.props.addFilter("neighborhood", this.state.inputVal).then(this.props.history.push('/search'));
+    // }
 
     render() {
         return(

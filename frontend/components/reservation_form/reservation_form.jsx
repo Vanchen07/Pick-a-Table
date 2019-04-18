@@ -35,7 +35,9 @@ class ReservationForm extends React.Component {
       time_slot_id: this.state.time_slot_id,
       date: this.state.date.format()
     });
-    this.props.createReservation(reservationParams);
+
+
+    this.props.createReservation(reservationParams).then(this.props.history.push('/search'));
 
       if(this.props.currentUserId){
         return swal("Thank You!", "Your reservation is confirmed!", "success");

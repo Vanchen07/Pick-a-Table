@@ -79,6 +79,7 @@ class SearchResult extends React.Component {
                                 <div className="sort-filters">
                                     <div className="sort-dropdown">
                                         <button
+                                            className="clear-filter-button"
                                             onClick={this.props.clearAllFilters.bind(this)} 
                                             value="">
                                             <span>Clear All Filters</span>
