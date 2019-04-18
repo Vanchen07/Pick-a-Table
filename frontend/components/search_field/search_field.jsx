@@ -73,9 +73,11 @@ class SearchField extends React.Component {
   render() {
     const results = this.state.matches.map((result, i) => {
       return (
-        <li className="search-result-match" key={i} onClick={this.selectName}>
-        {result}
-        </li>
+        <div className="select-label-neighborhood">
+          <li className="search-result-match" key={i} onClick={this.selectName}>
+            {result}
+          </li>
+        </div>
         );
       });
     return(
