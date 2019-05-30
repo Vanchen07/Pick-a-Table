@@ -58,10 +58,10 @@ class NavBar extends React.Component {
 
                                 {this.state.showMenu ? (
                                     <div className="dropdown-content-location" ref={(element) => {this.dropdownMenu = element;}}>
-                                        <a href="#" >Mission</a>
-                                        <a href="#" >Civic Center</a>
-                                        <a href="#" >Downtown</a>
-                                        <a href="#" >Financial District</a>
+                                        <Link to="/search">Mission</Link>
+                                        <Link to="/search">Civic Center</Link>
+                                        <Link to="/search">Downtown</Link>
+                                        <Link to="/search">Financial District</Link>
                                         <Link to="/search">All neighborhoods</Link>
                                     </div>
                                 ) : (

@@ -8,7 +8,7 @@ class Splash extends React.Component {
     render () {
         return (
         <div className="splash-display">
-            <NavBar/>
+            <NavBar {...this.props}/>
             <Splashbody {...this.props}/>
             <Footer/>
         </div>
