@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             showMenu: false,
@@ -13,6 +13,7 @@ class NavBar extends React.Component {
 
         this.showMenu = this.showMenu.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
+        // this.handleNeighborhood = this.handleNeighborhood.bind(this);
     }
 
     showMenu(e) {
@@ -30,6 +31,11 @@ class NavBar extends React.Component {
             });
         }
     }
+
+    // handleNeighborhood(e) {
+    //     e.preventDefault();
+    //     this.props.addFilter("neighborhood", 'mission').then(this.props.history.push('/search'));
+    // }
 
     render() {  
         return(
@@ -58,7 +64,7 @@ class NavBar extends React.Component {
 
                                 {this.state.showMenu ? (
                                     <div className="dropdown-content-location" ref={(element) => {this.dropdownMenu = element;}}>
-                                        <Link to="/search">Mission</Link>
+                                        <a href="/">Mission</a>
                                         <Link to="/search">Civic Center</Link>
                                         <Link to="/search">Downtown</Link>
                                         <Link to="/search">Financial District</Link>
