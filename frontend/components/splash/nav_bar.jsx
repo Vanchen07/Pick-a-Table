@@ -13,7 +13,7 @@ class NavBar extends React.Component {
 
         this.showMenu = this.showMenu.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
-        // this.handleNeighborhood = this.handleNeighborhood.bind(this);
+        this.handleNeighborhood = this.handleNeighborhood.bind(this);
     }
 
     showMenu(e) {
@@ -32,10 +32,10 @@ class NavBar extends React.Component {
         }
     }
 
-    // handleNeighborhood(e) {
-    //     e.preventDefault();
-    //     this.props.addFilter("neighborhood", 'mission').then(this.props.history.push('/search'));
-    // }
+    handleNeighborhood(e, neighborhood) {
+        e.preventDefault();
+        this.props.addFilter("neighborhood", neighborhood).then(this.props.history.push('/search'));
+    }
 
     render() {  
         return(
@@ -64,11 +64,11 @@ class NavBar extends React.Component {
 
                                 {this.state.showMenu ? (
                                     <div className="dropdown-content-location" ref={(element) => {this.dropdownMenu = element;}}>
-                                        <a href="/">Mission</a>
-                                        <Link to="/search">Civic Center</Link>
-                                        <Link to="/search">Downtown</Link>
-                                        <Link to="/search">Financial District</Link>
-                                        <Link to="/search">All neighborhoods</Link>
+                                        <a href="#" onClick={(e) => this.handleNeighborhood(e, 'Mission')}>Mission</a>
+                                        <a href="#" onClick={(e) => this.handleNeighborhood(e, 'Civic Center')}>Civic Center</a>
+                                        <a href="#" onClick={(e) => this.handleNeighborhood(e, 'Downtown')}>Downtown</a>
+                                        <a href="#" onClick={(e) => this.handleNeighborhood(e, 'Financial District')}>Financial District</a>
+                                        <Link to="/Search" onClick={this.handleNeighborhood}>All neighborhoods</Link>
                                     </div>
                                 ) : (
                                     null

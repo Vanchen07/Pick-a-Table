@@ -129,42 +129,17 @@ class SearchField extends React.Component {
                 value={this.state.inputVal}
                 placeholder='Neighborhood'/>
                 
-              {/* <div className='search-matches-container'> */}
+              
                 <ul className='search-matches-container search-matches'>
                   {results}
                 </ul>
-              {/* </div> */}
+             
             </div>
-            {/* <button className="dtp-picker-button"
-                  onClick={this.handleSubmit} 
-                  value={this.state.inputVal}>
-                <span>Let's go</span>
-            </button> */}
             <input className="dtp-picker-button" type="submit" value="Let's go"/>
           </div>
         </form>
       </div>
-      // <div className='search-container'>
-      //   <div className='search-field-container'>
-      //     <input
-      //       className='search-field'
-      //       onChange={this.handleInput}
-      //       value={this.state.inputVal}
-      //       placeholder='Where shall we go...'/>
-          
-      //     <div className='search-matches-container'>
-      //       <ul className='search-matches'>
-      //         {results}
-      //       </ul>
-      //     </div>
 
-      //   </div>
-      //   <button className='search-button'
-      //           onClick={this.handleSubmit} 
-      //           value={this.state.inputVal}>
-      //         <span>Let's go</span>
-      //     </button>
-      // </div>
     );
   }
 };
