@@ -4,25 +4,21 @@ import { Link} from 'react-router-dom';
 
 class SplashBody extends React.Component {
 
-    // constructor(props) {
-    //     super(props);
+    constructor(props) {
+        super(props);
        
-    //     this.state = {
-    //       inputVal: '',
-    //     };
-    
-    //     this.handleSubmit = this.handleSubmit.bind(this);
-    //   }
+        this.handleCuisine = this.handleCuisine.bind(this);
+      }
 
     componentDidMount() {
         this.props.fetchRestaurants();
     }
 
-    // handleSubmit(e) {
-    //     e.preventDefault();
+    handleCuisine(e, cuisinetype) {
+        e.preventDefault();
         
-    //     this.props.addFilter("neighborhood", this.state.inputVal).then(this.props.history.push('/search'));
-    // }
+        this.props.addFilter("cuisine", cuisinetype).then(this.props.history.push('/search'));
+    }
 
     render() {
         return(
@@ -183,7 +179,7 @@ class SplashBody extends React.Component {
                                                     <div className="top-cuisines-body-row">
                                                         <div className="top-cuisines-body-display">
                                                             <div className="top-cuisines-body-display-first">
-                                                                <a href="#">
+                                                                <a href="#" onClick={(e) => this.handleCuisine(e, 'American')}>
                                                                     <div className="top-cuisines-body-display-img-american">
                                                                         <h5 className="top-cuisines-body-display-heading">
                                                                             <span className="top-cuisines-body-display-heading-span">
@@ -194,7 +190,7 @@ class SplashBody extends React.Component {
                                                                 </a>
                                                             </div>
                                                             <div className="top-cuisines-body-display-middle">
-                                                                <a href="#">
+                                                                <a href="#" onClick={(e) => this.handleCuisine(e, 'Italian')}>
                                                                     <div className="top-cuisines-body-display-img-italian">
                                                                         <h5 className="top-cuisines-body-display-heading">
                                                                             <span className="top-cuisines-body-display-heading-span">
@@ -205,7 +201,7 @@ class SplashBody extends React.Component {
                                                                 </a>
                                                             </div>
                                                             <div className="top-cuisines-body-display-middle">
-                                                                <a href="#">
+                                                                <a href="#" onClick={(e) => this.handleCuisine(e, 'Seafood')}>
                                                                     <div className="top-cuisines-body-display-img-seafood">
                                                                         <h5 className="top-cuisines-body-display-heading">
                                                                             <span className="top-cuisines-body-display-heading-span">
@@ -216,7 +212,7 @@ class SplashBody extends React.Component {
                                                                 </a>
                                                             </div>
                                                             <div className="top-cuisines-body-display-middle">
-                                                                <a href="#">
+                                                                <a href="#" onClick={(e) => this.handleCuisine(e, 'French')}>
                                                                     <div className="top-cuisines-body-display-img-french">
                                                                         <h5 className="top-cuisines-body-display-heading">
                                                                             <span className="top-cuisines-body-display-heading-span">
