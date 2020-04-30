@@ -9,6 +9,7 @@ class FilteredResult extends React.Component {
     }
 
     render() {
+
         const { result } = this.props;
         return (   
             <div className="rest-row">

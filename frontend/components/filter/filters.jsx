@@ -7,7 +7,7 @@ import DiningStyleFilter from './dining_style_filter';
 
 class Filters extends React.Component {
     render () {
-        const { activeFilters, allPrices, allNeighborhoods, allCuisines, allDressCodes, allDiningStyles, addFilter, removeFilter, clearAllFilters } = this.props;
+        const { activeFilters, allPrices, allNeighborhoods, allCuisines, allDressCodes, allDiningStyles, addFilter, removeFilter, clearAllFilters, clearSearchRes } = this.props;
         return (
             <div className="filters-bar">
                 <div className="filters-wrapper">
@@ -19,6 +19,7 @@ class Filters extends React.Component {
                                 addFilter={addFilter}
                                 removeFilter={removeFilter}
                                 clearAllFilters={clearAllFilters}
+                                clearSearchRes={clearSearchRes}
                             />
                             <NeighborhoodFilter
                                 activeFilters={activeFilters.neighborhood}
@@ -26,6 +27,7 @@ class Filters extends React.Component {
                                 addFilter={addFilter}
                                 removeFilter={removeFilter}
                                 clearAllFilters={clearAllFilters}
+                                clearSearchRes={clearSearchRes}
                             />
                             <CuisineFilter
                                 activeFilters={activeFilters.cuisine}
@@ -33,6 +35,7 @@ class Filters extends React.Component {
                                 addFilter={addFilter}
                                 removeFilter={removeFilter}
                                 clearAllFilters={clearAllFilters}
+                                clearSearchRes={clearSearchRes}
                             />
                             <DressCodeFilter
                                 activeFilters={activeFilters.dress_code}
@@ -40,6 +43,7 @@ class Filters extends React.Component {
                                 addFilter={addFilter}
                                 removeFilter={removeFilter}
                                 clearAllFilters={clearAllFilters}
+                                clearSearchRes={clearSearchRes}
                             />
                             <DiningStyleFilter
                                 activeFilters={activeFilters.dining_style}
@@ -47,6 +51,7 @@ class Filters extends React.Component {
                                 addFilter={addFilter}
                                 removeFilter={removeFilter}
                                 clearAllFilters={clearAllFilters}
+                                clearSearchRes={clearSearchRes}
                             />
                         </div>
                     </div>

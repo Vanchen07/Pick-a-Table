@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../navbar/nav_bar';
+import NavBarContainer from '../navbar/nav_bar_container';
 import LocationLinkBar from '../search/location_link_bar';
 import RestaurantSplash from '../restaurant_show/restaurant_splash';
 import RestaurantMain from '../restaurant_show/restaurant_main';
@@ -23,7 +23,7 @@ class RestaurantShow extends React.Component {
         return (
             <div >
                 <div>
-                <NavBar/>
+                <NavBarContainer/>
                 </div>
                 <div>
                 <LocationLinkBar />

@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../navbar/nav_bar';
+import NavBarContainer from '../navbar/nav_bar_container';
 import LocationLinkBar from './location_link_bar';
 import SearchFieldContainer from '../search_field/search_field_container';
 import FiltersContainer from '../filter/filters_container';
@@ -13,7 +13,7 @@ class Search extends React.Component {
     render () {
         return (
             <div>
-                <NavBar/>
+                <NavBarContainer/>
                 <LocationLinkBar/>
                 <div className="search-control">
                     <div className="search-wrapper">

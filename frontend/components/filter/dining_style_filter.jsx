@@ -7,7 +7,7 @@ class DiningStyleFilter extends React.Component {
     }
  
     handleClick(dining_style) {
-        let {activeFilters, addFilter, removeFilter} = this.props;
+        let {activeFilters, addFilter, removeFilter } = this.props;
 
         return () => {
            

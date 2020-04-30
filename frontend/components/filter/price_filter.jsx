@@ -7,7 +7,7 @@ class PriceFilter extends React.Component {
     }
  
     handleClick(price) {
-        let {activeFilters, addFilter, removeFilter} = this.props;
+        let {activeFilters, addFilter, removeFilter } = this.props;
 
         return () => {
            

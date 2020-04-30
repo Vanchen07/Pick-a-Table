@@ -7,7 +7,7 @@ class NeighborhoodFilter extends React.Component {
     }
  
     handleClick(neighborhood) {
-        let {activeFilters, addFilter, removeFilter} = this.props;
+        let {activeFilters, addFilter, removeFilter } = this.props;
 
         return () => {
            

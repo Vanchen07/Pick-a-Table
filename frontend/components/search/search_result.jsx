@@ -1,6 +1,7 @@
 import React from 'react';
 import FilteredResult from './filtered_result';
 import EmptySearchResult from './empty_search_result';
+import { withRouter } from 'react-router-dom';
 
 class SearchResult extends React.Component {
 
@@ -44,23 +45,46 @@ class SearchResult extends React.Component {
         }
     }
 
+    filtersoff() {
+        let filters = Object.values(this.props.filters)
+        for (let i = 0; i < filters.length; i++) {
+            if (filters[i].size !== 0) return false;
+        }
+        return true;
+    }
+
     render () {
-        // debugger
-        let filteredSearchResults = Object.values(this.props.restaurants).filter((restaurant) => {
-            return this.passesNeighborhoodFilter(restaurant) 
-                && this.passesCuisineFilter(restaurant)
-                && this.passesDiningStyleFilter(restaurant)
-                && this.passesDressCodeFilter(restaurant)
-                && this.passespriceFilter(restaurant)
-        });
+  
+        let filtered;
 
-        let filtered = filteredSearchResults.map((result, idx) => {
-            return (
-                <FilteredResult key={idx} result={result}/>
-            )
-        });
+        // console.log(this.props)
 
+        if ( this.props.search.length > 0 && this.filtersoff()) {
+            // debugger
+            filtered = this.props.search.map((result, idx) => {
+                return (
+                    <FilteredResult key={idx} result={result} />
+                )
+            });
+            
+        } else {
 
+            let filteredSearchResults = Object.values(this.props.restaurants).filter((restaurant) => {
+                return this.passesNeighborhoodFilter(restaurant)
+                    && this.passesCuisineFilter(restaurant)
+                    && this.passesDiningStyleFilter(restaurant)
+                    && this.passesDressCodeFilter(restaurant)
+                    && this.passespriceFilter(restaurant)
+            });
+
+            filtered = filteredSearchResults.map((result, idx) => {
+                return (
+                    <FilteredResult key={idx} result={result} />
+                )
+            });
+        }
+        
+    
         return (    
             <div className='search-result-container'>
                 <div className="search-result-wrapper">
@@ -92,7 +116,8 @@ class SearchResult extends React.Component {
                         </div>
                         <div className="content-section">  
                             <div className="content-section-list">
-                                {filtered.length > 0 ? filtered : <EmptySearchResult/>}
+                                {filtered}
+                                {/* {filtered.length > 0 ? filtered : <EmptySearchResult/>} */}
                             </div>
                         </div>
                     </div>
@@ -103,4 +128,4 @@ class SearchResult extends React.Component {
     }
 }
 
-export default SearchResult;
+export default withRouter(SearchResult);

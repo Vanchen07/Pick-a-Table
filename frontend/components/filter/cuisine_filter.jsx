@@ -7,7 +7,8 @@ class CuisineFilter extends React.Component {
     }
  
     handleClick(cuisine) {
-        let {activeFilters, addFilter, removeFilter} = this.props;
+        let {activeFilters, addFilter, removeFilter } = this.props;
+
         return () => {
             if (activeFilters.has(cuisine)) {
                 return removeFilter("cuisine", cuisine);

@@ -7,7 +7,7 @@ class DressCodeFilter extends React.Component {
     }
  
     handleClick(dress_code) {
-        let {activeFilters, addFilter, removeFilter} = this.props;
+        let {activeFilters, addFilter, removeFilter } = this.props;
 
         return () => {
            

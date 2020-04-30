@@ -1,6 +1,7 @@
 import { addFilter, removeFilter, clearAllFilters } from '../../actions/filter_actions';
 import { connect } from 'react-redux';
 import Filters from './filters';
+import { clearSearchRes } from '../../actions/search_actions';
 
 const mapStateToProps = state => {
   return {
@@ -17,7 +18,8 @@ const mapDispatchToProps = dispatch => {
   return {
     addFilter: (filter, value) => dispatch(addFilter(filter, value)),
     removeFilter: (filter, value) => dispatch(removeFilter(filter, value)),
-    clearAllFilters: () => dispatch(clearAllFilters())
+    clearAllFilters: () => dispatch(clearAllFilters()),
+    clearSearchRes: () => dispatch(clearSearchRes())
   };
 };
 
