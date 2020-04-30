@@ -7,7 +7,7 @@ import DiningStyleFilter from './dining_style_filter';
 
 class Filters extends React.Component {
     render () {
-        const { activeFilters, allPrices, allNeighborhoods, allCuisines, allDressCodes, allDiningStyles } = this.props;
+        const { activeFilters, allPrices, allNeighborhoods, allCuisines, allDressCodes, allDiningStyles, addFilter, removeFilter, clearAllFilters } = this.props;
         return (
             <div className="filters-bar">
                 <div className="filters-wrapper">

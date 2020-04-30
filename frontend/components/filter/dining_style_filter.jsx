@@ -21,14 +21,13 @@ class DiningStyleFilter extends React.Component {
 
     render () {
      
-        const diningStyles = this.props.allDiningStyles.map(dining_style => {
+        const diningStyles = this.props.allDiningStyles.map((dining_style, i) => {
 
             return (
-                <div className='filter-component'>
-                    
+                <div className='filter-component' key={i}>
                     <input type="checkbox"
                         dining_style={dining_style} 
-                        activedining={this.props.activeFilters.includes(dining_style).toString()}
+                        // activedining={this.props.activeFilters.includes(dining_style).toString()}
                         onClick={this.handleClick(dining_style)}
                     />
                     <label className='filter-label'>{dining_style}</label>
@@ -41,7 +40,7 @@ class DiningStyleFilter extends React.Component {
                 <ul className="filters-list">
                     <li className="filter-option-neighborhood">
                         <span className="price-band-filter">
-                            <span className="price-icon"><i class="fas fa-concierge-bell"></i></span>
+                            <span className="price-icon"><i className="fas fa-concierge-bell"></i></span>
                             <span className="price-text">Dining Style</span>
                         </span>
                         <div className="price-band-menu">

@@ -21,14 +21,13 @@ class NeighborhoodFilter extends React.Component {
 
     render () {
      
-        const neighborhoods = this.props.allNeighborhoods.map(neighborhood => {
+        const neighborhoods = this.props.allNeighborhoods.map((neighborhood, i) => {
 
             return (
-                <div className='filter-component'>
-                    
+                <div className='filter-component' key={i}>
                     <input type="checkbox"
                         neighborhood={neighborhood} 
-                        activedining={this.props.activeFilters.includes(neighborhood).toString()}
+                        // activedining={this.props.activeFilters.includes(neighborhood).toString()}
                         onClick={this.handleClick(neighborhood)}
                     />
                     <label className='filter-label'>{neighborhood}</label>
@@ -41,7 +40,7 @@ class NeighborhoodFilter extends React.Component {
                 <ul className="filters-list">
                     <li className="filter-option-neighborhood">
                         <span className="price-band-filter">
-                            <span className="price-icon"><i class="far fa-building"></i></span>
+                            <span className="price-icon"><i className="far fa-building"></i></span>
                             <span className="price-text">Neighborhood</span>
                         </span>
                         <div className="price-band-menu">
