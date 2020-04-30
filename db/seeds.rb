@@ -6,17 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#create users
 User.destroy_all 
+Neighborhood.destroy_all
+Cuisine.destroy_all
+Restaurant.destroy_all
+Reservation.destroy_all
+TimeSlot.destroy_all
 
+#create users
 user1 = User.create({first_name: "guest", last_name: "user", email: "Demo_User@demo.com", password: "password"})
 
 
 require 'csv'
 
 #create neighborhoods
-Neighborhood.destroy_all
-
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'neigborhoods.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
@@ -25,8 +28,6 @@ csv.each do |row|
 end
 
 #create cuisines
-Cuisine.destroy_all
-
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'cuisines.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
@@ -34,8 +35,6 @@ csv.each do |row|
 end 
 
 #create restaurants
-Restaurant.destroy_all
-
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'restaurant_seed.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
@@ -50,11 +49,15 @@ csv.each do |row|
         dress_code: row[7],
         neighborhood_id: Neighborhood.find_by(name: row[8]).id,
         cuisine_id: Cuisine.find_by(name: row[9]).id,
-        opening_hour: Time.parse(row[10]),
-        closing_hour: Time.parse(row[11]),
+        opening_hour: row[10],
+        closing_hour: row[11],
+        capacity: rand(50..100)
     )
     puts "created #{row[0]}"
 end
 
-#generate default capacity
-Restaurant.update_all(capacity: 50)
+#for each restaurant, create a time slot entry for startime and endtime
+
+# Restaurant.all.each do |restaurant|
+#     TimeSlot.create!(restaurant_id: restaurant.id, )
+# end
