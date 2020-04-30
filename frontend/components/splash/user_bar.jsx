@@ -34,7 +34,7 @@ class UserBar extends React.Component {
     <div>
       <div className="dropdown">
         <button className="dropbtn" onClick={()=>{this.toggleDropdown('calendar')}}>
-          <i class="far fa-calendar-alt fa-2x"></i>
+          <i className="far fa-calendar-alt fa-2x"></i>
           {this.renderCalendarDropdown()}
         </button>
       </div>
