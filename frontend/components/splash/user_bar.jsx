@@ -41,7 +41,7 @@ class UserBar extends React.Component {
       <div className="dropdown">
           <button className="dropbtn-dashboard" onClick={()=>{this.toggleDropdown('user')}}>
             <span className="user-bar-name-span">Hi, {`${this.props.currentUser.first_name}`}</span>
-            <i class="fas fa-angle-down fa-lg"></i>
+            <i className="fas fa-angle-down fa-lg"></i>
             {this.renderUserDropdown()}
           </button>
       </div>
