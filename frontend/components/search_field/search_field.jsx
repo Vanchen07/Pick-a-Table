@@ -69,6 +69,27 @@ class SearchField extends React.Component {
     this.props.addFilter("neighborhood", this.state.neighborhood).then(this.props.history.push('/search'));
   }
 
+  renderParty() {
+    let party = [];
+
+    for (let i = 1; i <= 11; i++) {
+      party.push(i);
+    }
+
+    return party.map((qty, idx) => {
+      let val;
+      if (qty === 1) {
+        val = `${qty} person`;
+      } else if (qty === 11) {
+        val = 'Larger Party'
+      }
+      else {
+        val = `${qty} people`;
+      }
+
+    return <option key={idx} value={qty.toString()}>{val}</option>
+    })
+  }
 
   render() {
     const results = this.state.matches.map((result, i) => {
@@ -85,18 +106,9 @@ class SearchField extends React.Component {
         <form className="dtp-picker-form" onSubmit={this.handleSubmit}>
           <div className="dtp-picker-selectors-container">
             <div className="dtp-party-size">
-              <label className="select-label-party" >{this.state.party === '' ? '2 People' : `${this.state.party} people`}<i className="fas fa-angle-down angle-icon"></i>
+              <label className="select-label-party" >{this.state.party === '' ? '1 Person' : `${this.state.party} people`}<i className="fas fa-angle-down angle-icon"></i>
                 <select className="party-dropdown" value={this.state.party} onChange={this.handlePartyChange}>
-                    <option value="2">2 people</option>
-                    <option value="3">3 people</option>
-                    <option value="4">4 people</option>
-                    <option value="5">5 people</option>
-                    <option value="6">6 people</option>
-                    <option value="7">7 people</option>
-                    <option value="8">8 people</option>
-                    <option value="9">9 people</option>
-                    <option value="10">10 people</option>
-                    <option value="11">Larger Party</option>
+                  {this.renderParty()}
                 </select>
               </label>
             </div>
