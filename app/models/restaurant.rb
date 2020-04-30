@@ -17,10 +17,6 @@ class Restaurant < ApplicationRecord
         cuisine.name 
     end
 
-    def image_path
-        ActionController::Base.helpers.asset_path("restaurant_heads/#{name}")
-    end
-
     def remaining_capacity_for_time_slot(time_slot)
         capacity - reservations.where(time_slot_id: time_slot.id).sum(&:party_size)
     end
@@ -29,27 +25,36 @@ class Restaurant < ApplicationRecord
         remaining_capacity_for_time_slot(time_slot) <= 0
     end
 
-    def remaining_time_slots_for_today(limit: 6)
-        start_time = opening_hour.hour
-        end_time = closing_hour.hour
-        # total = start_time - end_time
+    def remaining_time_slots_for_today
+        current_time = DateTime.now.hour
 
-        time_slots = []
-        (start_time..end_time).step(1).to_a.each do |hour|
-           t = TimeSlot.where(restaurant_id: id, start_time: DateTime.now.change({hour: hour})).first_or_initialize
-           t.save!
-           time_slots << t
-        end
-        time_slots
-        # time_slots.where("start_time BETWEEN ? AND ?", DateTime.now, DateTime.now.end_of_day).first(6)
+        time_slots.where("start_time > ? ", current_time).where("restaurant_id = ? ", self.id).limit(6)
     end
 
     def formatted_opening_hour
-        opening_hour.strftime('%l:%M %p')
+        formatted_hour = 0
+
+        if opening_hour.to_i < 12
+            formatted_hour = "#{opening_hour}:00 AM"
+        else
+            temp = opening_hour.to_i - 12
+            formatted_hour = "#{temp.to_s}:00 PM"
+        end
+
+        formatted_hour
     end
 
     def formatted_closing_hour
-        closing_hour.strftime('%l:%M %p')
+        formatted_hour = 0
+
+        if closing_hour.to_i < 12
+            formatted_hour = "#{closing_hour}:00 AM"
+        else
+            temp = closing_hour.to_i - 12
+            formatted_hour = "#{temp.to_s}:00 PM"
+        end
+
+        formatted_hour
     end
 
 end

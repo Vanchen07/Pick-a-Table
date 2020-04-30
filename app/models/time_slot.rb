@@ -5,6 +5,14 @@ class TimeSlot < ApplicationRecord
     belongs_to :restaurant
 
     def formatted_start_time
-        start_time.strftime('%l:%M %p')
+        formatted_hour = 0
+
+        if start_time < 12
+            formatted_hour = "#{start_time.to_i}:00 AM"
+        else
+            formatted_hour = "#{start_time - 12}:00 PM"
+        end
+
+        formatted_hour
     end
 end

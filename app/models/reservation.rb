@@ -1,4 +1,5 @@
 class Reservation < ApplicationRecord
+    validates :party_size, :date, presence: true
 
     belongs_to :time_slot
 
