@@ -59,5 +59,6 @@ end
 #for each restaurant, create a time slot entry for startime and endtime
 
 # Restaurant.all.each do |restaurant|
+#     restaurant.opening_hour.to_
 #     TimeSlot.create!(restaurant_id: restaurant.id, )
 # end
