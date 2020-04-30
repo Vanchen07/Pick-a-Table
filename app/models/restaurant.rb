@@ -35,7 +35,7 @@ class Restaurant < ApplicationRecord
         formatted_hour = 0
 
         if opening_hour.to_i < 12
-            formatted_hour = "#{opening_hour}:00 AM"
+            formatted_hour = "#{opening_hour} AM"
         else
             temp = opening_hour.to_i - 12
             formatted_hour = "#{temp.to_s}:00 PM"
@@ -48,7 +48,7 @@ class Restaurant < ApplicationRecord
         formatted_hour = 0
 
         if closing_hour.to_i < 12
-            formatted_hour = "#{closing_hour}:00 AM"
+            formatted_hour = "#{closing_hour} AM"
         else
             temp = closing_hour.to_i - 12
             formatted_hour = "#{temp.to_s}:00 PM"
