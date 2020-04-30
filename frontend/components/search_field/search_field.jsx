@@ -84,7 +84,7 @@ class SearchField extends React.Component {
         <form className="dtp-picker-form" onSubmit={this.handleSubmit}>
           <div className="dtp-picker-selectors-container">
             <div className="dtp-party-size">
-              <label className="select-label-party" >{this.state.party === '' ? '2 People' : `${this.state.party} people`}<i class="fas fa-angle-down angle-icon"></i>
+              <label className="select-label-party" >{this.state.party === '' ? '2 People' : `${this.state.party} people`}<i className="fas fa-angle-down angle-icon"></i>
                 <select className="party-dropdown" value={this.state.party} onChange={this.handlePartyChange}>
                     <option value="2">2 people</option>
                     <option value="3">3 people</option>
@@ -104,7 +104,7 @@ class SearchField extends React.Component {
               <input className="date-dropdown-search" type="date" />
             </div>
             <div className="dtp-time-picker">
-                <label className="select-label-party" >{this.state.time === '' ? '7:00 PM' : `${this.state.time} PM`}<i class="fas fa-angle-down angle-icon"></i>
+                <label className="select-label-party" >{this.state.time === '' ? '7:00 PM' : `${this.state.time} PM`}<i className="fas fa-angle-down angle-icon"></i>
                 <select className="party-dropdown" value={this.state.time} onChange={this.handleTimeChange}>
                     <option value="5:00">5:00 PM</option>
                     <option value="5:30">5:30 PM</option>

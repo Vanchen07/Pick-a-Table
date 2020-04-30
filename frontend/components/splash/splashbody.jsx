@@ -78,7 +78,7 @@ class SplashBody extends React.Component {
                                                                             </div>
                                                                             <div className="absinthe-body-booked">
                                                                                 <div className="absinthe-body-booked-body">
-                                                                                    <div><i class="fas fa-chart-line"></i></div>
+                                                                                    <div><i className="fas fa-chart-line"></i></div>
                                                                                     <div className="absinthe-body-booked-text">Booked 134 times today</div>
                                                                                 </div>
                                                                             </div>
@@ -102,7 +102,7 @@ class SplashBody extends React.Component {
                                                                             </div>
                                                                             <div className="absinthe-body-booked">
                                                                                 <div className="absinthe-body-booked-body">
-                                                                                    <div><i class="fas fa-chart-line"></i></div>
+                                                                                    <div><i className="fas fa-chart-line"></i></div>
                                                                                     <div className="absinthe-body-booked-text">Booked 52 times today</div>
                                                                                 </div>
                                                                             </div>
@@ -126,7 +126,7 @@ class SplashBody extends React.Component {
                                                                             </div>
                                                                             <div className="absinthe-body-booked">
                                                                                 <div className="absinthe-body-booked-body">
-                                                                                    <div><i class="fas fa-chart-line"></i></div>
+                                                                                    <div><i className="fas fa-chart-line"></i></div>
                                                                                     <div className="absinthe-body-booked-text">Booked 53 times today</div>
                                                                                 </div>
                                                                             </div>
@@ -150,7 +150,7 @@ class SplashBody extends React.Component {
                                                                             </div>
                                                                             <div className="absinthe-body-booked">
                                                                                 <div className="absinthe-body-booked-body">
-                                                                                    <div><i class="fas fa-chart-line"></i></div>
+                                                                                    <div><i className="fas fa-chart-line"></i></div>
                                                                                     <div className="absinthe-body-booked-text">Booked 20 times today</div>
                                                                                 </div>
                                                                             </div>

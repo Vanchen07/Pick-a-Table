@@ -11,17 +11,17 @@ class Footer extends React.Component {
                 <div className="footer-social">
                     <div className="footer-social-icons">
                         <a target="_blank" href="https://www.linkedin.com/in/vanessa-chen-/">
-                            <i class="fab fa-linkedin fa-lg"></i>
+                            <i className="fab fa-linkedin fa-lg"></i>
                         </a>
                     </div>
                     <div className="footer-social-icons">
                         <a target="_blank" href="https://github.com/Vanchen07">
-                            <i class="fab fa-github fa-lg"></i>
+                            <i className="fab fa-github fa-lg"></i>
                         </a>
                     </div>
                     <div className="footer-social-icons">
                         <a target="_blank" href="https://angel.co/vanessa-chen-7">
-                            <i class="fab fa-angellist fa-lg"></i>
+                            <i className="fab fa-angellist fa-lg"></i>
                         </a>
                     </div>
                 </div>

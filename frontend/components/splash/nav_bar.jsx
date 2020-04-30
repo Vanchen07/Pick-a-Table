@@ -45,7 +45,7 @@ class NavBar extends React.Component {
                 <div className='bar-heading'>
                     <div className="bar-heading-left">
                         <div>
-                            <Link to='/' className="cheers-logo icon"><i class="fas fa-cookie fa-2x"></i></Link>
+                            <Link to='/' className="cheers-logo icon"><i className="fas fa-cookie fa-2x"></i></Link>
                         </div>
                         <div className="logo-padding">
                             <Link to='/' className="secondary">Pick-A-Table</Link>
@@ -55,10 +55,10 @@ class NavBar extends React.Component {
                             <div className="dropdown-location" >
                                 <button className="dropbtn-dashboard-location" onClick={this.showMenu}>
                                     <span className="user-bar-name-span-location">
-                                        <i class="fas fa-map-marker-alt fa-lg location-color"></i>
+                                        <i className="fas fa-map-marker-alt fa-lg location-color"></i>
                                     </span>
                                     
-                                    <i class="fas fa-angle-down fa-lg location-color"></i>
+                                    <i className="fas fa-angle-down fa-lg location-color"></i>
 
                                 </button>
 
