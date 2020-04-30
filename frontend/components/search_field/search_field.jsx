@@ -91,6 +91,31 @@ class SearchField extends React.Component {
     })
   }
 
+  convertTime(num) {
+    if (num < 12) {
+      return num + ":00 AM";
+    } else if (num === 12) {
+      return num + ":00 PM";
+    } else {
+      return (num % 12) + ":00 PM";
+    }
+  }
+
+
+  renderTime() {
+    let time = [];
+
+    for (let i = 9; i < 24; i++) {
+      time.push(i);
+    }
+
+    return time.map((time, idx) => {
+      let val = this.convertTime(time);
+
+      return <option key={idx} value={time}>{val}</option>
+    })
+  }
+
   render() {
     const results = this.state.matches.map((result, i) => {
       return (
@@ -117,21 +142,9 @@ class SearchField extends React.Component {
               <input className="date-dropdown-search" type="date" />
             </div>
             <div className="dtp-time-picker">
-                <label className="select-label-party" ><i className="fas fa-angle-down angle-icon"></i>
+              <label className="select-label-party" >{this.state.time === '' ? '9:00 AM' : this.convertTime(this.state.time)}<i className="fas fa-angle-down angle-icon"></i>
                 <select className="party-dropdown" value={this.state.time} onChange={this.handleTimeChange}>
-                  <option value="5:00" >5:00 PM</option>
-                    <option value="5:30">5:30 PM</option>
-                    <option value="6:00">6:00 PM</option>
-                    <option value="6:30">6:30 PM</option>
-                    <option value="7:00">7:00 PM</option>
-                    <option value="7:30">7:30 PM</option>
-                    <option value="8:00">8:00 PM</option>
-                    <option value="8:30">8:30 PM</option>
-                    <option value="9:00">9:00 PM</option>
-                    <option value="9:30">9:30 PM</option>
-                    <option value="10:00">10:00 PM</option>
-                    <option value="10:30">10:30 PM</option>
-                    <option value="11:00">11:00 PM</option>
+                  {this.renderTime()}
                 </select>
               </label>
             </div>
