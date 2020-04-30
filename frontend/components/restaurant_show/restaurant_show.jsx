@@ -1,7 +1,6 @@
 import React from 'react';
 import NavBarContainer from '../navbar/nav_bar_container';
 import LocationLinkBar from '../search/location_link_bar';
-import RestaurantSplash from '../restaurant_show/restaurant_splash';
 import RestaurantMain from '../restaurant_show/restaurant_main';
 
 
