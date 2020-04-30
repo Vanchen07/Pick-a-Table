@@ -16,7 +16,6 @@ class SplashBody extends React.Component {
 
     handleCuisine(e, cuisinetype) {
         e.preventDefault();
-        
         this.props.addFilter("cuisine", cuisinetype).then(this.props.history.push('/search'));
     }
 

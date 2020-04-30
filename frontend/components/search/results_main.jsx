@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SearchResultContainer from './search_result_container';
+import SearchResult from './search_result';
 import FiltersContainer from '../filter/filters_container';
 
 class ResultsMain extends React.Component {
@@ -8,7 +8,7 @@ class ResultsMain extends React.Component {
         return (
             <div className="results-main-container">
                 <FiltersContainer {...this.props}/>
-                <SearchResultContainer {...this.props}/>
+                <SearchResult {...this.props}/>
             </div>
         );
     }

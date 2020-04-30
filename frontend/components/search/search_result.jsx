@@ -6,7 +6,7 @@ class SearchResult extends React.Component {
 
     passespriceFilter(restaurant) {
         if (this.props.filters.price.length > 0) {
-            return this.props.filters.price.includes(restaurant.price_range);
+            return this.props.filters.price.has(restaurant.price_range);
         } else {
             return true;
         }
@@ -14,7 +14,7 @@ class SearchResult extends React.Component {
    
     passesNeighborhoodFilter(restaurant) {
         if(this.props.filters.neighborhood.length > 0) {
-            return this.props.filters.neighborhood.includes(restaurant.neighborhood_name);
+            return this.props.filters.neighborhood.has(restaurant.neighborhood_name);
         } else {
             return true;
         }
@@ -22,7 +22,7 @@ class SearchResult extends React.Component {
 
     passesCuisineFilter(restaurant) {
         if(this.props.filters.cuisine.length > 0) {
-            return this.props.filters.cuisine.includes(restaurant.cuisine_type);
+            return this.props.filters.cuisine.has(restaurant.cuisine_type);
         } else {
             return true;
         }
@@ -30,7 +30,7 @@ class SearchResult extends React.Component {
 
     passesDressCodeFilter(restaurant) {
         if (this.props.filters.dress_code.length > 0) {
-            return this.props.filters.dress_code.includes(restaurant.dress_code);
+            return this.props.filters.dress_code.has(restaurant.dress_code);
         } else {
             return true;
         }
@@ -54,7 +54,6 @@ class SearchResult extends React.Component {
                 && this.passespriceFilter(restaurant)
         });
 
-        // let total = filteredSearchResults.length
         let filtered = filteredSearchResults.map((result, idx) => {
             return (
                 <FilteredResult key={idx} result={result}/>
@@ -93,11 +92,10 @@ class SearchResult extends React.Component {
                         </div>
                         <div className="content-section">  
                             <div className="content-section-list">
-                                {filtered.length > 0 ? filtered : EmptySearchResult}
+                                {filtered.length > 0 ? filtered : <EmptySearchResult/>}
                             </div>
                         </div>
                     </div>
-                    {/* <Link to={`/${result.name}`}>{result.name}</Link> */}
                 </div>
             </div>
             </div>
