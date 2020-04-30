@@ -126,6 +126,7 @@ class SearchField extends React.Component {
         </div>
         );
       });
+
     return(
       <div className="dtp-picker">  
         <form className="dtp-picker-form" onSubmit={this.handleSubmit}>

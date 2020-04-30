@@ -98,7 +98,7 @@ class SearchResult extends React.Component {
                 <div>
                     <div className='filtered-result-header'>
                         <div className="filtered-result-header-bar">
-                            <h3 className="filtered-result-header-title">106 tables available</h3>
+                                <h3 className="filtered-result-header-title">{`${filtered.length} tables available`}</h3>
                             <div className="sort-view-filter">
                                 <div className="sort-filters">
                                     <div className="sort-dropdown">

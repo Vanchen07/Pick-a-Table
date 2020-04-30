@@ -29,6 +29,15 @@ class PriceFilter extends React.Component {
                 defaultChecked = "";
             }
 
+            let priceSym;
+            if (price === 2) {
+                priceSym = '$$';
+            } else if (price === 3) {
+                priceSym = '$$$';
+            } else if (price === 4) {
+                priceSym = '$$$$'
+            }
+
             return (
                 <div className='filter-component' key={i}>
                     <input type="checkbox"
@@ -37,7 +46,7 @@ class PriceFilter extends React.Component {
                         // activedining={this.props.activeFilters.includes(price).toString()}
                         onClick={this.handleClick(price)}
                     />
-                    <label className='filter-label'>{price}</label>
+                    <label className='filter-label'>{priceSym}</label>
                 </div>
             );
         });
