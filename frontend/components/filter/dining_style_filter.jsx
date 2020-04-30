@@ -22,11 +22,19 @@ class DiningStyleFilter extends React.Component {
     render () {
      
         const diningStyles = this.props.allDiningStyles.map((dining_style, i) => {
+            let checked;
+
+            if (this.props.activeFilters.has(dining_style)) {
+                checked = "checked";
+            } else {
+                checked = "";
+            }
 
             return (
                 <div className='filter-component' key={i}>
                     <input type="checkbox"
                         dining_style={dining_style} 
+                        checked={checked}
                         // activedining={this.props.activeFilters.includes(dining_style).toString()}
                         onClick={this.handleClick(dining_style)}
                     />

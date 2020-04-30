@@ -21,10 +21,19 @@ class PriceFilter extends React.Component {
 
     render () {
         const prices = this.props.allPrices.map((price, i) => {
+            let checked;
+
+            if (this.props.activeFilters.has(price)) {
+                checked = "checked";
+            } else {
+                checked = "";
+            }
+
             return (
                 <div className='filter-component' key={i}>
                     <input type="checkbox"
                         price={price} 
+                        checked={checked}
                         // activedining={this.props.activeFilters.includes(price).toString()}
                         onClick={this.handleClick(price)}
                     />

@@ -22,11 +22,19 @@ class DressCodeFilter extends React.Component {
     render () {
      
         const dressCodes = this.props.allDressCodes.map((dress_code, i) => {
+            let checked;
+
+            if (this.props.activeFilters.has(dress_code)) {
+                checked = "checked";
+            } else {
+                checked = "";
+            }
 
             return (
                 <div className='filter-component' key={i}>
                     <input type="checkbox"
                         dress_code={dress_code} 
+                        checked={checked}
                         // activedining={this.props.activeFilters.includes(dress_code).toString()}
                         onClick={this.handleClick(dress_code)}
                     />
