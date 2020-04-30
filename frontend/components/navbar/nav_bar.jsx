@@ -34,10 +34,11 @@ class NavBar extends React.Component {
 
     handleNeighborhood(e, neighborhood) {
         e.preventDefault();
-        let searchRes = Object.values(this.props.restaurants).filter((restaurant) => {
-            return restaurant.neighborhood_name === neighborhood;
-        })
-        this.props.receiveSearch(searchRes).then(this.props.history.push('/search'));
+        // let searchRes = Object.values(this.props.restaurants).filter((restaurant) => {
+        //     return restaurant.neighborhood_name === neighborhood;
+        // })
+        // this.props.receiveSearch(searchRes).then(this.props.history.push('/search'));
+        this.props.addFilter("neighborhood", neighborhood).then(this.props.history.push('/search'));
     }
 
     render() {  

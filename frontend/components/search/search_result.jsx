@@ -59,15 +59,15 @@ class SearchResult extends React.Component {
 
         // console.log(this.props)
 
-        if ( this.props.search.length > 0 && this.filtersoff()) {
-            // debugger
-            filtered = this.props.search.map((result, idx) => {
-                return (
-                    <FilteredResult key={idx} result={result} />
-                )
-            });
+        // if ( this.props.search.length > 0 && this.filtersoff()) {
+        //     // debugger
+        //     filtered = this.props.search.map((result, idx) => {
+        //         return (
+        //             <FilteredResult key={idx} result={result} />
+        //         )
+        //     });
             
-        } else {
+        // } else {
 
             let filteredSearchResults = Object.values(this.props.restaurants).filter((restaurant) => {
                 return this.passesNeighborhoodFilter(restaurant)
@@ -82,7 +82,8 @@ class SearchResult extends React.Component {
                     <FilteredResult key={idx} result={result} />
                 )
             });
-        }
+            
+        // }
         
     
         return (    

@@ -22,11 +22,18 @@ class NeighborhoodFilter extends React.Component {
     render () {
      
         const neighborhoods = this.props.allNeighborhoods.map((neighborhood, i) => {
+            let checked;
+            if (this.props.activeFilters.has(neighborhood)) {
+                checked = "checked";
+            } else {
+                checked = "";
+            }
 
             return (
                 <div className='filter-component' key={i}>
                     <input type="checkbox"
                         neighborhood={neighborhood} 
+                        checked={checked}
                         // activedining={this.props.activeFilters.includes(neighborhood).toString()}
                         onClick={this.handleClick(neighborhood)}
                     />
