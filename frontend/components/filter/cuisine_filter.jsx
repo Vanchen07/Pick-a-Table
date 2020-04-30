@@ -21,19 +21,19 @@ class CuisineFilter extends React.Component {
     render () {
 
         const cuisines = this.props.allCuisines.map((cuisine, i) => {
-            let checked;
+            let defaultChecked;
 
             if (this.props.activeFilters.has(cuisine)) {
-                checked = "checked";
+                defaultChecked = "checked";
             } else {
-                checked = "";
+                defaultChecked = "";
             }
             
             return (
                 <div className='filter-component' key={i}>
                     <input type="checkbox"
                         cuisine={cuisine}
-                        checked={checked} 
+                        defaultChecked={defaultChecked} 
                         // activedining={this.props.activeFilters.includes(cuisine).toString()}
                         onClick={this.handleClick(cuisine)}
                     />
