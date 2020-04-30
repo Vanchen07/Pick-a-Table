@@ -18,7 +18,7 @@ class CuisineFilter extends React.Component {
     }
 
     render () {
-     
+
         const cuisines = this.props.allCuisines.map((cuisine, i) => {
 
             return (

@@ -2,7 +2,8 @@ import React from 'react';
 import NavBar from '../navbar/nav_bar';
 import LocationLinkBar from './location_link_bar';
 import SearchFieldContainer from '../search_field/search_field_container';
-import ResultsMain from './results_main';
+import FiltersContainer from '../filter/filters_container';
+import SearchResultContainer from './search_result_container';
 
 class Search extends React.Component {
     componentDidMount() {
@@ -21,7 +22,11 @@ class Search extends React.Component {
                         </div>
                     </div>
                 </div>
-                <ResultsMain {...this.props}/>
+                <div className="results-main-container">
+                    <FiltersContainer {...this.props} />
+                    <SearchResultContainer {...this.props} />
+                </div>
+                {/* <ResultsMainContainer {...this.props}/> */}
             </div>
         );
     }

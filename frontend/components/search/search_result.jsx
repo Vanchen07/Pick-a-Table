@@ -5,7 +5,7 @@ import EmptySearchResult from './empty_search_result';
 class SearchResult extends React.Component {
 
     passespriceFilter(restaurant) {
-        if (this.props.filters.price.length > 0) {
+        if (this.props.filters.price.size > 0) {
             return this.props.filters.price.has(restaurant.price_range);
         } else {
             return true;
@@ -13,7 +13,7 @@ class SearchResult extends React.Component {
     }
    
     passesNeighborhoodFilter(restaurant) {
-        if(this.props.filters.neighborhood.length > 0) {
+        if(this.props.filters.neighborhood.size > 0) {
             return this.props.filters.neighborhood.has(restaurant.neighborhood_name);
         } else {
             return true;
@@ -21,7 +21,7 @@ class SearchResult extends React.Component {
     }
 
     passesCuisineFilter(restaurant) {
-        if(this.props.filters.cuisine.length > 0) {
+        if(this.props.filters.cuisine.size > 0) {
             return this.props.filters.cuisine.has(restaurant.cuisine_type);
         } else {
             return true;
@@ -29,7 +29,7 @@ class SearchResult extends React.Component {
     }
 
     passesDressCodeFilter(restaurant) {
-        if (this.props.filters.dress_code.length > 0) {
+        if (this.props.filters.dress_code.size > 0) {
             return this.props.filters.dress_code.has(restaurant.dress_code);
         } else {
             return true;
@@ -37,15 +37,15 @@ class SearchResult extends React.Component {
     }
 
     passesDiningStyleFilter(restaurant) {
-        if(this.props.filters.dining_style.length > 0) {
-            return this.props.filters.dining_style.includes(restaurant.dining_style);
+        if(this.props.filters.dining_style.size > 0) {
+            return this.props.filters.dining_style.has(restaurant.dining_style);
         } else {
             return true;
         }
     }
 
     render () {
-        
+        // debugger
         let filteredSearchResults = Object.values(this.props.restaurants).filter((restaurant) => {
             return this.passesNeighborhoodFilter(restaurant) 
                 && this.passesCuisineFilter(restaurant)

@@ -17,7 +17,8 @@ const filtersReducer = function(state = initialState, action) {
         newState[action.data.filterName].add(action.data.filterValue);
         return newState;
       case REMOVE_FILTER:
-        newState[action.data.filterName].delete(newState[action.data.filterValue]);
+        let val = action.data.filterValue;
+        newState[action.data.filterName].delete(val);
         return newState;
       case CLEAR_ALL_FILTERS:
         let clearState = {
