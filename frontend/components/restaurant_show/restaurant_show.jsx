@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../splash/nav_bar';
+import NavBar from '../navbar/nav_bar';
 import LocationLinkBar from '../restaurant_show/location_link_bar';
 import RestaurantSplash from '../restaurant_show/restaurant_splash';
 import RestaurantMain from '../restaurant_show/restaurant_main';

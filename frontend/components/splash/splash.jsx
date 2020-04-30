@@ -1,7 +1,7 @@
 import React from 'react';
-import NavBar from './nav_bar';
+import NavBar from '../navbar/nav_bar';
 import Splashbody from './splashbody';
-import Footer from './footer';
+import Footer from '../footer/footer';
 
 class Splash extends React.Component {
    

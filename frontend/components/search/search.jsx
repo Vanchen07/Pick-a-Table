@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../splash/nav_bar';
+import NavBar from '../navbar/nav_bar';
 import LocationLinkBar from '../restaurant_show/location_link_bar';
 import SearchFieldContainer from '../search_field/search_field_container';
 import ResultsMain from './results_main';
