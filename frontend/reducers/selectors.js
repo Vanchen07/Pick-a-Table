@@ -1,5 +1,3 @@
-
-
 export const findRestaurantByName = ({entities: {restaurants}}, restaurantName) => {
     let restaurantArray = Object.values(restaurants)
     
@@ -8,5 +6,9 @@ export const findRestaurantByName = ({entities: {restaurants}}, restaurantName) 
     }
 
     return null
+}
+
+export const selectFilters = (state, filter) => {
+    return [...new Set(Object.values(state.entities.restaurants).map((res) => (res.filter)))]
 }
 

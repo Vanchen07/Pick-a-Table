@@ -1,16 +1,17 @@
 import { addFilter, removeFilter, clearAllFilters } from '../../actions/filter_actions';
 import { connect } from 'react-redux';
 import Filters from './filters';
+import { selectFilters } from '../../reducers/selectors';
 
 
 const mapStateToProps = state => {
   return {
     activeFilters: state.ui.filters,
-    allPrices: [...new Set(Object.values(state.entities.restaurants).map((res)=> (res.price_range)))],  
-    allNeighborhoods: [...new Set(Object.values(state.entities.restaurants).map((res)=> (res.neighborhood_name)))],
-    allCuisines: [...new Set(Object.values(state.entities.restaurants).map((res)=> (res.cuisine_type)))],
-    allDressCodes: [...new Set(Object.values(state.entities.restaurants).map((res)=> (res.dress_code)))],
-    allDiningStyles: [...new Set(Object.values(state.entities.restaurants).map((res)=> (res.dining_style)))]
+    allPrices: selectFilters(state, price_range),  
+    allNeighborhoods: selectFilters(state, neighborhood_name),
+    allCuisines: selectFilters(state, cuisine_type),
+    allDressCodes: selectFilters(state, dress_code),
+    allDiningStyles: selectFilters(state, dining_style)
   };
 };
 
