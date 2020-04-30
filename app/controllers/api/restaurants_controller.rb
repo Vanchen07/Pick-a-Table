@@ -9,4 +9,9 @@ class Api::RestaurantsController < ApplicationController
         render :show
     end 
 
+    private
+    def restaurant_params
+        
+    end
+
 end

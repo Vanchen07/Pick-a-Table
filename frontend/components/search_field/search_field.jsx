@@ -11,11 +11,11 @@ class SearchField extends React.Component {
     super(props);
    
     this.state = {
-      inputVal: '',
       matches: [],
-      party: '',
+      date: moment(),
       time: '',
-      date: moment()
+      party: '',
+      neighborhood: ''
     };
 
     this.selectName = this.selectName.bind(this);
@@ -27,7 +27,7 @@ class SearchField extends React.Component {
 
   handleInput(event) {
     const value = event.currentTarget.value;
-    this.setState({inputVal: value});
+    this.setState({neighborhood: value});
 
     if(value.length === 0 ) {
       this.setState({matches: []});
@@ -59,13 +59,14 @@ class SearchField extends React.Component {
 
   selectName(event) {
     const name = event.currentTarget.innerText;
-    this.setState({inputVal: name});
+    this.setState({neighborhood: name});
     this.setState({matches: []});
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.addFilter("neighborhood", this.state.inputVal).then(this.props.history.push('/search'));
+    // console.log(this.state)
+    this.props.addFilter("neighborhood", this.state.neighborhood).then(this.props.history.push('/search'));
   }
 
 
@@ -104,9 +105,9 @@ class SearchField extends React.Component {
               <input className="date-dropdown-search" type="date" />
             </div>
             <div className="dtp-time-picker">
-                <label className="select-label-party" >{this.state.time === '' ? '7:00 PM' : `${this.state.time} PM`}<i className="fas fa-angle-down angle-icon"></i>
+                <label className="select-label-party" ><i className="fas fa-angle-down angle-icon"></i>
                 <select className="party-dropdown" value={this.state.time} onChange={this.handleTimeChange}>
-                    <option value="5:00">5:00 PM</option>
+                  <option value="5:00" >5:00 PM</option>
                     <option value="5:30">5:30 PM</option>
                     <option value="6:00">6:00 PM</option>
                     <option value="6:30">6:30 PM</option>
@@ -126,7 +127,7 @@ class SearchField extends React.Component {
               <input
                 className="select-label-party search-input"
                 onChange={this.handleInput}
-                value={this.state.inputVal}
+                value={this.state.neighborhood}
                 placeholder='Neighborhood'/>
                 
               
