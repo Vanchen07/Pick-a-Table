@@ -1,5 +1,4 @@
 import React from 'react';
-
 import SearchResult from './search_result';
 import FiltersContainer from '../filter/filters_container';
 

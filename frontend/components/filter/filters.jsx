@@ -7,7 +7,7 @@ import DiningStyleFilter from './dining_style_filter';
 
 class Filters extends React.Component {
     render () {
-        const { activeFilters } = this.props;
+        const { activeFilters, allPrices, allNeighborhoods, allCuisines, allDressCodes, allDiningStyles } = this.props;
         return (
             <div className="filters-bar">
                 <div className="filters-wrapper">
@@ -15,38 +15,38 @@ class Filters extends React.Component {
                         <div className="column">
                             <PriceFilter
                                 activeFilters={activeFilters.price}
-                                allPrices={this.props.allPrices}
-                                addFilter={this.props.addFilter}
-                                removeFilter={this.props.removeFilter}
-                                clearAllFilters={this.props.clearAllFilters}
+                                allPrices={allPrices}
+                                addFilter={addFilter}
+                                removeFilter={removeFilter}
+                                clearAllFilters={clearAllFilters}
                             />
                             <NeighborhoodFilter
                                 activeFilters={activeFilters.neighborhood}
-                                allNeighborhoods={this.props.allNeighborhoods}
-                                addFilter={this.props.addFilter}
-                                removeFilter={this.props.removeFilter}
-                                clearAllFilters={this.props.clearAllFilters}
+                                allNeighborhoods={allNeighborhoods}
+                                addFilter={addFilter}
+                                removeFilter={removeFilter}
+                                clearAllFilters={clearAllFilters}
                             />
                             <CuisineFilter
                                 activeFilters={activeFilters.cuisine}
-                                allCuisines={this.props.allCuisines}
-                                addFilter={this.props.addFilter}
-                                removeFilter={this.props.removeFilter}
-                                clearAllFilters={this.props.clearAllFilters}
+                                allCuisines={allCuisines}
+                                addFilter={addFilter}
+                                removeFilter={removeFilter}
+                                clearAllFilters={clearAllFilters}
                             />
                             <DressCodeFilter
                                 activeFilters={activeFilters.dress_code}
-                                allDressCodes={this.props.allDressCodes}
-                                addFilter={this.props.addFilter}
-                                removeFilter={this.props.removeFilter}
-                                clearAllFilters={this.props.clearAllFilters}
+                                allDressCodes={allDressCodes}
+                                addFilter={addFilter}
+                                removeFilter={removeFilter}
+                                clearAllFilters={clearAllFilters}
                             />
                             <DiningStyleFilter
                                 activeFilters={activeFilters.dining_style}
-                                allDiningStyles={this.props.allDiningStyles}
-                                addFilter={this.props.addFilter}
-                                removeFilter={this.props.removeFilter}
-                                clearAllFilters={this.props.clearAllFilters}
+                                allDiningStyles={allDiningStyles}
+                                addFilter={addFilter}
+                                removeFilter={removeFilter}
+                                clearAllFilters={clearAllFilters}
                             />
                         </div>
                     </div>
