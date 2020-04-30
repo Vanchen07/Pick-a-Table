@@ -11,7 +11,7 @@ class PriceFilter extends React.Component {
 
         return () => {
            
-            if (activeFilters.includes(price)) {
+            if (activeFilters.has(price)) {
                 return removeFilter("price", price);
             } else {
                 return addFilter("price", price);

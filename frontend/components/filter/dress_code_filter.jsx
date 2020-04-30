@@ -11,7 +11,7 @@ class DressCodeFilter extends React.Component {
 
         return () => {
            
-            if (activeFilters.includes(dress_code)) {
+            if (activeFilters.has(dress_code)) {
                 return removeFilter("dress_code", dress_code);
             } else {
                 return addFilter("dress_code", dress_code);

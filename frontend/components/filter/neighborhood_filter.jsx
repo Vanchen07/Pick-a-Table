@@ -11,7 +11,7 @@ class NeighborhoodFilter extends React.Component {
 
         return () => {
            
-            if (activeFilters.includes(neighborhood)) {
+            if (activeFilters.has(neighborhood)) {
                 return removeFilter("neighborhood", neighborhood);
             } else {
                 return addFilter("neighborhood", neighborhood);

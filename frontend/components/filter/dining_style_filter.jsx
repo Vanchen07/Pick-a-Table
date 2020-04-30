@@ -11,7 +11,7 @@ class DiningStyleFilter extends React.Component {
 
         return () => {
            
-            if (activeFilters.includes(dining_style)) {
+            if (activeFilters.has(dining_style)) {
                 return removeFilter("dining_style", dining_style);
             } else {
                 return addFilter("dining_style", dining_style);
