@@ -28,9 +28,7 @@ class RestaurantShow extends React.Component {
                 </div>
                 <div className="restaurant-show-container">
                     <div className="rest-show-hero">
-                        {/* <img src={`window.imagesURL.${this.props.restaurant.name}`} alt={this.props.restaurant.name} className="splash-photo"/> */}
                         <img className="splash-photo" src="https://resizer.otstatic.com/v2/photos/wide-huge/24090351.jpg" alt=""/>
-                        {/* <RestaurantSplash {...this.props}/> */}
                     </div>
                     <div className="rest-show-body">
                         <RestaurantMain {...this.props}/>
