@@ -14,7 +14,7 @@ class FilteredResult extends React.Component {
         return (   
             <div className="rest-row">
                 <div className="rest-row-img">
-                    <img src="//resizer.otstatic.com/v2/profiles/legacy/51673.jpg" alt=""/>
+                    <img src="https://images.otstatic.com/prod/25943158/1/medium.jpg" alt=""/>
                 </div>
                 <div className="rest-row-info">
                         <Link className="rest-name" to={`/${result.name}`}>{result.name}</Link>

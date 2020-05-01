@@ -274,6 +274,11 @@
     cursor: pointer;
 }
 
+
+.clear-filter-button:focus {
+    outline: none;
+}
+
 .content-section-header {
     height: 100%;
     padding: 0;

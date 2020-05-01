@@ -45,45 +45,38 @@ class SearchResult extends React.Component {
         }
     }
 
-    filtersoff() {
-        let filters = Object.values(this.props.filters)
-        for (let i = 0; i < filters.length; i++) {
-            if (filters[i].size !== 0) return false;
+    clearFilterButton() {
+        let button = document.getElementById("clearFilter");
+        // button.addEventListener("click", () => this.checkFilters())
+        let inputs = document.querySelectorAll("input[type='checkbox']");
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i].checked = false;
         }
-        return true;
+    }
+
+    handleClearFilter() {
+        this.props.clearAllFilters();
+        this.clearFilterButton();
     }
 
     render () {
   
         let filtered;
 
-        // console.log(this.props)
+        let filteredSearchResults = Object.values(this.props.restaurants).filter((restaurant) => {
+            return this.passesNeighborhoodFilter(restaurant)
+                && this.passesCuisineFilter(restaurant)
+                && this.passesDiningStyleFilter(restaurant)
+                && this.passesDressCodeFilter(restaurant)
+                && this.passespriceFilter(restaurant)
+        });
 
-        // if ( this.props.search.length > 0 && this.filtersoff()) {
-        //     // debugger
-        //     filtered = this.props.search.map((result, idx) => {
-        //         return (
-        //             <FilteredResult key={idx} result={result} />
-        //         )
-        //     });
-            
-        // } else {
-
-            let filteredSearchResults = Object.values(this.props.restaurants).filter((restaurant) => {
-                return this.passesNeighborhoodFilter(restaurant)
-                    && this.passesCuisineFilter(restaurant)
-                    && this.passesDiningStyleFilter(restaurant)
-                    && this.passesDressCodeFilter(restaurant)
-                    && this.passespriceFilter(restaurant)
-            });
-
-            filtered = filteredSearchResults.map((result, idx) => {
-                return (
-                    <FilteredResult key={idx} result={result} />
-                )
-            });
-            
-        // }
+        filtered = filteredSearchResults.map((result, idx) => {
+            return (
+                <FilteredResult key={idx} result={result} />
+            )
+        });
+        
         
     
         return (    
@@ -103,8 +96,9 @@ class SearchResult extends React.Component {
                                 <div className="sort-filters">
                                     <div className="sort-dropdown">
                                         <button
+                                            id="clearFilter"
                                             className="clear-filter-button"
-                                            onClick={this.props.clearAllFilters.bind(this)} 
+                                            onClick={this.handleClearFilter.bind(this)} 
                                             value="">
                                             <span>Clear All Filters</span>
                                         </button>

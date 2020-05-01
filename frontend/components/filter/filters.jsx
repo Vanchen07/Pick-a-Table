@@ -6,6 +6,7 @@ import DressCodeFilter from './dress_code_filter';
 import DiningStyleFilter from './dining_style_filter';
 
 class Filters extends React.Component {
+
     render () {
         const { activeFilters, allPrices, allNeighborhoods, allCuisines, allDressCodes, allDiningStyles, addFilter, removeFilter, clearAllFilters, clearSearchRes } = this.props;
         return (
