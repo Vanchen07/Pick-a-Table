@@ -1,8 +1,6 @@
 import React from 'react';
 import 'react-dates/initialize';
-import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
-import { ANCHOR_LEFT, HORIZONTAL_ORIENTATION, OPEN_UP } from 'react-dates/lib/constants';
 import swal from 'sweetalert';
 
 var moment = require('moment');
@@ -68,6 +66,27 @@ class ReservationForm extends React.Component {
     this.props.clearErrors()
   }
 
+  renderParty() {
+    let party = [];
+
+    for (let i = 1; i <= 11; i++) {
+      party.push(i);
+    }
+
+    return party.map((qty, idx) => {
+      let val;
+      if (qty === 1) {
+        val = `${qty} person`;
+      } else if (qty === 11) {
+        val = 'Larger Party'
+      }
+      else {
+        val = `${qty} people`;
+      }
+
+      return <option key={idx} value={qty.toString()}>{val}</option>
+    })
+  }
  
   render() {
     // if(this.props.currentUserId){
@@ -89,19 +108,9 @@ class ReservationForm extends React.Component {
                   <div className="input-party-wrapper">
                     <div className="input-party-size">Party Size</div>
                     <div className="input-party-size-selection">
-                      {/* <div className="empty-selection"></div> */}
-                      <i class="fas fa-angle-down caret"></i>
+                      <i className="fas fa-angle-down caret"></i>
                       <select className="res-party-selection-dropdown" value={this.state.party_size} onChange={this.update('party_size')}>
-                        <option value="2">For 2</option>
-                        <option value="3">For 3</option>
-                        <option value="4">For 4</option>
-                        <option value="5">For 5</option>
-                        <option value="6">For 6</option>
-                        <option value="7">For 7</option>
-                        <option value="8">For 8</option>
-                        <option value="9">For 9</option>
-                        <option value="10">For 10</option>
-                        <option value="11">For Larger Party</option>
+                        {this.renderParty()}
                       </select>
                     </div>
                   </div>
@@ -109,33 +118,10 @@ class ReservationForm extends React.Component {
                     <div className="input-date">
                       <div className="date-label">Date</div>
                       <div className="date-dropdown">
-                        {/* <div className="date-placeholder">Thu, 5/2</div> */}
-                        <i class="fas fa-angle-down caret"></i>
+                        <i className="fas fa-angle-down caret"></i>
                         <input className="date-dropdown" type="date" />
                       </div>
                     </div>
-                    {/* <div className="input-time">
-                      <div className="date-label">Time</div>
-                      <div className="date-dropdown"> */}
-                        {/* <div className="date-placeholder"></div> */}
-                        {/* <i class="fas fa-angle-down caret"></i>
-                        <select className="res-party-selection-dropdown" value={this.state.time_slot_id} onChange={this.update('time_slot_id')}>
-                            <option value="5:00">5:00 PM</option>
-                            <option value="5:30">5:30 PM</option>
-                            <option value="6:00">6:00 PM</option>
-                            <option value="6:30">6:30 PM</option>
-                            <option value="7:00">7:00 PM</option>
-                            <option value="7:30">7:30 PM</option>
-                            <option value="8:00">8:00 PM</option>
-                            <option value="8:30">8:30 PM</option>
-                            <option value="9:00">9:00 PM</option>
-                            <option value="9:30">9:30 PM</option>
-                            <option value="10:00">10:00 PM</option>
-                            <option value="10:30">10:30 PM</option>
-                            <option value="11:00">11:00 PM</option>
-                        </select> */}
-                      {/* </div>
-                    </div> */}
                   </div>
                 </div>
               </div>
@@ -156,34 +142,6 @@ class ReservationForm extends React.Component {
                     </div>
                 )
               })}
-                    {/* <div className="time-input-button-1">
-                      <div>
-                        <div className="timeslot">
-                          <span>6:30 PM</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="time-input-button-1">
-                      <div>
-                        <div className="timeslot">
-                          <span>7:00 PM</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="time-input-button-1">
-                      <div>
-                        <div className="timeslot">
-                          <span>7:30 PM</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="time-input-button-1">
-                      <div>
-                        <div className="timeslot">
-                          <span>8:00 PM</span>
-                        </div>
-                      </div>
-                    </div> */}
                   </div>
                 </div>
               </span>
@@ -204,59 +162,6 @@ class ReservationForm extends React.Component {
               </div>
             </div>
           </form>
-        {/* <div className="reservation-form-header">
-          Make a reservation
-        </div>
-        <form className="reservation-form-body" onSubmit={this.handleSubmit}>
-            {this.renderErrors()}
-            <div className="party-size">
-                <label>Party Size
-                    <select value={this.state.party_size} onChange={this.update('party_size')} >
-                        <option value="1">For 1</option>
-                        <option value="2">For 2</option>
-                        <option value="3">For 3</option>
-                        <option value="4">For 4</option>
-                        <option value="5">For 5</option>
-                        <option value="6">For 6</option>
-                        <option value="7">For 7</option>
-                        <option value="8">For 8</option>
-                        <option value="9">For 9</option>
-                        <option value="10">For 10</option>
-                    </select>
-                </label>
-            </div>
-
-            <div>
-              <SingleDatePicker
-                hideKeyboardShortcutsPanel
-                date={this.state.date} // momentPropTypes.momentObj or null
-                onDateChange={date => this.setState({ date })} // PropTypes.func.isRequired
-                focused={this.state.focused} // PropTypes.bool
-                onFocusChange={({ focused }) => this.setState({ focused })} // PropTypes.func.isRequired
-                id="your_unique_id" // PropTypes.string.isRequired,
-              />
-            </div>
-
-            <div className="select-a-time">Select a time:
-            </div>
-
-            <div className="time-slot-parent">
-              {this.props.restaurant.remaining_time_slots.map(timeSlot => {
-                return (
-                    <div className="time-slots" onClick={()=> {this.setState({time_slot_id: timeSlot.id})}} >
-                        <button className={`time-slot-button ${this.state.time_slot_id === timeSlot.id ? 'time-slot-button-selected' : ''}`}>
-                          {timeSlot.formatted_start_time}
-                        </button>
-                    </div>
-                )
-              })}
-            </div>
-
-            <div className='submit-button'>
-                <input className='submit-button-input' type="submit" value="Find a Table"/>
-            </div>
-
-        </form> */}
       </div>
     );
   }
