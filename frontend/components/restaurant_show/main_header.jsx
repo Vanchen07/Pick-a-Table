@@ -1,51 +1,60 @@
 import React from 'react';
 
 class MainHeader extends React.Component {
+    constructor(props) {
+        super(props)
 
-    smoothScroll(target) {
-        let scrollContainer = target;
-        do { //find scroll container
-          scrollContainer = scrollContainer.parentNode;
-          if (!scrollContainer) return;
-          scrollContainer.scrollTop += 1;
-        } while (scrollContainer.scrollTop === 0);
-    
-        let targetY = 0;
-        do { //find the top of target relatively to the container
-          if (target === scrollContainer) break;
-          targetY += target.offsetTop;
-        } while (target === target.offsetParent);
-    
-        const scroll = (c, a, b, i) => {
-          i++; if (i > 30) return;
-          c.scrollTop = a + (b - a) / 30 * i;
-          setTimeout(function () { scroll(c, a, b, i); }, 20);
-        };
-        // start scrolling
-        scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
-      }
+        this.scrollToOverview = this.scrollToOverview.bind(this);
+        this.scrollToRes = this.scrollToRes.bind(this);
+        this.scrollToDes = this.scrollToDes.bind(this);
+        this.scrollToAttributes = this.scrollToAttributes.bind(this);
+    }
+
+    scrollToOverview(e) {
+        e.preventDefault();
+        let ele = document.getElementById('scroll-overview');
+        ele.scrollIntoView();
+    }
+
+    scrollToRes(e) {
+        e.preventDefault();
+        let ele = document.getElementById('scroll-reservation');
+        ele.scrollIntoView();
+    }
+
+    scrollToDes(e) {
+        e.preventDefault();
+        let ele = document.getElementById('scroll-description');
+        ele.scrollIntoView();
+    }
+
+    scrollToAttributes(e) {
+        e.preventDefault();
+        let ele = document.getElementById('scroll-attributes');
+        ele.scrollIntoView();
+    }
     
     render() {
         return (
             <div className="style2" >
                <ul className="main-header">
                    <li className="main-header-list-overview">
-                        <a className="overview-link" href="#">
-                            <span>Overview</span>
+                        <a className="overview-link" href="#" onClick={this.scrollToOverview}>
+                            <span id="scroll-overview">Overview</span>
                         </a>
                    </li>
                    <li className="main-header-list-reservations">
-                        <a className="overview-link-description" href="#" onClick={this.smoothScroll('Reservations')}>
+                        <a className="overview-link-description" href="#" onClick={this.scrollToRes}>
                             <span>Reservations</span>
                         </a>
                    </li>
                    <li className="main-header-list-description">
-                        <a className="overview-link-description" href="#overview">
+                        <a className="overview-link-description" href="#" onClick={this.scrollToDes}>
                             <span>Description</span>
                         </a>
                    </li>
                    <li className="main-header-list-description">
-                        <a className="overview-link-description" href="#overview">
+                        <a className="overview-link-description" href="#" onClick={this.scrollToAttributes}>
                             <span>Details</span>
                         </a>
                    </li>

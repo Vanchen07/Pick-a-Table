@@ -35,14 +35,15 @@ class ReservationForm extends React.Component {
     });
 
 
-    this.props.createReservation(reservationParams).then(this.props.history.push('/search'));
+    if(this.props.currentUserId){
+      this.props.createReservation(reservationParams)
+      // .then(this.props.history.push('/search'));
 
-      if(this.props.currentUserId){
-        return swal("Thank You!", "Your reservation is confirmed!", "success");
-      } else {
-        return swal("Sorry!", "Please log in to continue", "error");
-      }
-      
+      return swal("Thank You!", "Your reservation is confirmed!", "success");
+    } else {
+      return swal("Sorry!", "Please log in to continue", "error");
+    }
+    
   }
 
   
@@ -94,10 +95,9 @@ class ReservationForm extends React.Component {
     // }
     return (
       <div className="reservation-form-wrapper">
-          <a name="reservations"></a>
           <div className="reservation-form-header">
             <h3 className="form-header-title">
-              <span className="title-span">Make a reservation</span>
+              <span id="scroll-reservation" className="title-span">Make a reservation</span>
             </h3>
           </div>
           <form className="reservation-form-body" onSubmit={this.handleSubmit}>
@@ -133,9 +133,9 @@ class ReservationForm extends React.Component {
                 </div>
                 <div className="time-input-buttons-body">
                   <div>
-                  {this.props.restaurant.remaining_time_slots.map(timeSlot => {
+                  {this.props.restaurant.remaining_time_slots.map((timeSlot, i) => {
                 return (
-                    <div className="time-input-button-1" onClick={()=> {this.setState({time_slot_id: timeSlot.id})}} >
+                    <div key={i} className="time-input-button-1" onClick={()=> {this.setState({time_slot_id: timeSlot.id})}} >
                         <div className={`timeslot ${this.state.time_slot_id === timeSlot.id ? 'time-slot-button-selected' : ''}`}>
                           {timeSlot.formatted_start_time}
                         </div>
@@ -153,7 +153,7 @@ class ReservationForm extends React.Component {
             </div>
             <div className="form-footer">
               <div className="form-footer-booked">
-                <div className="form-footer-icon"><i class="fas fa-chart-line"></i></div>
+                <div className="form-footer-icon"><i className="fas fa-chart-line"></i></div>
                 <div className="form-footer-text">
                   <div className="form-footer-text-span">
                     <span>Booked {Object.keys(this.props.reservations).length} times today</span>

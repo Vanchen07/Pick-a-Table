@@ -8,7 +8,7 @@ class BodyRestaurantAttributes extends React.Component {
                <div className="restaurant-attributes-side">
                     <div>
                         <div className="restaurant-attributes-items">
-                            <div><i className="fas fa-concierge-bell"></i></div>
+                            <div id="scroll-attributes"><i className="fas fa-concierge-bell"></i></div>
                             <div className="restaurant-attributes-items-pad">Dining Style</div>
                         </div>
                         <div className="restaurant-attributes-items-pad2">{this.props.restaurant.dining_style}</div>
