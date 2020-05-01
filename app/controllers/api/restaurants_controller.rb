@@ -1,6 +1,6 @@
 class Api::RestaurantsController < ApplicationController
     def index
-        @restaurants = Restaurant.includes(:time_slots).all
+        @restaurants = Restaurant.all.includes(:time_slots)
         render :index
     end 
 
