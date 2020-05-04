@@ -9,6 +9,8 @@ class Restaurant < ApplicationRecord
 
     has_many :time_slots
 
+    has_one_attached :photo
+
     def neighborhood_name
         neighborhood.name
     end
