@@ -9,12 +9,12 @@ class FilteredResult extends React.Component {
     }
 
     render() {
-
         const { result } = this.props;
+        // debugger
         return (   
             <div className="rest-row">
                 <div className="rest-row-img">
-                    <img src="https://images.otstatic.com/prod/25943158/1/medium.jpg" alt=""/>
+                    {/* <img src={result.photoUrl} alt=""/> */}
                 </div>
                 <div className="rest-row-info">
                         <Link className="rest-name" to={`/${result.name}`}>{result.name}</Link>

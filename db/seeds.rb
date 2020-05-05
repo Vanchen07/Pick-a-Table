@@ -58,11 +58,15 @@ end
 
 #for each restaurant, create a time slot entry for startime and endtime
 
-Restaurant.all.each do |restaurant|
+Restaurant.all.each_with_index do |restaurant, idx|
     start_hour = restaurant.opening_hour[0...-3].to_i
     close_hour = restaurant.closing_hour[0...-3].to_i
 
     (start_hour..close_hour).each do |slot|
         TimeSlot.create!(restaurant_id: restaurant.id, start_time: slot)
     end
+
+    # n = idx + 1
+    
+    # restaurant.photo.attach(io: File.open("/Users/vanessachen/Desktop/seed_photos/#{n}.jpg"), filename:"#{n}.jpg")
 end
