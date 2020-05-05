@@ -34,10 +34,6 @@ class NavBar extends React.Component {
 
     handleNeighborhood(e, neighborhood) {
         e.preventDefault();
-        // let searchRes = Object.values(this.props.restaurants).filter((restaurant) => {
-        //     return restaurant.neighborhood_name === neighborhood;
-        // })
-        // this.props.receiveSearch(searchRes).then(this.props.history.push('/search'));
         this.props.addFilter("neighborhood", neighborhood).then(this.props.history.push('/search'));
     }
 
@@ -72,10 +68,9 @@ class NavBar extends React.Component {
                                         <a href="#" onClick={(e) => this.handleNeighborhood(e, 'Civic Center')}>Civic Center</a>
                                         <a href="#" onClick={(e) => this.handleNeighborhood(e, 'Downtown')}>Downtown</a>
                                         <a href="#" onClick={(e) => this.handleNeighborhood(e, 'Financial District')}>Financial District</a>
-                                        <Link to="/Search" onClick={this.handleNeighborhood}>All neighborhoods</Link>
+                                        <Link to="/Search" >All neighborhoods</Link>
                                     </div>
                                 ) : (
-                                    // null
                                     <div className="dropdown-content-location" ref={(element) => { this.dropdownMenu = element; }}>
                                     </div>
                                 )}
