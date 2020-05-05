@@ -15,6 +15,10 @@
         <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
   </script>
    <% end %>
+   
+  <script type="text/javascript">
+    // window.a = "<%= image_url('restaurant1.jpg') %>"
+  </script>
   <body>
     <%= yield %>
   </body>

@@ -5,6 +5,7 @@ class Api::RestaurantsController < ApplicationController
     end 
 
     def show
+        # debugger
         @restaurant = Restaurant.find_by(name: params[:id])
         render :show
     end 

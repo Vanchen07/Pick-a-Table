@@ -67,6 +67,7 @@ Restaurant.all.each_with_index do |restaurant, idx|
     end
 
     # n = idx + 1
+    # restaurant.photo_url = n
     
     # restaurant.photo.attach(io: File.open("/Users/vanessachen/Desktop/seed_photos/#{n}.jpg"), filename:"#{n}.jpg")
 end
