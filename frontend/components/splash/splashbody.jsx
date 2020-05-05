@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchField from '../search_field/search_field';
+import SearchFieldContainer from '../search_field/search_field_container';
 import { Link} from 'react-router-dom';
 
 class SplashBody extends React.Component {
@@ -10,9 +10,9 @@ class SplashBody extends React.Component {
         this.handleCuisine = this.handleCuisine.bind(this);
       }
 
-    componentDidMount() {
-        this.props.fetchRestaurants();
-    }
+    // componentDidMount() {
+    //     this.props.fetchRestaurants();
+    // }
 
     handleCuisine(e, cuisinetype) {
         e.preventDefault();
@@ -32,7 +32,7 @@ class SplashBody extends React.Component {
                       </div>
                     </div>
                     <div className="content-block-body">
-                      <SearchField {...this.props} />
+                      <SearchFieldContainer />
                     </div>
                   </div>
                 </div>
@@ -301,20 +301,17 @@ class SplashBody extends React.Component {
                                       </div>
                                     </a>
                                   </div>
-                                  {/* <div className="top-cuisines-body-display-last"></div> */}
                                 </div>
                               </div>
                             </div>
                           </div>
                         </section>
-                        {/* <section></section> */}
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            {/* <div className="splash-footer"></div> */}
           </div>
         );
     }
