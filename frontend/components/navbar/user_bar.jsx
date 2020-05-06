@@ -53,7 +53,7 @@ class UserBar extends React.Component {
       if(this.state.activeDropdown === 'calendar'){
         return(
           <div className="dropdown-content calendar">
-              <a href="#" >My Upcoming Reservations</a>
+              <Link to="/reservations" >My Upcoming Reservations</Link>
           </div>
         )
       }

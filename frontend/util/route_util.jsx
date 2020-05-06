@@ -20,7 +20,7 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
       <Redirect to="/" />
     )
   )} />
-);u
+);
 
 const mapStateToProps = state => (
   {loggedIn: Boolean(state.session.currentUserId)}

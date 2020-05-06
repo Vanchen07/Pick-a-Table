@@ -1,7 +1,8 @@
 import { connect } from "react-redux";
 import Reservation from "./reservations";
+import { fetchReservations } from "../../actions/reservation_actions";
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     reservations: state.entities.reservations,
     errors: state.errors.errors,
@@ -11,8 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createReservation: (reservation) =>
-      dispatch(createReservation(reservation))
+    fetchReservations: () => dispatch(fetchReservations())
   };
 };
 
