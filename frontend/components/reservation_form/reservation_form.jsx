@@ -1,10 +1,5 @@
 import React from 'react';
-// import 'react-dates/initialize';
-// import 'react-dates/lib/css/_datepicker.css';
 import swal from 'sweetalert';
-
-var moment = require('moment');
-
 
 class ReservationForm extends React.Component {
     
