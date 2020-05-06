@@ -6,7 +6,8 @@ const initialState = {
   neighborhood: new Set(),
   cuisine: new Set(),
   dress_code: new Set(),
-  dining_style: new Set()
+  dining_style: new Set(),
+  time: new Set()
 };
 
 const filtersReducer = function(state = initialState, action) {
@@ -26,7 +27,8 @@ const filtersReducer = function(state = initialState, action) {
           neighborhood: new Set(),
           cuisine: new Set(),
           dress_code: new Set(),
-          dining_style: new Set()
+          dining_style: new Set(),
+          time: new Set()
         };
         return clearState;
       default:

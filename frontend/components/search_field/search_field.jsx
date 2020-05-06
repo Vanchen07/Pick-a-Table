@@ -65,8 +65,17 @@ class SearchField extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // console.log(this.state)
-    this.props.addFilter("neighborhood", this.state.neighborhood).then(this.props.history.push('/search'));
+    // debugger
+    if (this.state.neighborhood) {
+      this.props.addFilter("neighborhood", this.state.neighborhood)
+        // .then(this.props.history.push("/search"));
+    }
+
+    if (this.state.time) {
+      this.props.addFilter("time", this.state.time);
+    }
+
+    this.props.history.push("/search");
   }
 
   renderParty() {

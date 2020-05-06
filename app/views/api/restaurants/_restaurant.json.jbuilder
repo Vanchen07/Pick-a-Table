@@ -1,4 +1,4 @@
-json.extract! restaurant, :id, :name, :price_range, :description, :address, :website, :phone_number, :dining_style, :dress_code, :neighborhood_name, :cuisine_type, :formatted_opening_hour, :formatted_closing_hour
+json.extract! restaurant, :id, :name, :price_range, :description, :address, :website, :phone_number, :dining_style, :dress_code, :neighborhood_name, :cuisine_type, :formatted_opening_hour, :formatted_closing_hour, :opening_hour, :closing_hour
 # json.image_url do 
 #     image_url("restaurant_heads/#{restaurant.name}.png")
 # end
