@@ -12,13 +12,14 @@ class Reservation extends React.Component {
     }
 
     render() {
-        console.log(this.props)
+        // console.log(this.props);
 
         if (!this.props.reservations) return null;
 
         return (
             <div>
                 <Navbar />
+                <h1>Your Reservations</h1>
                 {
                     this.props.reservations.map((res, i) => {
                         return (
