@@ -4,13 +4,13 @@ import { fetchReservations } from "../../actions/reservation_actions";
 
 const mapStateToProps = (state) => {
   return {
-    reservations: state.entities.reservations,
+    reservations: Object.values(state.entities.reservations),
     errors: state.errors.errors,
-    currentUserId: state.session.currentUserId
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
+    // debugger
   return {
     fetchReservations: () => dispatch(fetchReservations())
   };

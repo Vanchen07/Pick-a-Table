@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../navbar/nav_bar';
+import ReservationItem from './reservation_item';
 
 class Reservation extends React.Component {
     constructor(props) {
@@ -12,10 +13,19 @@ class Reservation extends React.Component {
 
     render() {
         console.log(this.props)
+
+        if (!this.props.reservations) return null;
+
         return (
             <div>
                 <Navbar />
-                hello
+                {
+                    this.props.reservations.map((res, i) => {
+                        return (
+                            <ReservationItem key={i} res={res}/>
+                        )
+                    })
+                }
             </div>
         )
     }

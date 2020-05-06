@@ -6,6 +6,7 @@ const reservationsReducer = (state = {}, action) => {
 
     switch(action.type) {
         case RECEIVE_RESERVATIONS:
+            // debugger
             action.reservations.forEach(reservation => {
                 nextState[reservation.id] = reservation
             })

@@ -4,10 +4,13 @@ export const RECEIVE_RESERVATIONS = 'RECEIVE_RESERVATIONS';
 export const RECEIVE_RESERVATION = 'RECEIVE_RESERVATION';
 export const REMOVE_RESERVATION = 'REMOVE_RESERVATION';
 
-export const receiveReservations = reservations => ({
+export const receiveReservations = reservations =>  {
+    // debugger
+    return ({
     type: RECEIVE_RESERVATIONS,
     reservations 
-});
+    })
+};
 
 export const receiveReservation = reservation => ({
     type: RECEIVE_RESERVATION,
