@@ -1,35 +1,38 @@
-import React from 'react';
-import Navbar from '../navbar/nav_bar';
-import ReservationItem from './reservation_item';
+import React from "react";
+import Navbar from "../navbar/nav_bar";
+import ReservationsIndex from './reservations_index';
+import Sidebar from './sidebar';
 
 class Reservation extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    componentDidMount() {
-        this.props.fetchReservations();
-    }
+  componentDidMount() {
+    this.props.fetchReservations();
+  }
 
-    render() {
-        // console.log(this.props);
+  render() {
+    // console.log(this.props);
 
-        if (!this.props.reservations) return null;
+    if (!this.props.reservations) return null;
 
-        return (
-            <div>
-                <Navbar />
-                <h1>Your Reservations</h1>
-                {
-                    this.props.reservations.map((res, i) => {
-                        return (
-                            <ReservationItem key={i} res={res}/>
-                        )
-                    })
-                }
-            </div>
-        )
-    }
+    return (
+      <div>
+        <Navbar />
+        <div className="res-container-wrapper">
+          <div className="res-container">
+            <Sidebar />
+            <ReservationsIndex
+              reservations={this.props.reservations}
+              errors={this.props.errors}
+              fetchReservations={this.props.fetchReservations}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Reservation;
