@@ -5,11 +5,12 @@ const ReservationItem = (props) => {
 
     return (
       <div className="reservation-item">
-        <div className="">
-          <div className="reservation-name">
-            <h3>{props.res.restaurant}</h3>
-          </div>
+        <div className="reservation-item-wrapper">
+          <div>image here</div>
           <div className="reservation-body">
+            <div className="reservation-name">
+              <h3>{props.res.restaurant}</h3>
+            </div>
             <div>{props.res.date}</div>
             <div>{convertTime(props.res.time)}</div>
             <div>Table for {props.res.party_size}</div>
