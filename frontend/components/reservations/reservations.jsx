@@ -21,14 +21,14 @@ class Reservation extends React.Component {
       <div>
         <Navbar />
         <div className="res-container-wrapper">
-          <div className="res-container">
+          {/* <div className="res-container"> */}
             <Sidebar />
             <ReservationsIndex
               reservations={this.props.reservations}
               errors={this.props.errors}
               fetchReservations={this.props.fetchReservations}
             />
-          </div>
+          {/* </div> */}
         </div>
       </div>
     );

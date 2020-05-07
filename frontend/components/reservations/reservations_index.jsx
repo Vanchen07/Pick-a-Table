@@ -8,10 +8,11 @@ class Reservation extends React.Component {
     }
 
     render() {
-      
+
       return (
-        <div className="reservation-block">
-          
+        <div className="reservation-container">
+          <div className="reservation-block">
+            
             <div className="reservation-header">
               <h1>Your Reservations</h1>
             </div>
@@ -19,6 +20,7 @@ class Reservation extends React.Component {
             {this.props.reservations.map((res, i) => {
               return <ReservationItem key={i} res={res} />;
             })}
+          </div>
         </div>
       );
     }
