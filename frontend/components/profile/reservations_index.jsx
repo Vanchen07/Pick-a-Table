@@ -11,7 +11,7 @@ class Reservation extends React.Component {
       if (this.props.reservations.length === 0) {
         return (
           <div className="profile-container-wrapper">
-            <div className="profile-header">No reservations found</div>
+            <div className="profile-header">No reservations found!</div>
           </div>
         );
       }
