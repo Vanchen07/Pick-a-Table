@@ -9,10 +9,10 @@ class Reservation extends React.Component {
     render() {
 
       return (
-        <div className="reservation-container">
-          <div className="reservation-block">
+        <div className="profile-container">
+          <div className="profile-block">
             
-            <div className="reservation-header">
+            <div className="profile-header">
               <h1>Your Reservations</h1>
             </div>
 

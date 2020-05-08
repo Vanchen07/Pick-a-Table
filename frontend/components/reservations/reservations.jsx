@@ -20,7 +20,7 @@ class Reservation extends React.Component {
     return (
       <div>
         <Navbar />
-        <div className="res-container-wrapper">
+        <div className="profile-container-wrapper">
           {/* <div className="res-container"> */}
             <Sidebar />
             <ReservationsIndex

@@ -33,7 +33,7 @@ class ReservationForm extends React.Component {
 
     if(this.props.currentUserId){
       this.props.createReservation(reservationParams)
-      // .then(this.props.history.push('/search'));
+      .then(this.props.history.push('/reservations'));
 
       return swal("Thank You!", "Your reservation is confirmed!", "success");
     } else {
