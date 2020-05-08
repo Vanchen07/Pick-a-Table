@@ -14,7 +14,7 @@ class FilteredResult extends React.Component {
         return (   
             <div className="rest-row">
                 <div className="rest-row-img">
-                    {/* <img src={window.table} alt=""/> */}
+                    <img src={window.table} alt=""/>
                 </div>
                 <div className="rest-row-info">
                         <Link className="rest-name" to={`/${result.name}`}>{result.name}</Link>
