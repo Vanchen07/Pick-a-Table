@@ -63,7 +63,7 @@ class UserBar extends React.Component {
     if(this.state.activeDropdown === 'user') {
       return(
           <div className="dropdown-content">
-             <a href="#" >My Profile</a>
+             <Link to="/reservations" >My Reservations</Link>
              <a href="#" >My Dining History</a>
              <a href="#" >My Saved Restaurants</a>
              <a href="#" onClick={this.props.logout}>Sign Out</a>
