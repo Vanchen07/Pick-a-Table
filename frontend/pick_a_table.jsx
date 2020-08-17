@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
       };
       store = configureStore(preloadedState);
       delete window.currentUser;
+      if (document.querySelector(".user_bootstrap")) {
+        document.querySelector(".user_bootstrap").remove() 
+      }
     } else {
       store = configureStore();
     }
