@@ -105,10 +105,12 @@ a:active {
     padding: 8px;
     border-radius: 3px;
     margin-left: 8px;
-    border-color: white;
+    border: 1px solid lightgray;
     font-size: 15px;
     font-weight: 700px;
-    color: rgb(51, 51, 51);
+    background-color: white;
+    // color: rgb(51, 51, 51);
+    color: red;
     cursor: pointer;
     font-family: BrandonText,Helvetica Neue,Helvetica,Arial,sans-serif;
     padding-left: 4px;

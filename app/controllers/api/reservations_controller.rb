@@ -15,12 +15,12 @@ class Api::ReservationsController < ApplicationController
     end 
 
     def show
-        @reservation = Reservation.find_by(params[:id])
+        @reservation = Reservation.find(params[:id])
         render :show
     end 
 
     def destroy
-        @reservation = Reservation.find_by(params[:id])
+        @reservation = Reservation.find(params[:id])
         @reservation.destroy
         @reservations = Reservation.all
         render :index

@@ -31,7 +31,8 @@
 }
 
 .page-header-hero {
-    background-image: url(https://resizer.otstatic.com/v2/photos/wide-huge/25161502.jpg);
+    // background-image: url(https://resizer.otstatic.com/v2/photos/wide-huge/25161502.jpg);
+    background-image: image_url('hero2.jpg');
     background-position-x: 100%;
     background-position-y: 50%;
     background-repeat: no-repeat;
@@ -45,67 +46,58 @@
     position: static;
 }
 
-.page-header-hero::before {
-    background-image: url(https://resizer.otstatic.com/v2/photos/wide-huge/25160669.jpg);
-    animation-name: rotate-layer2;
+// .page-header-hero::before {
+//     // background-image: url(https://resizer.otstatic.com/v2/photos/wide-huge/25161502.jpg);
+//     background-image: image_url('hero1.jpg');
+//     animation-name: rotate-layer2;
+//     animation-iteration-count: infinite;
+//     animation-duration: 18s;
+//     animation-timing-function: ease-in-out;
+//     animation-fill-mode: forwards;
+//     content: ' ';
+//     position: absolute;
+//     height: 100%;
+//     width: 100%;
+//     top: 0;
+//     // opacity: 0;
+// }
 
-    animation-iteration-count: infinite;
-    animation-duration: 18s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-    content: ' ';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    // opacity: 0;
-}
-
-.page-header-hero::before {
-    background-image: url(https://resizer.otstatic.com/v2/photos/wide-huge/25161502.jpg);
-    background-position: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: static;
-    opacity: 1;
-}
-
-.page-header-hero::after {
-    background-image: url(https://resizer.otstatic.com/v2/photos/wide-huge/25160340.jpg);
-    animation-name: rotate-layer3;
-
-    animation-iteration-count: infinite;
-    animation-duration: 18s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-    content: ' ';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    opacity: 0;
-}
-
-// .page-header-hero::after {
-//     background-image: url(https://resizer.otstatic.com/v2/photos/wide-huge/25161502.jpg);
+// .page-header-hero::before {
+//     // background-image: url(https://resizer.otstatic.com/v2/photos/wide-huge/25161502.jpg);
+//     background-image: image_url('hero2.jpg');
 //     background-position: 100%;
 //     background-repeat: no-repeat;
 //     background-size: cover;
 //     position: static;
 //     opacity: 1;
+// }
+
+// .page-header-hero::after {
+//     // background-image: url(https://resizer.otstatic.com/v2/photos/wide-huge/25160340.jpg);
+//      background-image: image_url('hero3.jpg');
 //     animation-name: rotate-layer3;
+//     animation-iteration-count: infinite;
+//     animation-duration: 18s;
+//     animation-timing-function: ease-in-out;
+//     animation-fill-mode: forwards;
+//     content: ' ';
+//     position: absolute;
+//     height: 100%;
+//     width: 100%;
+//     top: 0;
+//     opacity: 0;
 // }
 
 
-@keyframes rotate-layer2 {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-}
+// @keyframes rotate-layer2 {
+//     0%   { opacity: 0; }
+//     100% { opacity: 1; }
+// }
 
-@keyframes rotate-layer3 {
-    0%   { opacity: 1; }
-    100% { opacity: 0; }
-}
+// @keyframes rotate-layer3 {
+//     0%   { opacity: 1; }
+//     100% { opacity: 0; }
+// }
 
 .content-block {
     align-items: center;
@@ -1080,7 +1072,7 @@
 }
 
 .absinthe-head {
-    background-image: url(https://resizer.otstatic.com/v2/photos/medium/23679902.jpg);
+    background-image: image_url('absinthe.jpg');
     height: 132px;
     background-position: center;
     background-size: cover;
@@ -1088,7 +1080,7 @@
 }
 
 .flour-head {
-    background-image: url(https://resizer.otstatic.com/v2/photos/medium/25161496.jpg);
+    background-image: image_url('flour.jpg');
     height: 132px;
     background-position: center;
     background-size: cover;
@@ -1096,7 +1088,7 @@
 }
 
 .cala-head {
-    background-image: url(https://resizer.otstatic.com/v2/photos/medium/25110695.jpg);
+    background-image: image_url('cala.jpg');
     height: 132px;
     background-position: center;
     background-size: cover;
@@ -1104,7 +1096,7 @@
 }
 
 .le-head {
-    background-image: url(https://resizer.otstatic.com/v2/photos/medium/23892881.jpg);
+    background-image: image_url('le.jpg');
     height: 132px;
     background-position: center;
     background-size: cover;
@@ -1256,7 +1248,7 @@
 }
 
 .top-cuisines-body-display-img-american {
-    background-image: url(//cdn.otstatic.com/start-page-rush-654/8AFC7ADC-DE3B-439D-91F2-CE568C1A653B.jpg);
+    background-image: image_url('american.jpg');
     border-radius: 4px;
     height: 13rem;
     width: 13rem;
@@ -1281,7 +1273,7 @@
 }
 
 .top-cuisines-body-display-img-italian {
-    background-image: url(//cdn.otstatic.com/start-page-rush-654/48E9D049-40CF-4CB9-98D9-8C47D0D58986.jpg);
+    background-image: image_url('italian.jpg');
     border-radius: 4px;
     height: 13rem;
     width: 13rem;
@@ -1306,7 +1298,7 @@
 }
 
 .top-cuisines-body-display-img-seafood {
-    background-image: url(//cdn.otstatic.com/start-page-rush-654/0735C10C-6AB6-46F6-87AA-8FE54397744D.jpg);
+    background-image: image_url('seafood.jpg');
     border-radius: 4px;
     height: 13rem;
     width: 13rem;
@@ -1331,7 +1323,7 @@
 }
 
 .top-cuisines-body-display-img-french {
-    background-image: url(//cdn.otstatic.com/start-page-rush-654/39C85294-D536-48D4-93CE-675A2DB3A064.jpg);
+    background-image: image_url('french.jpg');
     border-radius: 4px;
     height: 13rem;
     width: 13rem;

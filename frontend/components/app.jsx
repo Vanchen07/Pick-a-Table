@@ -7,12 +7,14 @@ import RestaurantShowContainer from './restaurant_show/restaurant_show_container
 import SearchContainer from './search/search_container';
 import { ProtectedRoute } from '../util/route_util';
 import ReservationsContainer from './profile/reservations_container';
+// import ReservationShowContainer from './profile/reservation_show_container'
 
 const App = () => (
   <div>
     <Modal/>
     <Switch>
         <Route exact path="/" component={SplashContainer} />
+        {/* <ProtectedRoute path="/reservations/:id" component={ReservationShowContainer}/> */}
         <ProtectedRoute path="/reservations" component={ReservationsContainer}/>
         <Route path="/search" component={SearchContainer} />
         <Route path="/:restaurantName" component={RestaurantShowContainer} />

@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../navbar/nav_bar";
+import NavbarContainer from "../navbar/nav_bar_container";
 import ReservationsIndex from './reservations_index';
 import Sidebar from './sidebar';
 
@@ -19,7 +19,7 @@ class Reservation extends React.Component {
 
     return (
       <div>
-        <Navbar />
+        <NavbarContainer />
         <div className="profile-container-wrapper">
           {/* <div className="res-container"> */}
             <Sidebar />
