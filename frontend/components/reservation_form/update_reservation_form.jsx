@@ -25,7 +25,7 @@ class UpdateReservationForm extends React.Component {
                 this.setState({
                     party_size: res.reservation.party_size,
                     date: res.reservation.date,
-                    time_slot_id: '',
+                    time_slot_id: res.reservation.time_slot_id,
                 })
             })
         .then(() => this.props.fetchRestaurant(name))
