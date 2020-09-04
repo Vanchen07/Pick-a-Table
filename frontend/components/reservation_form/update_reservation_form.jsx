@@ -2,6 +2,7 @@ import React from 'react';
 import { convertTime } from '../../util/convert_time_util';
 import swal from 'sweetalert';
 import Navbar from '../navbar/nav_bar_container';
+import { Link } from 'react-router-dom';
 // import Sidebar from '../profile/sidebar';
 
 class UpdateReservationForm extends React.Component {
@@ -47,8 +48,6 @@ class UpdateReservationForm extends React.Component {
             time_slot_id: this.state.time_slot_id,
             date: this.state.date
         });
-
-        debugger
 
         if (this.props.currentUserId) {
             this.props.updateReservation(reservationParams)
@@ -111,6 +110,9 @@ class UpdateReservationForm extends React.Component {
         if(!this.props.restaurant){
           return null
         }
+
+        // this.props.reservation.restaurant
+
         return (
             <div >
                 <div>
@@ -126,6 +128,7 @@ class UpdateReservationForm extends React.Component {
                                         Edit a reservation
                                     </span>
                                 </h3>
+                                {/* <div>{this.props.reservation[0].restaurant}</div> */}
                             </div>
                             <form className="reservation-form-body" onSubmit={this.handleSubmit}>
                                 {this.renderErrors()}
@@ -156,6 +159,14 @@ class UpdateReservationForm extends React.Component {
                                                             value={this.state.date}
                                                             onChange={this.update("date")}
                                                         />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="input-date-time-wrapper">
+                                                <div className="input-date">
+                                                    <div className="date-label">Restaurant</div>
+                                                    <div className="name-dropdown">
+                                                        {this.props.reservation[0].restaurant}
                                                     </div>
                                                 </div>
                                             </div>
@@ -198,7 +209,7 @@ class UpdateReservationForm extends React.Component {
                                 </span>
                                 <div className="res-button-wrapper">
                                     <button className="res-button">
-                                        <span>Find a Table</span>
+                                        <span>Update Table</span>
                                     </button>
                                 </div>
                                 <div className="form-footer">
@@ -208,9 +219,9 @@ class UpdateReservationForm extends React.Component {
                                         </div>
                                         <div className="form-footer-text">
                                             <div className="form-footer-text-span">
-                                                {/* <span>
-                                                    Booked {Object.keys(this.props.reservations).length} timestoday
-                                                </span> */}
+                                                {/* <span> */}
+                                                    <Link to="/reservations">Back to Reservations</Link>
+                                                {/* </span> */}
                                             </div>
                                         </div>
                                     </div>

@@ -12,7 +12,7 @@ class Api::ReservationsController < ApplicationController
     def update
         @reservation = Reservation.find(params[:id])
 
-        if @reservation && @reservation.update(reservation_params)
+        if @reservation && @reservation.update!(reservation_params)
             render :show
         else
             render json: ["No reservation found"]
