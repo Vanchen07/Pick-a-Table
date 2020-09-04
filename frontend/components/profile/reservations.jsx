@@ -27,6 +27,7 @@ class Reservation extends React.Component {
               reservations={this.props.reservations}
               errors={this.props.errors}
               fetchReservations={this.props.fetchReservations}
+              deleteReservation={this.props.deleteReservation}
             />
           {/* </div> */}
         </div>

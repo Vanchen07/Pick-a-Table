@@ -57,7 +57,7 @@ class SplashBody extends React.Component {
                             <span className="view-all-bar">
                               <Link
                                 className="view-all"
-                                target="_blank"
+                              
                                 to="/search"
                               >
                                 <span>View all</span>
@@ -70,7 +70,7 @@ class SplashBody extends React.Component {
                                 <div className="popular-restaurant-list">
                                   <div className="popular-restaurant-list-item-first">
                                     <Link
-                                      target="_blank"
+                                    
                                       to="/Absinthe%20Brasserie%20and%20Bar"
                                     >
                                       <div className="popular-restaurant-list-item-content">
@@ -107,7 +107,7 @@ class SplashBody extends React.Component {
                                     </Link>
                                   </div>
                                   <div className="popular-restaurant-list-item">
-                                    <Link target="_blank" to="/Marlowe">
+                                    <Link to="/Marlowe">
                                       <div className="popular-restaurant-list-item-content">
                                         <div className="flour-head"></div>
                                         <div className="absinthe-body">
@@ -142,7 +142,7 @@ class SplashBody extends React.Component {
                                     </Link>
                                   </div>
                                   <div className="popular-restaurant-list-item">
-                                    <Link target="_blank" to="/Cala">
+                                    <Link to="/Cala">
                                       <div className="popular-restaurant-list-item-content">
                                         <div className="cala-head"></div>
                                         <div className="absinthe-body">
@@ -177,7 +177,7 @@ class SplashBody extends React.Component {
                                     </Link>
                                   </div>
                                   <div className="popular-restaurant-list-item-last">
-                                    <Link target="_blank" to="/Venticello">
+                                    <Link to="/Venticello">
                                       <div className="popular-restaurant-list-item-content">
                                         <div className="le-head"></div>
                                         <div className="absinthe-body">
@@ -226,7 +226,7 @@ class SplashBody extends React.Component {
                             <span className="view-all-bar">
                               <Link
                                 className="view-all"
-                                target="_blank"
+                              
                                 to="/search"
                               >
                                 <span>View all</span>
