@@ -254,8 +254,8 @@
     position: relative;
     display: block;
     z-index: 1;
-    border: 2px solid rgba(0,0,0,.12);
-    border-radius: 1px;
+    // border: 2px solid rgba(0,0,0,.12);
+    border-radius: 20px;
     padding: .5rem 2.5rem .6rem .7rem;
     background-color: #fff;
     font-size: 14px;
@@ -272,6 +272,7 @@
     height: 100%;
     border: none;
     cursor: pointer;
+    border-radius: 20px
 }
 
 
@@ -300,7 +301,7 @@
 
 .content-section-list {
     border-top: none;
-    border-bottom: 1px solid #d8d9db;
+    // border-bottom: 1px solid #d8d9db;
     padding: .875rem 0;
     border-left: 1px solid transparent;
     border-right: 1px solid transparent;

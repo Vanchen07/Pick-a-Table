@@ -25,7 +25,7 @@ class Reservation extends React.Component {
             </div>
 
             {this.props.reservations.reverse().map((res, i) => {
-              return <ReservationItem key={i} res={res} />;
+              return <ReservationItem key={i} res={res} deleteReservation={this.props.deleteReservation} />;
             })}
           </div>
         </div>

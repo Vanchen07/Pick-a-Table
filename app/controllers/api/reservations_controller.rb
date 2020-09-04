@@ -9,18 +9,28 @@ class Api::ReservationsController < ApplicationController
         end 
     end 
 
+    def update
+        @reservation = Reservation.find(params[:id])
+
+        if @reservation && @reservation.update!(reservation_params)
+            render :show
+        else
+            render json: ["No reservation found"]
+        end
+    end
+
     def index
         @reservations = current_user.reservations
         render :index
     end 
 
     def show
-        @reservation = Reservation.find_by(params[:id])
+        @reservation = Reservation.find(params[:id])
         render :show
     end 
 
     def destroy
-        @reservation = Reservation.find_by(params[:id])
+        @reservation = Reservation.find(params[:id])
         @reservation.destroy
         @reservations = Reservation.all
         render :index

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Reservation from "./reservations";
-import { fetchReservations } from "../../actions/reservation_actions";
+import { fetchReservations, deleteReservation } from "../../actions/reservation_actions";
 
 const mapStateToProps = (state) => {
   return {
@@ -12,7 +12,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     // debugger
   return {
-    fetchReservations: () => dispatch(fetchReservations())
+    fetchReservations: () => dispatch(fetchReservations()),
+    deleteReservation: (id) => dispatch(deleteReservation(id))
   };
 };
 

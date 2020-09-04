@@ -1,8 +1,21 @@
 import React from 'react';
 import { convertTime } from '../../util/convert_time_util';
+import { Link, withRouter } from 'react-router-dom';
 
-const ReservationItem = (props) => {
+class ReservationItem extends React.Component {
+  
+  constructor(props) {
+    super(props);
+    
+    this.handleDelete = this.handleDelete.bind(this)
+  }
 
+  handleDelete() {
+    this.props.deleteReservation(this.props.res.id)
+    .then(() => window.location.reload());
+  }
+
+  render() {
     return (
       <div className="profile-item">
         <div className="profile-item-wrapper">
@@ -11,20 +24,22 @@ const ReservationItem = (props) => {
           </div>
           <div className="profile-body">
             <div className="profile-name">
-              <h3>{props.res.restaurant}</h3>
+              <h3>{this.props.res.restaurant}</h3>
             </div>
-            <div className="profile-date">{props.res.date}</div>
+            <div className="profile-date">{this.props.res.date}</div>
             <div className="profile-date">
-              {convertTime(props.res.time)}
+              {convertTime(this.props.res.time)}
             </div>
             <div className="profile-info">
-              Table for {props.res.party_size}
+              Table for {this.props.res.party_size}
             </div>
-            <a className="modify-button" href="#">Modify Reservation</a>
+            <Link className="modify-link" to={`/reservations/${this.props.res.id}`}>Modify Reservation</Link>
+            <button className="modify-link" onClick={this.handleDelete}>Cancel Reservation</button>
           </div>
         </div>
       </div>
     );
+  }
 }
 
-export default ReservationItem;
+export default withRouter(ReservationItem);

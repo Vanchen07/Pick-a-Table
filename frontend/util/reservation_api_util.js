@@ -6,12 +6,13 @@ export const fetchReservations = () => (
   );
 
 
-export const fetchReservation = id => (
-  $.ajax({
-      method: 'GET',
-      url: `/api/reservations/${id}`
+export const fetchReservation = id => {
+  // debugger
+  return $.ajax({
+    method: 'GET',
+    url: `/api/reservations/${id}`
   })
-);
+};
 
 export const createReservation = reservation => (
   $.ajax({
@@ -21,13 +22,13 @@ export const createReservation = reservation => (
     })
 );
 
-export const updateReservation = reservation => (
-  $.ajax({
-      method: 'PATCH',
-      url: `/api/reservations/${reservation.id}`,
-      data: { reservation }
-    })
-);
+export const updateReservation = reservation => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/reservations/${reservation.id}`,
+    data: { reservation }
+  })
+}
 
 export const deleteReservation = (id) => (
   $.ajax({
