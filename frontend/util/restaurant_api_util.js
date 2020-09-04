@@ -6,9 +6,10 @@ export const fetchRestaurants = () => (
   );
 
 
-export const fetchRestaurant = id => (
-  $.ajax({
-      method: 'GET',
-      url: `/api/restaurants/${id}`
+export const fetchRestaurant = name => {
+  // debugger
+  return $.ajax({
+    method: 'GET',
+    url: `/api/restaurants/${name}`
   })
-);
+}
