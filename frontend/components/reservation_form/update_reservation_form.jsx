@@ -166,7 +166,7 @@ class UpdateReservationForm extends React.Component {
                                                 <div className="input-date">
                                                     <div className="date-label">Restaurant</div>
                                                     <div className="name-dropdown">
-                                                        {this.props.reservation[0].restaurant}
+                                                        {this.props.reservation.restaurant}
                                                     </div>
                                                 </div>
                                             </div>
@@ -182,6 +182,9 @@ class UpdateReservationForm extends React.Component {
                                             <div>
                                                 {this.props.restaurant.remaining_time_slots.map(
                                                     (timeSlot, i) => {
+                                                        // console.log(this.state.time_slot_id)
+                                                        // console.log(timeSlot.id)
+                                                        // console.log(this.state.time_slot_id === timeSlot.id)
                                                         return (
                                                             <div
                                                                 key={i}

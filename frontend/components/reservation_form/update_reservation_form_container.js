@@ -8,7 +8,7 @@ import { fetchRestaurant } from '../../actions/restaurant_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        reservation: Object.values(state.entities.reservations),
+        reservation: state.entities.reservations[ownProps.match.params.id],
         errors: state.errors.errors,
         currentUserId: state.session.currentUserId,
         restaurant: Object.values(state.entities.restaurants)[0]
