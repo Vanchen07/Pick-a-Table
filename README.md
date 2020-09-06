@@ -1,9 +1,7 @@
 
 ![Pick-a-Table](https://raw.githubusercontent.com/Vanchen07/Pick-a-Table/master/app/assets/images/logo.png)
 
-Pick-a-Table is a clone of the popular restaurant reservation app, OpenTable. 
-
-[Live Site](https://pick-a-table.herokuapp.com/#/)
+[Pick-a-Table](https://pick-a-table.herokuapp.com/#/) is a clone of the popular restaurant reservation app, OpenTable. 
 
 ## Features
 
