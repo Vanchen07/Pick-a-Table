@@ -6,6 +6,26 @@ class Reservation extends React.Component {
         super(props)
     }
 
+    currentSort() {
+      let res = this.props.reservations.filter(ele => {
+        return Date.parse(ele.date) > Date.now();
+      })
+
+      return res.sort((a, b) => {
+        return a.date.localeCompare(b.date);
+      })
+    }
+
+    historySort() {
+      let res = this.props.reservations.filter(ele => {
+        return Date.parse(ele.date) < Date.now();
+      })
+
+      return res.sort((a, b) => {
+        return a.date.localeCompare(b.date);
+      })
+    }
+
     render() {
 
       if (this.props.reservations.length === 0) {
@@ -24,7 +44,15 @@ class Reservation extends React.Component {
               <h1>Your Reservations</h1>
             </div>
 
-            {this.props.reservations.reverse().map((res, i) => {
+            {this.currentSort().map((res, i) => {
+              return <ReservationItem key={i} res={res} deleteReservation={this.props.deleteReservation} />;
+            })}
+
+            <div className="profile-header">
+              <h1>Your History</h1>
+            </div>
+
+            {this.historySort().map((res, i) => {
               return <ReservationItem key={i} res={res} deleteReservation={this.props.deleteReservation} />;
             })}
           </div>

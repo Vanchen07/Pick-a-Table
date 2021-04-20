@@ -11,7 +11,7 @@ const Sidebar = () => {
           <NavLink className="sidebar-item" to="/">
             Favorites
           </NavLink>
-          <NavLink className="sidebar-item" to="/">
+          <NavLink className="sidebar-item" to="/reservations">
             History
           </NavLink>
         </div>

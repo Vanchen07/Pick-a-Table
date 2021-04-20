@@ -33,9 +33,10 @@ class ReservationForm extends React.Component {
 
     if(this.props.currentUserId){
       this.props.createReservation(reservationParams)
-      .then(this.props.history.push('/reservations'));
+        .then(() => swal("Thank You!", "Your reservation is confirmed!", "success"))
+        .then(() => this.props.history.push('/reservations'));
 
-      return swal("Thank You!", "Your reservation is confirmed!", "success");
+      // return swal("Thank You!", "Your reservation is confirmed!", "success");
     } else {
       return swal("Sorry!", "Please log in to continue", "error");
     }
@@ -122,6 +123,7 @@ class ReservationForm extends React.Component {
                     <div className="date-dropdown">
                       <i className="fas fa-angle-down caret"></i>
                       <input
+                        required
                         className="date-dropdown"
                         type="date"
                         value={this.state.date}

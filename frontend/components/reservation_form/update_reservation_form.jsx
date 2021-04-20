@@ -51,9 +51,10 @@ class UpdateReservationForm extends React.Component {
 
         if (this.props.currentUserId) {
             this.props.updateReservation(reservationParams)
-                .then(this.props.history.push('/reservations'));
+                .then(() => swal("Thank You!", "Your reservation is updated!", "success"))
+                .then(() => this.props.history.push('/reservations'));
 
-            return swal("Thank You!", "Your reservation is updated!", "success");
+            // return swal("Thank You!", "Your reservation is updated!", "success");
         } else {
             return swal("Sorry!", "Something went wrong", "error");
         }
@@ -154,6 +155,7 @@ class UpdateReservationForm extends React.Component {
                                                     <div className="date-dropdown">
                                                         <i className="fas fa-angle-down caret"></i>
                                                         <input
+                                                            required
                                                             className="date-dropdown"
                                                             type="date"
                                                             value={this.state.date}

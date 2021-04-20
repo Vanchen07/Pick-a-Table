@@ -9,8 +9,10 @@ class TimeSlot < ApplicationRecord
 
         if start_time < 12
             formatted_hour = "#{start_time.to_i}:00 AM"
-        else
+        elsif start_time > 12
             formatted_hour = "#{start_time - 12}:00 PM"
+        else  
+            formatted_hour = "12:00 PM"
         end
 
         formatted_hour
