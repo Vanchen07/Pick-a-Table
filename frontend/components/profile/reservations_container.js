@@ -10,7 +10,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    // debugger
   return {
     fetchReservations: () => dispatch(fetchReservations()),
     deleteReservation: (id) => dispatch(deleteReservation(id))

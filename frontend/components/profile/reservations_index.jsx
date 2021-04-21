@@ -1,29 +1,10 @@
 import React from 'react';
+import { Route, Switch } from 'react-router';
 import ReservationItem from './reservation_item';
 
-class Reservation extends React.Component {
+class ReservationsIndex extends React.Component {
     constructor(props) {
         super(props)
-    }
-
-    currentSort() {
-      let res = this.props.reservations.filter(ele => {
-        return Date.parse(ele.date) > Date.now();
-      })
-
-      return res.sort((a, b) => {
-        return a.date.localeCompare(b.date);
-      })
-    }
-
-    historySort() {
-      let res = this.props.reservations.filter(ele => {
-        return Date.parse(ele.date) < Date.now();
-      })
-
-      return res.sort((a, b) => {
-        return a.date.localeCompare(b.date);
-      })
     }
 
     render() {
@@ -39,26 +20,19 @@ class Reservation extends React.Component {
       return (
         <div className="profile-container">
           <div className="profile-block">
-            
+
             <div className="profile-header">
-              <h1>Your Reservations</h1>
+              <h1>{`Your ${this.props.route}`}</h1>
             </div>
 
-            {this.currentSort().map((res, i) => {
+            {this.props.reservations.map((res, i) => {
               return <ReservationItem key={i} res={res} deleteReservation={this.props.deleteReservation} />;
             })}
 
-            <div className="profile-header">
-              <h1>Your History</h1>
-            </div>
-
-            {this.historySort().map((res, i) => {
-              return <ReservationItem key={i} res={res} deleteReservation={this.props.deleteReservation} />;
-            })}
           </div>
         </div>
       );
     }
 }
 
-export default Reservation;
+export default ReservationsIndex;
